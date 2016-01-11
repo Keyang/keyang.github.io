@@ -4,17 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Keyang&#39;s Blog</title>
+  <title>Move to Hexo | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Keyang's Blog">
-<meta property="og:url" content="http://keyangxiang.com/index.html">
+  <meta name="description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog.
+The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Move to Hexo">
+<meta property="og:url" content="http://keyangxiang.com/2016/01/10/move-to-hexo-blog/index.html">
 <meta property="og:site_name" content="Keyang's Blog">
-<meta property="og:description">
+<meta property="og:description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog.
+The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
+<meta property="og:updated_time" content="2016-01-10T13:47:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Keyang's Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Move to Hexo">
+<meta name="twitter:description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog.
+The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -159,9 +163,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-move-to-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-move-to-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/01/10/move-to-hexo-blog/" class="article-date">
@@ -177,36 +179,61 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/move-to-hexo-blog/">Move to Hexo</a>
+    <h1 class="article-title" itemprop="name">
+      Move to Hexo
     </h1>
   
 
       </header>
       
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Today, I moved my blog from Wordpress to <a href="https://hexo.io/">Hexo</a>. I use github.io to host the blog.</p>
+        <p>Today, I moved my blog from Wordpress to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. I use github.io to host the blog.</p>
 <p>The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.</p>
 <p>Hexo is a very powerful static content generator which converts MarkDown posts to Html.</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
+<a id="more"></a>
+<p>To install Hexo, simply:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line">hex init  <span class="comment">#create a new blog in current folder</span></span><br><span class="line">npm install . <span class="comment">#install dependencies</span></span><br></pre></td></tr></table></figure>
+<p>To serve content locally:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
+<p>To generate static content:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>To deploy to github:</p>
+<ol>
+<li>open _config.yml</li>
+<li>add deploy section:</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: git&#10;  repo: &#60;your github.io repo&#62;&#10;  branch: master</span><br></pre></td></tr></table></figure>
+<ol>
+<li>then run:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br></pre></td></tr></table></figure>
+<p>There are still a lot of powerful function in Hexo. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">here</a> for more details.</p>
 
       
-        <p class="article-more-link">
-          <a  href="/2016/01/10/move-to-hexo-blog/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2012/03/27/csv2json/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Online CSV to JSON Convert</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -217,67 +244,6 @@
 
 
 
-
-  
-    <article id="post-csv2json" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2012/03/27/csv2json/" class="article-date">
-  	<time datetime="2012-03-26T23:00:00.000Z" itemprop="datePublished">2012-03-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/03/27/csv2json/">Online CSV to JSON Convert</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Demo: Click  <a href="http://keyangxiang.com/csvtojson/">here</a></p>
-<p>Document &amp; API: See <a href="https://github.com/Keyang/node-csvtojson" target="_blank" rel="external">Github site</a> for more information.</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/misc/">misc</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -301,8 +267,8 @@
 		fancybox: true,
 		mathjax: false,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
