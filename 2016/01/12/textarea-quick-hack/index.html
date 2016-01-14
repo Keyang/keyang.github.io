@@ -4,18 +4,33 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>About Me | Keyang&#39;s Blog</title>
+  <title>textarea quick hack | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this is about me">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About Me">
-<meta property="og:url" content="http://keyangxiang.com/about/index.html">
+  <meta name="description" content="ResizeSwitch on / off resize of a textarea on horizontal / vertical / both.1&amp;lt;textarea style=&quot;resize:horizontal&quot;&amp;gt;&amp;lt;/textarea&amp;gt;
+
+
+The resize property can be either:
+
+vertical: only resize vert">
+<meta property="og:type" content="article">
+<meta property="og:title" content="textarea quick hack">
+<meta property="og:url" content="http://keyangxiang.com/2016/01/12/textarea-quick-hack/index.html">
 <meta property="og:site_name" content="Keyang's Blog">
-<meta property="og:description" content="this is about me">
-<meta property="og:updated_time" content="2016-01-10T06:34:07.000Z">
+<meta property="og:description" content="ResizeSwitch on / off resize of a textarea on horizontal / vertical / both.1&amp;lt;textarea style=&quot;resize:horizontal&quot;&amp;gt;&amp;lt;/textarea&amp;gt;
+
+
+The resize property can be either:
+
+vertical: only resize vert">
+<meta property="og:updated_time" content="2016-01-14T08:53:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About Me">
-<meta name="twitter:description" content="this is about me">
+<meta name="twitter:title" content="textarea quick hack">
+<meta name="twitter:description" content="ResizeSwitch on / off resize of a textarea on horizontal / vertical / both.1&amp;lt;textarea style=&quot;resize:horizontal&quot;&amp;gt;&amp;lt;/textarea&amp;gt;
+
+
+The resize property can be either:
+
+vertical: only resize vert">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -160,11 +175,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-textarea-quick-hack" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-  	<time datetime="2015-11-11T18:34:11.000Z" itemprop="datePublished">2015-11-11</time>
+      <a href="/2016/01/12/textarea-quick-hack/" class="article-date">
+  	<time datetime="2016-01-12T10:35:25.000Z" itemprop="datePublished">2016-01-12</time>
 </a>
     </div>
   
@@ -177,7 +192,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      About Me
+      textarea quick hack
     </h1>
   
 
@@ -185,6 +200,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html-css/">html css</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -193,7 +212,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>this is about me</p>
+        <h3 id="Resize">Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">style</span>=<span class="value">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<textarea style="resize:horizontal"></textarea>
+
+<p>The resize property can be either:</p>
+<ul>
+<li>vertical: only resize vertically</li>
+<li>horizontal: only resize horizontally</li>
+<li>none: disable resize (also remove the resize area on right bottom.)</li>
+</ul>
+<h3 id="Outline">Outline</h3><p>Remove or change style of outline when textarea is focused on safari / chrome etc.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">class</span>=<span class="value">"customize"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.customize</span><span class="pseudo">:focus</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">outline-color</span>:<span class="value">red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><style>.customize:focus{ outline-color:red; }</style></p>
+<textarea class="customize"></textarea>
 
       
     </div>
@@ -201,6 +232,16 @@
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/10/move-to-hexo-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Move to Hexo</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -235,7 +276,7 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

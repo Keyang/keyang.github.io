@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-01-10T13:47:15.000Z</updated>
+  <updated>2016-01-14T08:53:48.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[textarea quick hack]]></title>
+    <link href="http://keyangxiang.com/2016/01/12/textarea-quick-hack/"/>
+    <id>http://keyangxiang.com/2016/01/12/textarea-quick-hack/</id>
+    <published>2016-01-12T10:35:25.000Z</published>
+    <updated>2016-01-14T08:53:48.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Resize">Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">style</span>=<span class="value">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<textarea style="resize:horizontal"></textarea>
+
+<p>The resize property can be either:</p>
+<ul>
+<li>vertical: only resize vertically</li>
+<li>horizontal: only resize horizontally</li>
+<li>none: disable resize (also remove the resize area on right bottom.)</li>
+</ul>
+<h3 id="Outline">Outline</h3><p>Remove or change style of outline when textarea is focused on safari / chrome etc.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">class</span>=<span class="value">"customize"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.customize</span><span class="pseudo">:focus</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">outline-color</span>:<span class="value">red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><style>.customize:focus{ outline-color:red; }</style></p>
+<textarea class="customize"></textarea>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Resize">Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table]]>
+    </summary>
+    
+      <category term="html css" scheme="http://keyangxiang.com/tags/html-css/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Move to Hexo]]></title>

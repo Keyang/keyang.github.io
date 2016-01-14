@@ -9,9 +9,10 @@
   padding:5px;
   background:#efefef;
   resize:vertical;
+  outline:none;
 }
 .txtBox:focus{
-  border:5px solid #999;
+  border:3px solid #999;
 
 }
 
