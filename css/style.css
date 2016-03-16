@@ -137,8 +137,8 @@ body,
   height: 100%;
 }
 body {
-  font-family: "微软雅黑", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: Maax-Standard, Helvetica, Arial, sans-serif;
+  font-size: 20px;
   background: #fff;
   color: rgba(0,0,0,0.6);
   -webkit-overflow-scrolling: touch;
@@ -242,6 +242,7 @@ a {
   -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   height: 100%;
+  z-index: 1;
 }
 #container .left-col .overlay {
   width: 100%;
@@ -254,6 +255,9 @@ a {
   width: 76%;
   text-align: center;
   margin: 112px auto 0;
+}
+#container .left-col .intrude-less .gs-title {
+  text-align: left;
 }
 #container .mid-col {
   position: absolute;
@@ -1128,7 +1132,6 @@ a {
 }
 .article-more-link {
   margin-top: 5px;
-  text-align: right;
 }
 .article-more-link a {
   background: #4d4d4d;
