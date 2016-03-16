@@ -138,10 +138,12 @@ body,
 }
 body {
   font-family: Maax-Standard, Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   background: #fff;
   color: rgba(0,0,0,0.6);
   -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 h1,
 h2,

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-16T16:59:58.000Z</updated>
+  <updated>2016-03-16T17:32:02.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[css: font-smoothing]]></title>
+    <link href="http://keyangxiang.com/2016/03/16/css-font-smoothing/"/>
+    <id>http://keyangxiang.com/2016/03/16/css-font-smoothing/</id>
+    <published>2016-03-16T17:30:36.000Z</published>
+    <updated>2016-03-16T17:32:02.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">-webkit-font-smoothing</span>: <span class="tag">antialiased</span>;</span><br><span class="line"><span class="tag">-moz-osx-font-smoothing</span>: <span class="tag">grayscale</span></span><br></pre></td></tr></table></figure>
+<p>Makes text clearer</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><t]]>
+    </summary>
+    
+      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Docker Quick Notes]]></title>
