@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a>
+						<a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,63 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-minimist-a-neat-cli-argv-parser" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/minimist-a-neat-cli-argv-parser/" class="article-date">
+  	<time datetime="2016-03-16T17:41:36.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/16/minimist-a-neat-cli-argv-parser/">minimist: a neat cli argv parser</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line arguments) parser:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-css-font-smoothing" class="article article-type-post" itemscope itemprop="blogPost">
   

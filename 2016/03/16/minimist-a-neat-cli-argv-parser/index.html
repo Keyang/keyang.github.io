@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Projects | Keyang&#39;s Blog</title>
+  <title>minimist: a neat cli argv parser | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Node.JS csvtojsonA comprehensive csv to json converter module">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Projects">
-<meta property="og:url" content="http://keyangxiang.com/projects/index.html">
+  <meta name="description" content="minimist is a lightweight cli argument (command line arguments) parser:
+1234567891011require(&apos;minimist&apos;)(&quot;-x 3 -y 4 -n5 -abc --beep=boop foo bar baz&quot;);//output:&amp;#123; _: [ &apos;foo&apos;, &apos;bar&apos;, &apos;baz&apos; ],  x: 3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="minimist: a neat cli argv parser">
+<meta property="og:url" content="http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/index.html">
 <meta property="og:site_name" content="Keyang's Blog">
-<meta property="og:description" content="Node.JS csvtojsonA comprehensive csv to json converter module">
-<meta property="og:updated_time" content="2016-01-10T14:08:40.000Z">
+<meta property="og:description" content="minimist is a lightweight cli argument (command line arguments) parser:
+1234567891011require(&apos;minimist&apos;)(&quot;-x 3 -y 4 -n5 -abc --beep=boop foo bar baz&quot;);//output:&amp;#123; _: [ &apos;foo&apos;, &apos;bar&apos;, &apos;baz&apos; ],  x: 3">
+<meta property="og:updated_time" content="2016-03-16T17:48:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Projects">
-<meta name="twitter:description" content="Node.JS csvtojsonA comprehensive csv to json converter module">
+<meta name="twitter:title" content="minimist: a neat cli argv parser">
+<meta name="twitter:description" content="minimist is a lightweight cli argument (command line arguments) parser:
+1234567891011require(&apos;minimist&apos;)(&quot;-x 3 -y 4 -n5 -abc --beep=boop foo bar baz&quot;);//output:&amp;#123; _: [ &apos;foo&apos;, &apos;bar&apos;, &apos;baz&apos; ],  x: 3">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -173,7 +176,13 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-minimist-a-neat-cli-argv-parser" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/minimist-a-neat-cli-argv-parser/" class="article-date">
+  	<time datetime="2016-03-16T17:41:36.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
   
   <div class="article-inner">
     
@@ -184,7 +193,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Projects
+      minimist: a neat cli argv parser
     </h1>
   
 
@@ -192,6 +201,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -200,7 +213,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Node-JS_csvtojson">Node.JS csvtojson</h2><p>A comprehensive csv to json converter module</p>
+        <p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line arguments) parser:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -208,6 +222,16 @@
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/16/css-font-smoothing/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css: font-smoothing</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -258,7 +282,7 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

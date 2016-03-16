@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-16T17:32:02.000Z</updated>
+  <updated>2016-03-16T17:48:43.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[minimist: a neat cli argv parser]]></title>
+    <link href="http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/"/>
+    <id>http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/</id>
+    <published>2016-03-16T17:41:36.000Z</published>
+    <updated>2016-03-16T17:48:43.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line arguments) parser:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line ar]]>
+    </summary>
+    
+      <category term="node.js" scheme="http://keyangxiang.com/tags/node-js/"/>
+    
+      <category term="npm" scheme="http://keyangxiang.com/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[css: font-smoothing]]></title>
