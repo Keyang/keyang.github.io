@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-17T21:33:58.000Z</updated>
+  <updated>2016-03-17T21:35:44.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://keyangxiang.com/2016/03/17/wordpress-reverse-proxy-headers/"/>
     <id>http://keyangxiang.com/2016/03/17/wordpress-reverse-proxy-headers/</id>
     <published>2016-03-17T21:32:31.000Z</published>
-    <updated>2016-03-17T21:33:58.000Z</updated>
+    <updated>2016-03-17T21:35:44.000Z</updated>
     <content type="html"><![CDATA[<p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">proxy_set_header X-Real-IP <span class="variable">$remote</span>_addr;</span><br><span class="line">proxy_set_header X-Forwarded-For <span class="variable">$proxy</span>_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">proxy_set_header X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">proxy_set_header HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -28,6 +28,12 @@
 <figure class="highlight xquery"><table><]]>
     </summary>
     
+      <category term="nginx" scheme="http://keyangxiang.com/tags/nginx/"/>
+    
+      <category term="wordpress" scheme="http://keyangxiang.com/tags/wordpress/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
   </entry>
   
   <entry>
@@ -35,7 +41,7 @@
     <link href="http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/"/>
     <id>http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/</id>
     <published>2016-03-16T17:41:36.000Z</published>
-    <updated>2016-03-16T17:48:43.000Z</updated>
+    <updated>2016-03-17T21:36:37.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line arguments) parser:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -47,6 +53,8 @@
     
       <category term="npm" scheme="http://keyangxiang.com/tags/npm/"/>
     
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
   </entry>
   
   <entry>
@@ -54,7 +62,7 @@
     <link href="http://keyangxiang.com/2016/03/16/css-font-smoothing/"/>
     <id>http://keyangxiang.com/2016/03/16/css-font-smoothing/</id>
     <published>2016-03-16T17:30:36.000Z</published>
-    <updated>2016-03-16T17:32:02.000Z</updated>
+    <updated>2016-03-17T21:36:27.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">-webkit-font-smoothing</span>: <span class="tag">antialiased</span>;</span><br><span class="line"><span class="tag">-moz-osx-font-smoothing</span>: <span class="tag">grayscale</span></span><br></pre></td></tr></table></figure>
 <p>Makes text clearer</p>
 ]]></content>
@@ -64,6 +72,8 @@
     
       <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
     
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
   </entry>
   
   <entry>
@@ -71,7 +81,7 @@
     <link href="http://keyangxiang.com/2016/02/10/docker-quick-notes/"/>
     <id>http://keyangxiang.com/2016/02/10/docker-quick-notes/</id>
     <published>2016-02-10T00:00:00.000Z</published>
-    <updated>2016-03-16T16:59:58.000Z</updated>
+    <updated>2016-03-17T21:36:33.000Z</updated>
     <content type="html"><![CDATA[<h1 id="What_is_Docker_and_why?">What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker" target="_blank" rel="external">See here</a></p>
 <p>In short:</p>
 <ul>
@@ -158,6 +168,8 @@
     
       <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
     
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
   </entry>
   
   <entry>
@@ -165,7 +177,7 @@
     <link href="http://keyangxiang.com/2016/01/12/textarea-quick-hack/"/>
     <id>http://keyangxiang.com/2016/01/12/textarea-quick-hack/</id>
     <published>2016-01-12T10:35:25.000Z</published>
-    <updated>2016-01-14T09:06:31.000Z</updated>
+    <updated>2016-03-17T21:35:56.000Z</updated>
     <content type="html"><![CDATA[<h3 id="Resize">Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">style</span>=<span class="value">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <textarea style="resize:horizontal"></textarea>
 
@@ -187,6 +199,8 @@
       <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
     
       <category term="html" scheme="http://keyangxiang.com/tags/html/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
     
   </entry>
   
