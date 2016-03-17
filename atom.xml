@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-16T17:48:43.000Z</updated>
+  <updated>2016-03-17T21:33:58.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[wordpress reverse proxy headers]]></title>
+    <link href="http://keyangxiang.com/2016/03/17/wordpress-reverse-proxy-headers/"/>
+    <id>http://keyangxiang.com/2016/03/17/wordpress-reverse-proxy-headers/</id>
+    <published>2016-03-17T21:32:31.000Z</published>
+    <updated>2016-03-17T21:33:58.000Z</updated>
+    <content type="html"><![CDATA[<p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">proxy_set_header X-Real-IP <span class="variable">$remote</span>_addr;</span><br><span class="line">proxy_set_header X-Forwarded-For <span class="variable">$proxy</span>_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">proxy_set_header X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">proxy_set_header HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p>
+<figure class="highlight xquery"><table><]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[minimist: a neat cli argv parser]]></title>
