@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-20T18:20:54.000Z</updated>
+  <updated>2016-03-20T18:21:47.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://keyangxiang.com/2016/03/20/mongoosejs-setters-schema/"/>
     <id>http://keyangxiang.com/2016/03/20/mongoosejs-setters-schema/</id>
     <published>2016-03-20T18:16:31.000Z</published>
-    <updated>2016-03-20T18:20:54.000Z</updated>
+    <updated>2016-03-20T18:21:47.000Z</updated>
     <content type="html"><![CDATA[<p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="external">doc</a> is not quite detailed and obselete.<br>Some example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  password:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    required:<span class="literal">true</span>,</span><br><span class="line">    set:hash</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hash</span>(<span class="params">plainPwd</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>The <code>hash</code> will be called mainly on following scenarios:</p>
 <ul>
@@ -34,6 +34,12 @@
     <summary type="html">
     <![CDATA[<p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/d]]>
     </summary>
+    
+      <category term="mongoose.js" scheme="http://keyangxiang.com/tags/mongoose-js/"/>
+    
+      <category term="node.js" scheme="http://keyangxiang.com/tags/node-js/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
     
   </entry>
   
