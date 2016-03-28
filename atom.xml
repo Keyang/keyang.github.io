@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-28T14:29:42.000Z</updated>
+  <updated>2016-03-28T14:32:54.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -19,9 +19,11 @@
     <link href="http://keyangxiang.com/2016/03/28/Quick-Note-for-Unit-Tests-in-Angularjs/"/>
     <id>http://keyangxiang.com/2016/03/28/Quick-Note-for-Unit-Tests-in-Angularjs/</id>
     <published>2016-03-28T14:05:54.000Z</published>
-    <updated>2016-03-28T14:29:42.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="Tools">Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
+    <updated>2016-03-28T14:32:54.000Z</updated>
+    <content type="html"><![CDATA[<p>Testing with web app is always fun. Angularjs makes it even better.<br>This quick note bootstrap any angular.js projects embracing with unit tests.</p>
+<h1 id="Tools">Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
 <p>Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="operator"><span class="keyword">install</span> <span class="comment">--save angular-mocks</span></span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h1 id="Npm_dependencies">Npm dependencies</h1><p>Following npm packages are needed and add them as devDependencies:<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"jasmine-core"</span>: <span class="string">"^2.3.4"</span>,</span><br><span class="line"><span class="string">"karma"</span>: <span class="string">"~0.12"</span>,</span><br><span class="line"><span class="string">"karma-chrome-launcher"</span>: <span class="string">"^0.1.12"</span>,</span><br><span class="line"><span class="string">"karma-firefox-launcher"</span>: <span class="string">"^0.1.6"</span>,</span><br><span class="line"><span class="string">"karma-jasmine"</span>: <span class="string">"^0.3.5"</span>,</span><br><span class="line"><span class="string">"karma-junit-reporter"</span>: <span class="string">"^0.2.2"</span>,</span><br><span class="line"><span class="string">"protractor"</span>: <span class="string">"^2.1.0"</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="karma-conf-js">karma.conf.js</h1><p>Configuration for karma:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line">  config.set(&#123;</span><br><span class="line"></span><br><span class="line">    basePath : <span class="string">'./'</span>,</span><br><span class="line"></span><br><span class="line">    files : [</span><br><span class="line">      <span class="string">'www/bower_components/angular/angular.js'</span>,</span><br><span class="line">      <span class="string">'www/bower_components/angular-ui-router/release/angular-ui-router.js'</span>,</span><br><span class="line">      <span class="string">'www/bower_components/angular-mocks/angular-mocks.js'</span>,</span><br><span class="line">      <span class="string">'www/bower_components/jquery/dist/jquery.js'</span>,</span><br><span class="line">      <span class="comment">//all other lib dependencies</span></span><br><span class="line">      <span class="string">'www/app.gen.js'</span>, <span class="comment">// app js file &lt;- generated by browserfi</span></span><br><span class="line">      <span class="string">'www/app/**/test_*.js'</span> <span class="comment">// all tests file</span></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    autoWatch : <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">    frameworks: [<span class="string">'jasmine'</span>],</span><br><span class="line"></span><br><span class="line">    browsers : [<span class="string">'Chrome'</span>],</span><br><span class="line"></span><br><span class="line">    plugins : [</span><br><span class="line">            <span class="string">'karma-chrome-launcher'</span>,</span><br><span class="line">            <span class="string">'karma-firefox-launcher'</span>,</span><br><span class="line">            <span class="string">'karma-jasmine'</span>,</span><br><span class="line">            <span class="string">'karma-junit-reporter'</span></span><br><span class="line">            ],</span><br><span class="line"></span><br><span class="line">    junitReporter : &#123;</span><br><span class="line">      outputFile: <span class="string">'test_out/unit.xml'</span>,</span><br><span class="line">      suite: <span class="string">'unit'</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>Put this file at root of project.</p>
@@ -45,9 +47,17 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="Tools">Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
-<p>Also, angular-mocks needs to be instal]]>
+    <![CDATA[<p>Testing with web app is always fun. Angularjs makes it even better.<br>This quick note bootstrap any angular.js projects embracing with unit tests.</p>
+<h1 id="Tools">Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
+<p>Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="operator"><span class="keyword">install</span> <span class="comment">--save angular-mocks</span></span></span><br></pre></td></tr></table></figure></p>]]>
+    
     </summary>
+    
+      <category term="angularjs" scheme="http://keyangxiang.com/tags/angularjs/"/>
+    
+      <category term="test" scheme="http://keyangxiang.com/tags/test/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
     
   </entry>
   
