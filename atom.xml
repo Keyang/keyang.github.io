@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-30T12:49:42.000Z</updated>
+  <updated>2016-03-30T19:10:53.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Docker multi-hosting network quick note]]></title>
+    <link href="http://keyangxiang.com/2016/03/30/Docker-multi-hosting-network-quick-note/"/>
+    <id>http://keyangxiang.com/2016/03/30/Docker-multi-hosting-network-quick-note/</id>
+    <published>2016-03-30T17:24:17.000Z</published>
+    <updated>2016-03-30T19:10:53.000Z</updated>
+    <content type="html"><![CDATA[<p>To create an <code>overlay</code> network on multiple hosts over swarm, following are required:</p>
+<ul>
+<li>a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used for discovery</li>
+<li>Run docker daemon with following parameters:<ul>
+<li>cluster-store: where the store is</li>
+<li>cluster-advertise: what network interface to be advertised</li>
+</ul>
+</li>
+</ul>
+<h1 id="Setup_consul_KV_store">Setup consul KV store</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    -<span class="ruby">p <span class="string">"8500:8500"</span> \</span><br><span class="line"></span>    -<span class="ruby">h <span class="string">"consul"</span> \</span><br><span class="line"></span>    -<span class="ruby">-restart=<span class="keyword">unless</span>-stopped \</span><br><span class="line"></span>    -<span class="ruby">-name=<span class="string">"kv_store"</span>\</span><br><span class="line"></span>    progrium/consul -server -bootstrap</span><br></pre></td></tr></table></figure>
+<h1 id="Daemon_Options">Daemon Options</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">-engine-opt=<span class="string">"cluster-store=consul://$(docker-machine ip mh-keystore):8500"</span></span><br><span class="line"></span>-<span class="ruby">-engine-opt=<span class="string">"cluster-advertise=eth1:2376"</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>All</strong> swarm-agents should have these options otherwise it will be likely get this error:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Error</span> <span class="built_in">response</span> from daemon: <span class="number">500</span> Internal <span class="built_in">Server</span> <span class="keyword">Error</span>: failed <span class="keyword">to</span> parse pool <span class="built_in">request</span> <span class="keyword">for</span> address <span class="built_in">space</span> <span class="string">"GlobalDefault"</span> pool <span class="string">""</span> subpool <span class="string">""</span>: cannot find address <span class="built_in">space</span> GlobalDefault (most likely the backing datastore <span class="keyword">is</span> <span class="keyword">not</span> configured)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Create_overlay_network">Create overlay network</h1><p>If using docker-compose, there is nothing need to do. As docker-compose will automatically create defaul network if:</p>
+<ul>
+<li>Single host: it will create a bridge</li>
+<li>Multiple host: it will create a overlay</li>
+</ul>
+<p>Once docker-compose file finished, just run <code>docker-compose up -d</code> which will create network correspondingly.</p>
+<p>otherwise simply use following command at your <code>swarm</code>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create --driver overlay --subnet=<span class="number">10.0</span><span class="number">.9</span><span class="number">.0</span>/<span class="number">24</span> my-net</span><br></pre></td></tr></table></figure></p>
+<h1 id="Docker-compose_build_on_Swarm">Docker-compose build on Swarm</h1><p>There is limitation for docker-compose build as it cannot find the target node to build the image.<br>The only way currently is to build on the node and tag it rather than on swarm.<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t &lt;tag <span class="property">name</span>&gt; path/<span class="keyword">to</span>/dockerfile</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>To create an <code>overlay</code> network on multiple hosts over swarm, following are required:</p>
+<ul>
+<li>a key-value store service: t]]>
+    </summary>
+    
+      <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[get client ip address in express.js]]></title>
@@ -214,7 +253,7 @@
     <link href="http://keyangxiang.com/2016/02/10/docker-quick-notes/"/>
     <id>http://keyangxiang.com/2016/02/10/docker-quick-notes/</id>
     <published>2016-02-10T00:00:00.000Z</published>
-    <updated>2016-03-17T21:36:33.000Z</updated>
+    <updated>2016-03-30T17:32:51.000Z</updated>
     <content type="html"><![CDATA[<h1 id="What_is_Docker_and_why?">What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker" target="_blank" rel="external">See here</a></p>
 <p>In short:</p>
 <ul>
@@ -283,7 +322,22 @@
 <li>etcd</li>
 <li>consul<br>and some other key-value stores.</li>
 </ul>
+<h3 id="Token">Token</h3><p>token is hosted on docker.com. Typeically not used for prod.</p>
+<p>Generate a token:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="command">run</span> <span class="comment">--rm swarm create</span></span><br></pre></td></tr></table></figure></p>
+<p>Then it is able to use <code>token://&lt;tokenID&gt;</code> as discovery service</p>
 <h2 id="Swarm_Manager_TLS">Swarm Manager TLS</h2><p>As docker swarm manager needs to actively manage swarm agents, it needs have its own TLS certificates signed by same CA. Otherwise, swarm manager will not be able to talk to swarm agents.<br>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="operator">-d</span> -p <span class="number">3376</span>:<span class="number">3376</span> -t -v /var/lib/boot2docker:/certs:ro swarm manage -H <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">3376</span> --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://<span class="number">123456789</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Run_container_on_specific_Swarm_agent">Run container on specific Swarm agent</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">environment:&#10;  - &#34;constraint:node==node-1&#34;</span><br></pre></td></tr></table></figure>
+<p>the <code>node-1</code> can be name of the docker machine.</p>
+<p>#Docker Engine</p>
+<h2 id="Restart_policy">Restart policy</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="command">run</span> <span class="comment">--restart =&lt;restart strategy &gt; &lt;image name&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Restart strategies:</p>
+<ul>
+<li>no</li>
+<li>on-failure[:max-retries]</li>
+<li>always</li>
+<li>unless-stopped</li>
+</ul>
+<h2 id="give_a_name">give a name</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --<span class="built_in">name</span>=&lt;<span class="built_in">name</span>&gt; &lt;<span class="built_in">image</span> <span class="built_in">name</span>&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="What_is_Docker_and_why?">What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker">See here</a></p>

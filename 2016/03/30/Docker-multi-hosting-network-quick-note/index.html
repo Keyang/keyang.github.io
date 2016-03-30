@@ -4,21 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>css: font-smoothing | Keyang&#39;s Blog</title>
+  <title>Docker multi-hosting network quick note | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale
-Makes text clearer">
+  <meta name="description" content="To create an overlay network on multiple hosts over swarm, following are required:
+
+a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used fo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css: font-smoothing">
-<meta property="og:url" content="http://keyangxiang.com/2016/03/16/css-font-smoothing/index.html">
+<meta property="og:title" content="Docker multi-hosting network quick note">
+<meta property="og:url" content="http://keyangxiang.com/2016/03/30/Docker-multi-hosting-network-quick-note/index.html">
 <meta property="og:site_name" content="Keyang's Blog">
-<meta property="og:description" content="12-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale
-Makes text clearer">
-<meta property="og:updated_time" content="2016-03-17T21:36:27.000Z">
+<meta property="og:description" content="To create an overlay network on multiple hosts over swarm, following are required:
+
+a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used fo">
+<meta property="og:updated_time" content="2016-03-30T19:10:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css: font-smoothing">
-<meta name="twitter:description" content="12-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale
-Makes text clearer">
+<meta name="twitter:title" content="Docker multi-hosting network quick note">
+<meta name="twitter:description" content="To create an overlay network on multiple hosts over swarm, following are required:
+
+a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used fo">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -176,11 +179,11 @@ Makes text clearer">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-css-font-smoothing" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Docker-multi-hosting-network-quick-note" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/16/css-font-smoothing/" class="article-date">
-  	<time datetime="2016-03-16T17:30:36.000Z" itemprop="datePublished">2016-03-16</time>
+      <a href="/2016/03/30/Docker-multi-hosting-network-quick-note/" class="article-date">
+  	<time datetime="2016-03-30T17:24:17.000Z" itemprop="datePublished">2016-03-30</time>
 </a>
     </div>
   
@@ -193,7 +196,7 @@ Makes text clearer">
         
   
     <h1 class="article-title" itemprop="name">
-      css: font-smoothing
+      Docker multi-hosting network quick note
     </h1>
   
 
@@ -202,7 +205,7 @@ Makes text clearer">
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
 	</div>
 
         
@@ -217,8 +220,26 @@ Makes text clearer">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">-webkit-font-smoothing</span>: <span class="tag">antialiased</span>;</span><br><span class="line"><span class="tag">-moz-osx-font-smoothing</span>: <span class="tag">grayscale</span></span><br></pre></td></tr></table></figure>
-<p>Makes text clearer</p>
+        <p>To create an <code>overlay</code> network on multiple hosts over swarm, following are required:</p>
+<ul>
+<li>a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used for discovery</li>
+<li>Run docker daemon with following parameters:<ul>
+<li>cluster-store: where the store is</li>
+<li>cluster-advertise: what network interface to be advertised</li>
+</ul>
+</li>
+</ul>
+<h1 id="Setup_consul_KV_store">Setup consul KV store</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    -<span class="ruby">p <span class="string">"8500:8500"</span> \</span><br><span class="line"></span>    -<span class="ruby">h <span class="string">"consul"</span> \</span><br><span class="line"></span>    -<span class="ruby">-restart=<span class="keyword">unless</span>-stopped \</span><br><span class="line"></span>    -<span class="ruby">-name=<span class="string">"kv_store"</span>\</span><br><span class="line"></span>    progrium/consul -server -bootstrap</span><br></pre></td></tr></table></figure>
+<h1 id="Daemon_Options">Daemon Options</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">-engine-opt=<span class="string">"cluster-store=consul://$(docker-machine ip mh-keystore):8500"</span></span><br><span class="line"></span>-<span class="ruby">-engine-opt=<span class="string">"cluster-advertise=eth1:2376"</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>All</strong> swarm-agents should have these options otherwise it will be likely get this error:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Error</span> <span class="built_in">response</span> from daemon: <span class="number">500</span> Internal <span class="built_in">Server</span> <span class="keyword">Error</span>: failed <span class="keyword">to</span> parse pool <span class="built_in">request</span> <span class="keyword">for</span> address <span class="built_in">space</span> <span class="string">"GlobalDefault"</span> pool <span class="string">""</span> subpool <span class="string">""</span>: cannot find address <span class="built_in">space</span> GlobalDefault (most likely the backing datastore <span class="keyword">is</span> <span class="keyword">not</span> configured)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Create_overlay_network">Create overlay network</h1><p>If using docker-compose, there is nothing need to do. As docker-compose will automatically create defaul network if:</p>
+<ul>
+<li>Single host: it will create a bridge</li>
+<li>Multiple host: it will create a overlay</li>
+</ul>
+<p>Once docker-compose file finished, just run <code>docker-compose up -d</code> which will create network correspondingly.</p>
+<p>otherwise simply use following command at your <code>swarm</code>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create --driver overlay --subnet=<span class="number">10.0</span><span class="number">.9</span><span class="number">.0</span>/<span class="number">24</span> my-net</span><br></pre></td></tr></table></figure></p>
+<h1 id="Docker-compose_build_on_Swarm">Docker-compose build on Swarm</h1><p>There is limitation for docker-compose build as it cannot find the target node to build the image.<br>The only way currently is to build on the node and tag it rather than on swarm.<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t &lt;tag <span class="property">name</span>&gt; path/<span class="keyword">to</span>/dockerfile</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -228,18 +249,9 @@ Makes text clearer">
     
 <nav id="article-nav">
   
-    <a href="/2016/03/16/minimist-a-neat-cli-argv-parser/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          minimist: a neat cli argv parser
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/10/docker-quick-notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Docker Quick Notes</div>
+    <a href="/2016/03/30/get-client-ip-address-in-express-js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">get client ip address in express.js</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

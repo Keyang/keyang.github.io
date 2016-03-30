@@ -24,7 +24,7 @@ Docker is a container tech based on LXC
 Much less resource than VM by sharing cores
 But provide full run-time isolation
 It makes system deployment much faste">
-<meta property="og:updated_time" content="2016-03-17T21:36:33.000Z">
+<meta property="og:updated_time" content="2016-03-30T17:32:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker Quick Notes">
 <meta name="twitter:description" content="What is Docker and why?See here
@@ -133,7 +133,7 @@ It makes system deployment much faste">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
 					</div>
 				</section>
 				
@@ -300,7 +300,22 @@ It makes system deployment much faste">
 <li>etcd</li>
 <li>consul<br>and some other key-value stores.</li>
 </ul>
+<h3 id="Token">Token</h3><p>token is hosted on docker.com. Typeically not used for prod.</p>
+<p>Generate a token:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="command">run</span> <span class="comment">--rm swarm create</span></span><br></pre></td></tr></table></figure></p>
+<p>Then it is able to use <code>token://&lt;tokenID&gt;</code> as discovery service</p>
 <h2 id="Swarm_Manager_TLS">Swarm Manager TLS</h2><p>As docker swarm manager needs to actively manage swarm agents, it needs have its own TLS certificates signed by same CA. Otherwise, swarm manager will not be able to talk to swarm agents.<br>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="operator">-d</span> -p <span class="number">3376</span>:<span class="number">3376</span> -t -v /var/lib/boot2docker:/certs:ro swarm manage -H <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">3376</span> --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://<span class="number">123456789</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Run_container_on_specific_Swarm_agent">Run container on specific Swarm agent</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">environment:&#10;  - &#34;constraint:node==node-1&#34;</span><br></pre></td></tr></table></figure>
+<p>the <code>node-1</code> can be name of the docker machine.</p>
+<p>#Docker Engine</p>
+<h2 id="Restart_policy">Restart policy</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="command">run</span> <span class="comment">--restart =&lt;restart strategy &gt; &lt;image name&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Restart strategies:</p>
+<ul>
+<li>no</li>
+<li>on-failure[:max-retries]</li>
+<li>always</li>
+<li>unless-stopped</li>
+</ul>
+<h2 id="give_a_name">give a name</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --<span class="built_in">name</span>=&lt;<span class="built_in">name</span>&gt; &lt;<span class="built_in">image</span> <span class="built_in">name</span>&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>

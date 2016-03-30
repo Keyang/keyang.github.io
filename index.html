@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,85 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Docker-multi-hosting-network-quick-note" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/30/Docker-multi-hosting-network-quick-note/" class="article-date">
+  	<time datetime="2016-03-30T17:24:17.000Z" itemprop="datePublished">2016-03-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/30/Docker-multi-hosting-network-quick-note/">Docker multi-hosting network quick note</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>To create an <code>overlay</code> network on multiple hosts over swarm, following are required:</p>
+<ul>
+<li>a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used for discovery</li>
+<li>Run docker daemon with following parameters:<ul>
+<li>cluster-store: where the store is</li>
+<li>cluster-advertise: what network interface to be advertised</li>
+</ul>
+</li>
+</ul>
+<h1 id="Setup_consul_KV_store">Setup consul KV store</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    -<span class="ruby">p <span class="string">"8500:8500"</span> \</span><br><span class="line"></span>    -<span class="ruby">h <span class="string">"consul"</span> \</span><br><span class="line"></span>    -<span class="ruby">-restart=<span class="keyword">unless</span>-stopped \</span><br><span class="line"></span>    -<span class="ruby">-name=<span class="string">"kv_store"</span>\</span><br><span class="line"></span>    progrium/consul -server -bootstrap</span><br></pre></td></tr></table></figure>
+<h1 id="Daemon_Options">Daemon Options</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">-engine-opt=<span class="string">"cluster-store=consul://$(docker-machine ip mh-keystore):8500"</span></span><br><span class="line"></span>-<span class="ruby">-engine-opt=<span class="string">"cluster-advertise=eth1:2376"</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>All</strong> swarm-agents should have these options otherwise it will be likely get this error:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Error</span> <span class="built_in">response</span> from daemon: <span class="number">500</span> Internal <span class="built_in">Server</span> <span class="keyword">Error</span>: failed <span class="keyword">to</span> parse pool <span class="built_in">request</span> <span class="keyword">for</span> address <span class="built_in">space</span> <span class="string">"GlobalDefault"</span> pool <span class="string">""</span> subpool <span class="string">""</span>: cannot find address <span class="built_in">space</span> GlobalDefault (most likely the backing datastore <span class="keyword">is</span> <span class="keyword">not</span> configured)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Create_overlay_network">Create overlay network</h1><p>If using docker-compose, there is nothing need to do. As docker-compose will automatically create defaul network if:</p>
+<ul>
+<li>Single host: it will create a bridge</li>
+<li>Multiple host: it will create a overlay</li>
+</ul>
+<p>Once docker-compose file finished, just run <code>docker-compose up -d</code> which will create network correspondingly.</p>
+<p>otherwise simply use following command at your <code>swarm</code>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create --driver overlay --subnet=<span class="number">10.0</span><span class="number">.9</span><span class="number">.0</span>/<span class="number">24</span> my-net</span><br></pre></td></tr></table></figure></p>
+<h1 id="Docker-compose_build_on_Swarm">Docker-compose build on Swarm</h1><p>There is limitation for docker-compose build as it cannot find the target node to build the image.<br>The only way currently is to build on the node and tag it rather than on swarm.<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t &lt;tag <span class="property">name</span>&gt; path/<span class="keyword">to</span>/dockerfile</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/tech/">tech</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-get-client-ip-address-in-express-js" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -740,62 +819,6 @@
 	<a class="article-category-link" href="/categories/tech/">tech</a>
 	</div>
 
-
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-move-to-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/10/move-to-hexo-blog/" class="article-date">
-  	<time datetime="2016-01-10T13:47:15.000Z" itemprop="datePublished">2016-01-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/move-to-hexo-blog/">Move to Hexo</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Today, I moved my blog from Wordpress to <a href="https://hexo.io/">Hexo</a>. I use github.io to host the blog.</p>
-<p>The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.</p>
-<p>Hexo is a very powerful static content generator which converts MarkDown posts to Html.</p>
-        <p class="article-more-link">
-          <a  href="/2016/01/10/move-to-hexo-blog/">more >></a>
-        </p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
 
       <div class="clearfix"></div>
     </div>
