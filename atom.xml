@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-30T19:10:53.000Z</updated>
+  <updated>2016-03-30T23:26:32.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Customised select styles]]></title>
+    <link href="http://keyangxiang.com/2016/03/31/Customised-select-styles/"/>
+    <id>http://keyangxiang.com/2016/03/31/Customised-select-styles/</id>
+    <published>2016-03-30T23:25:15.000Z</published>
+    <updated>2016-03-30T23:26:32.000Z</updated>
+    <content type="html"><![CDATA[<p>e.g.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.select-type-1</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-appearance</span>:<span class="value"> none</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">-moz-appearance</span>:<span class="value"> none</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">appearance</span>:<span class="value"> none</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">1em</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#ee7122</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">0px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-border-radius</span>:<span class="value"> <span class="number">0px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.12</span>) <span class="function">url</span>(<span class="string">"../img/arrowdown.png"</span>) no-repeat <span class="number">90%</span> <span class="number">50%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-size</span>:<span class="value"><span class="number">10%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>self-explained.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>e.g.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><s]]>
+    </summary>
+    
+      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
+    
+      <category term="html" scheme="http://keyangxiang.com/tags/html/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Docker multi-hosting network quick note]]></title>
