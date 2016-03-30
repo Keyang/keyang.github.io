@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,67 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-get-client-ip-address-in-express-js" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/30/get-client-ip-address-in-express-js/" class="article-date">
+  	<time datetime="2016-03-30T12:47:49.000Z" itemprop="datePublished">2016-03-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/30/get-client-ip-address-in-express-js/">get client ip address in express.js</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>According to <a href="http://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node" target="_blank" rel="external">this</a>, do following to determine the client ipaddress:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ip = (req.headers[<span class="string">'x-forwarded-for'</span>] ||</span><br><span class="line">     req.connection.remoteAddress ||</span><br><span class="line">     req.socket.remoteAddress ||</span><br><span class="line">     req.connection.socket.remoteAddress).split(<span class="string">","</span>)[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express-js/">express.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/tech/">tech</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Quick-Note-for-Unit-Tests-in-Angularjs" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -752,63 +813,10 @@
 
 
   
-    <article id="post-csv2json" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2012/03/27/csv2json/" class="article-date">
-  	<time datetime="2012-03-26T23:00:00.000Z" itemprop="datePublished">2012-03-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/03/27/csv2json/">Online CSV to JSON Convert</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Demo: Click  <a href="http://keyangxiang.com/csvtojson/">here</a></p>
-<p>Document &amp; API: See <a href="https://github.com/Keyang/node-csvtojson" target="_blank" rel="external">Github site</a> for more information.</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/misc/">misc</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

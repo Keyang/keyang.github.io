@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-28T14:32:54.000Z</updated>
+  <updated>2016-03-30T12:49:42.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[get client ip address in express.js]]></title>
+    <link href="http://keyangxiang.com/2016/03/30/get-client-ip-address-in-express-js/"/>
+    <id>http://keyangxiang.com/2016/03/30/get-client-ip-address-in-express-js/</id>
+    <published>2016-03-30T12:47:49.000Z</published>
+    <updated>2016-03-30T12:49:42.000Z</updated>
+    <content type="html"><![CDATA[<p>According to <a href="http://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node" target="_blank" rel="external">this</a>, do following to determine the client ipaddress:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ip = (req.headers[<span class="string">'x-forwarded-for'</span>] ||</span><br><span class="line">     req.connection.remoteAddress ||</span><br><span class="line">     req.socket.remoteAddress ||</span><br><span class="line">     req.connection.socket.remoteAddress).split(<span class="string">","</span>)[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>According to <a href="http://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node" target="_blank" rel="extern]]>
+    </summary>
+    
+      <category term="express.js" scheme="http://keyangxiang.com/tags/express-js/"/>
+    
+      <category term="node.js" scheme="http://keyangxiang.com/tags/node-js/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Quick Note for Unit Tests in Angularjs]]></title>
