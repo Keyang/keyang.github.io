@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-30T23:26:32.000Z</updated>
+  <updated>2016-03-31T16:16:01.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[use nc send udp packet]]></title>
+    <link href="http://keyangxiang.com/2016/03/31/use-nc-send-udp-packet/"/>
+    <id>http://keyangxiang.com/2016/03/31/use-nc-send-udp-packet/</id>
+    <published>2016-03-31T16:09:54.000Z</published>
+    <updated>2016-03-31T16:16:01.000Z</updated>
+    <content type="html"><![CDATA[<p>Netcat (nc) is very powerful tool. Install <code>apt-get install netcat</code><br>Send UDP packet with netcat:<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">echo</span> <span class="string">"content goes to server"</span> | nc -u &lt;ip&gt; &lt;<span class="foreign"><span class="keyword">port</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Netcat (nc) is very powerful tool. Install <code>apt-get install netcat</code><br>Send UDP packet with netcat:<br><figure class="highligh]]>
+    </summary>
+    
+      <category term="cli" scheme="http://keyangxiang.com/tags/cli/"/>
+    
+      <category term="linux" scheme="http://keyangxiang.com/tags/linux/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Customised select styles]]></title>
