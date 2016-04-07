@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-03-31T16:16:01.000Z</updated>
+  <updated>2016-04-07T16:33:19.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[run docker in docker]]></title>
+    <link href="http://keyangxiang.com/2016/04/07/run-docker-in-docker/"/>
+    <id>http://keyangxiang.com/2016/04/07/run-docker-in-docker/</id>
+    <published>2016-04-07T16:32:14.000Z</published>
+    <updated>2016-04-07T16:33:19.000Z</updated>
+    <content type="html"><![CDATA[<p>Run docker in docker<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --privileged -i -t -d --restart=unless-stopped -p <span class="number">2376</span>:<span class="number">2376</span> -p <span class="number">10000</span>-<span class="number">11000</span>:<span class="number">10000</span>-<span class="number">11000</span> -p <span class="number">10000</span>-<span class="number">11000</span>:<span class="number">10000</span>-<span class="number">11000</span><span class="regexp">/udp -v /</span>mnt<span class="regexp">/opt:/</span><span class="string">opt:</span>rw -v <span class="regexp">/etc/</span><span class="string">docker:</span><span class="regexp">/etc/</span><span class="string">docker:</span>ro -v <span class="regexp">/mnt/</span>var<span class="regexp">/lib/</span><span class="string">docker:</span><span class="regexp">/var/</span>lib<span class="regexp">/docker --name=docker docker:dind  -H tcp:/</span><span class="regexp">/0.0.0.0:2376 --storage-driver=aufs --tlsverify --tlscacert /</span>etc<span class="regexp">/docker/</span>ca.pem --tlscert <span class="regexp">/etc/</span>docker<span class="regexp">/server.pem --tlskey /</span>etc<span class="regexp">/docker/</span>server-key.pem</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Run docker in docker<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td]]>
+    </summary>
+    
+      <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[use nc send udp packet]]></title>

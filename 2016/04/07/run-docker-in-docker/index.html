@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2012 | Keyang&#39;s Blog</title>
+  <title>run docker in docker | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Keyang's Blog">
-<meta property="og:url" content="http://keyangxiang.com/archives/2012/index.html">
+  <meta name="description" content="Run docker in docker1docker run --privileged -i -t -d --restart=unless-stopped -p 2376:2376 -p 10000-11000:10000-11000 -p 10000-11000:10000-11000/udp -v /mnt/opt:/opt:rw -v /etc/docker:/etc/docker:ro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="run docker in docker">
+<meta property="og:url" content="http://keyangxiang.com/2016/04/07/run-docker-in-docker/index.html">
 <meta property="og:site_name" content="Keyang's Blog">
-<meta property="og:description">
+<meta property="og:description" content="Run docker in docker1docker run --privileged -i -t -d --restart=unless-stopped -p 2376:2376 -p 10000-11000:10000-11000 -p 10000-11000:10000-11000/udp -v /mnt/opt:/opt:rw -v /etc/docker:/etc/docker:ro">
+<meta property="og:updated_time" content="2016-04-07T16:33:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Keyang's Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="run docker in docker">
+<meta name="twitter:description" content="Run docker in docker1docker run --privileged -i -t -d --restart=unless-stopped -p 2376:2376 -p 10000-11000:10000-11000 -p 10000-11000:10000-11000/udp -v /mnt/opt:/opt:rw -v /etc/docker:/etc/docker:ro">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -172,53 +173,90 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-run-docker-in-docker" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2012" class="archive-year">2012</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2012/03/27/csv2json/" class="archive-article-date">
-  	<time datetime="2012-03-26T23:00:00.000Z" itemprop="datePublished">Mar 27</time>
+    <div class="article-meta">
+      <a href="/2016/04/07/run-docker-in-docker/" class="article-date">
+  	<time datetime="2016-04-07T16:32:14.000Z" itemprop="datePublished">2016-04-07</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2012/03/27/csv2json/">Online CSV to JSON Convert</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      run docker in docker
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/misc/">misc</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
 	</div>
 
-          
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/tech/">tech</a>
+	</div>
 
-        </div>
+
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Run docker in docker<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --privileged -i -t -d --restart=unless-stopped -p <span class="number">2376</span>:<span class="number">2376</span> -p <span class="number">10000</span>-<span class="number">11000</span>:<span class="number">10000</span>-<span class="number">11000</span> -p <span class="number">10000</span>-<span class="number">11000</span>:<span class="number">10000</span>-<span class="number">11000</span><span class="regexp">/udp -v /</span>mnt<span class="regexp">/opt:/</span><span class="string">opt:</span>rw -v <span class="regexp">/etc/</span><span class="string">docker:</span><span class="regexp">/etc/</span><span class="string">docker:</span>ro -v <span class="regexp">/mnt/</span>var<span class="regexp">/lib/</span><span class="string">docker:</span><span class="regexp">/var/</span>lib<span class="regexp">/docker --name=docker docker:dind  -H tcp:/</span><span class="regexp">/0.0.0.0:2376 --storage-driver=aufs --tlsverify --tlscacert /</span>etc<span class="regexp">/docker/</span>ca.pem --tlscert <span class="regexp">/etc/</span>docker<span class="regexp">/server.pem --tlskey /</span>etc<span class="regexp">/docker/</span>server-key.pem</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/31/use-nc-send-udp-packet/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">use nc send udp packet</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'keyangxiang'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 </div>
       <footer id="footer">
@@ -244,8 +282,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
