@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Be happy everyday]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-04-07T16:33:19.000Z</updated>
+  <updated>2016-04-25T13:15:52.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -13,6 +13,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[openssl quick note]]></title>
+    <link href="http://keyangxiang.com/2016/04/24/openssl-quick-note/"/>
+    <id>http://keyangxiang.com/2016/04/24/openssl-quick-note/</id>
+    <published>2016-04-24T11:39:16.000Z</published>
+    <updated>2016-04-25T13:15:52.000Z</updated>
+    <content type="html"><![CDATA[<p>I found <a href="http://pki-tutorial.readthedocs.org/en/latest/simple/" target="_blank" rel="external">this tutorial</a> is relatively simple to follow to create a simple PKI infrastructure</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I found <a href="http://pki-tutorial.readthedocs.org/en/latest/simple/" target="_blank" rel="external">this tutorial</a> is relatively si]]>
+    </summary>
+    
+      <category term="openssl" scheme="http://keyangxiang.com/tags/openssl/"/>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[run docker in docker]]></title>

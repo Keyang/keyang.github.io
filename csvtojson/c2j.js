@@ -3,10 +3,20 @@ $(function() {
   $("#backBtn").on("click", back);
   $("#jsonRes").on("click", selectRes);
   $("#toggleParams").on("click", toggleParams);
+  // init();
 });
 
-var defParam = (new csvtojson.Converter({})).param;
-var paramsOn = false;
+var defParam=(new csvtojson.Converter({})).param  ;
+var paramsOn = true;
+$.get("https://raw.githubusercontent.com/Keyang/node-csvtojson/master/bin/options.json",function(res){
+  var options=JSON.parse(res).options;
+  for (var key in options){
+    var oriKey=key;
+    key=key.replace("--","");
+    var id="conf_"+key;
+    $("#"+id).parent().attr("title",options[oriKey].desc);
+  }
+});
 
 function toggleParams() {
   if (paramsOn) {
@@ -69,6 +79,15 @@ function getParams(defParam) {
         params[key] = parseInt(obj.val());
         if (isNaN(params[key])) {
           params[key] = 0;
+        }
+      } else if (key === "delimiter"){
+        var val=obj.val();
+        if (val) {
+          try {
+            params[key] = JSON.parse(val);
+          } catch (e) {
+            params[key] = val;
+          }
         }
       } else {
         params[key] = obj.val();

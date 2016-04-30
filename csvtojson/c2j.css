@@ -48,6 +48,19 @@
 input.sm{
   width:12px;
 }
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.col-3-item>span{
+  width:31%;
+  margin-right:1%;
+  float:left;
+  display: block;
+}
 .col-4-item>span{
   width:24%;
   margin-right:1%;
@@ -68,7 +81,7 @@ input.dyna{
   margin-bottom:5px;
   border:2px solid #eee;
   border-radius: 3px;
-  display: none;
+  font-size:0.8em;
 }
 .right{
   float:right;

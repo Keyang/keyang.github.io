@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
+  <meta name="keywords" content="csvtojson, online csv to json, free csv to json, csv to json node.js">
+  
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>CSVTOJSON Demo | Keyang&#39;s Blog</title>
+  <title>Online csv to json | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Toggle Params
       
@@ -14,7 +17,7 @@
         
           Paypal:">
 <meta property="og:type" content="website">
-<meta property="og:title" content="CSVTOJSON Demo">
+<meta property="og:title" content="Online csv to json">
 <meta property="og:url" content="http://keyangxiang.com/csvtojson/index.html">
 <meta property="og:site_name" content="Keyang's Blog">
 <meta property="og:description" content="Toggle Params
@@ -26,9 +29,9 @@
           Paypal:">
 <meta property="og:image" content="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
 <meta property="og:image" content="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-<meta property="og:updated_time" content="2016-01-14T09:10:54.000Z">
+<meta property="og:updated_time" content="2016-04-30T10:49:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSVTOJSON Demo">
+<meta name="twitter:title" content="Online csv to json">
 <meta name="twitter:description" content="Toggle Params
       
         
@@ -135,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/cli/" style="font-size: 10px;">cli</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/cli/" style="font-size: 10px;">cli</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
 					</div>
 				</section>
 				
@@ -204,7 +207,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CSVTOJSON Demo
+      Online csv to json
     </h1>
   
 
@@ -220,7 +223,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script type="application/javascript" src="/js/csvtojson.txt"></script>
+        <script type="application/javascript" src="https://cdn.rawgit.com/Keyang/node-csvtojson/master/dist/csvtojson.js"></script>
 <script type="application/javascript" src="c2j.js"></script>
 <link rel="stylesheet" href="c2j.css">
 <div id="source">
@@ -247,21 +250,21 @@
       </div>
     </div>
     <form id="paramBox">
-      <div class="section col-4-item">
-        <span>Delimiter:
-          <input name="conf_delimiter" id="conf_delimiter" class="sm" value=",">
+      <div class="section col-4-item clearfix">
+        <span>Trim:
+          <input name="conf_trim" id="conf_trim" type="checkbox">
+        </span>
+        <span>Max Row Length:
+          <input name="conf_maxRowLength" id="conf_maxRowLength" class="sm">
         </span>
         <span>Quote:
           <input name="conf_quote" id="conf_quote" class="sm" value="">
-        </span>
-        <span>Trim:
-          <input name="conf_trim" id="conf_trim" type="checkbox">
         </span>
         <span>Check Type:
           <input name="conf_checkType" id="conf_checkType" type="checkbox">
         </span>
       </div>
-      <div class="section col-4-item">
+      <div class="section col-4-item clearfix">
         <span>Ignore Empty:
           <input name="conf_ignoreEmpty" id="conf_ignoreEmpty" type="checkbox">
         </span>
@@ -275,16 +278,16 @@
           <input name="conf_checkColumn" id="conf_checkColumn" type="checkbox">
         </span>
       </div>
-      <div class="section col-2-item">
-        <span>Max Row Length:
-          <input name="conf_maxRowLength" id="conf_maxRowLength">
+      <div class="section col-2-item clearfix">
+        <span>Delimiter:
+          <input name="conf_delimiter" id="conf_delimiter" class="dyna" value=",">
         </span>
         <span>Headers:
           <input name="conf_headers" id="conf_headers" class="dyna" placeholder="['header1','header2']">
         </span>
       </div>
       <div class="section">
-        See <a href="https://github.com/Keyang/node-csvtojson#params" target="_blank">here</a> for more about parameters.
+        Move mouse over to see usage or visit <a href="https://github.com/Keyang/node-csvtojson#params" target="_blank">here</a> for more about parameters.
         Not all parameters are available for web version.
       </div>
     </form>
@@ -321,6 +324,9 @@
     Back
   </div>
 </div>
+    <div>
+    This tool is powered by Node.js csvtojson module. Github url: <a href="https://github.com/Keyang/node-csvtojson" target="_blank">https://github.com/Keyang/node-csvtojson</a>
+    </div>
 
       
     </div>
