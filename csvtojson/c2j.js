@@ -4,10 +4,11 @@ $(function() {
   $("#jsonRes").on("click", selectRes);
   $("#toggleParams").on("click", toggleParams);
   // init();
+  toggleParams();
 });
 
 var defParam=(new csvtojson.Converter({})).param  ;
-var paramsOn = true;
+var paramsOn = false;
 $.get("https://raw.githubusercontent.com/Keyang/node-csvtojson/master/bin/options.json",function(res){
   var options=JSON.parse(res).options;
   for (var key in options){

@@ -82,6 +82,7 @@ input.dyna{
   border:2px solid #eee;
   border-radius: 3px;
   font-size:0.8em;
+  display: none;
 }
 .right{
   float:right;
