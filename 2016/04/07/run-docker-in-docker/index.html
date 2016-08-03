@@ -23,8 +23,8 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
- <script src="/js/require-jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/require-jquery.js"></script>
 </head>
 
 <body>
@@ -100,6 +100,8 @@
 				        
 							<li><a href="/csvtojson">csvtojson</a></li>
 				        
+							<li><a href="/simplepsd">Simple PSD</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -158,6 +160,8 @@
 		        
 					<li><a href="/csvtojson">csvtojson</a></li>
 		        
+					<li><a href="/simplepsd">Simple PSD</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
@@ -215,7 +219,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Run docker in docker<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --privileged -i -t -d --restart=unless-stopped -p <span class="number">2376</span>:<span class="number">2376</span> -p <span class="number">10000</span>-<span class="number">11000</span>:<span class="number">10000</span>-<span class="number">11000</span> -p <span class="number">10000</span>-<span class="number">11000</span>:<span class="number">10000</span>-<span class="number">11000</span><span class="regexp">/udp -v /</span>mnt<span class="regexp">/opt:/</span><span class="string">opt:</span>rw -v <span class="regexp">/etc/</span><span class="string">docker:</span><span class="regexp">/etc/</span><span class="string">docker:</span>ro -v <span class="regexp">/mnt/</span>var<span class="regexp">/lib/</span><span class="string">docker:</span><span class="regexp">/var/</span>lib<span class="regexp">/docker --name=docker docker:dind  -H tcp:/</span><span class="regexp">/0.0.0.0:2376 --storage-driver=aufs --tlsverify --tlscacert /</span>etc<span class="regexp">/docker/</span>ca.pem --tlscert <span class="regexp">/etc/</span>docker<span class="regexp">/server.pem --tlskey /</span>etc<span class="regexp">/docker/</span>server-key.pem</span><br></pre></td></tr></table></figure></p>
+        <p>Run docker in docker<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --privileged -i -t -d --restart=unless-stopped -p <span class="number">2376</span>:<span class="number">2376</span> -p <span class="number">10000</span><span class="number">-11000</span>:<span class="number">10000</span><span class="number">-11000</span> -p <span class="number">10000</span><span class="number">-11000</span>:<span class="number">10000</span><span class="number">-11000</span><span class="regexp">/udp -v /</span>mnt<span class="regexp">/opt:/</span><span class="string">opt:</span>rw -v <span class="regexp">/etc/</span><span class="string">docker:</span><span class="regexp">/etc/</span><span class="string">docker:</span>ro -v <span class="regexp">/mnt/</span>var<span class="regexp">/lib/</span><span class="string">docker:</span><span class="regexp">/var/</span>lib<span class="regexp">/docker --name=docker docker:dind  -H tcp:/</span><span class="regexp">/0.0.0.0:2376 --storage-driver=aufs --tlsverify --tlscacert /</span>etc<span class="regexp">/docker/</span>ca.pem --tlscert <span class="regexp">/etc/</span>docker<span class="regexp">/server.pem --tlskey /</span>etc<span class="regexp">/docker/</span>server-key.pem</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -283,7 +287,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -299,7 +303,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
 
 <!-- Google Analytics -->

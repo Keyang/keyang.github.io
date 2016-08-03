@@ -1,102 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Keyang's Blog]]></title>
-  <subtitle><![CDATA[Be happy everyday]]></subtitle>
+  <title>Keyang&#39;s Blog</title>
+  <subtitle>Be happy everyday</subtitle>
   <link href="/atom.xml" rel="self"/>
+  
   <link href="http://keyangxiang.com/"/>
   <updated>2016-04-25T13:15:52.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
-    <name><![CDATA[Keyang Xiang]]></name>
+    <name>Keyang Xiang</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[openssl quick note]]></title>
+    <title>openssl quick note</title>
     <link href="http://keyangxiang.com/2016/04/24/openssl-quick-note/"/>
     <id>http://keyangxiang.com/2016/04/24/openssl-quick-note/</id>
     <published>2016-04-24T11:39:16.000Z</published>
     <updated>2016-04-25T13:15:52.000Z</updated>
+    
     <content type="html"><![CDATA[<p>I found <a href="http://pki-tutorial.readthedocs.org/en/latest/simple/" target="_blank" rel="external">this tutorial</a> is relatively simple to follow to create a simple PKI infrastructure</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>I found <a href="http://pki-tutorial.readthedocs.org/en/latest/simple/" target="_blank" rel="external">this tutorial</a> is relatively si]]>
+    
+      &lt;p&gt;I found &lt;a href=&quot;http://pki-tutorial.readthedocs.org/en/latest/simple/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;this tutorial&lt;/a&gt; is relatively si
+    
     </summary>
     
-      <category term="openssl" scheme="http://keyangxiang.com/tags/openssl/"/>
-    
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+    
+      <category term="openssl" scheme="http://keyangxiang.com/tags/openssl/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[run docker in docker]]></title>
+    <title>run docker in docker</title>
     <link href="http://keyangxiang.com/2016/04/07/run-docker-in-docker/"/>
     <id>http://keyangxiang.com/2016/04/07/run-docker-in-docker/</id>
     <published>2016-04-07T16:32:14.000Z</published>
     <updated>2016-04-07T16:33:19.000Z</updated>
-    <content type="html"><![CDATA[<p>Run docker in docker<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --privileged -i -t -d --restart=unless-stopped -p <span class="number">2376</span>:<span class="number">2376</span> -p <span class="number">10000</span>-<span class="number">11000</span>:<span class="number">10000</span>-<span class="number">11000</span> -p <span class="number">10000</span>-<span class="number">11000</span>:<span class="number">10000</span>-<span class="number">11000</span><span class="regexp">/udp -v /</span>mnt<span class="regexp">/opt:/</span><span class="string">opt:</span>rw -v <span class="regexp">/etc/</span><span class="string">docker:</span><span class="regexp">/etc/</span><span class="string">docker:</span>ro -v <span class="regexp">/mnt/</span>var<span class="regexp">/lib/</span><span class="string">docker:</span><span class="regexp">/var/</span>lib<span class="regexp">/docker --name=docker docker:dind  -H tcp:/</span><span class="regexp">/0.0.0.0:2376 --storage-driver=aufs --tlsverify --tlscacert /</span>etc<span class="regexp">/docker/</span>ca.pem --tlscert <span class="regexp">/etc/</span>docker<span class="regexp">/server.pem --tlskey /</span>etc<span class="regexp">/docker/</span>server-key.pem</span><br></pre></td></tr></table></figure></p>
+    
+    <content type="html"><![CDATA[<p>Run docker in docker<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --privileged -i -t -d --restart=unless-stopped -p <span class="number">2376</span>:<span class="number">2376</span> -p <span class="number">10000</span><span class="number">-11000</span>:<span class="number">10000</span><span class="number">-11000</span> -p <span class="number">10000</span><span class="number">-11000</span>:<span class="number">10000</span><span class="number">-11000</span><span class="regexp">/udp -v /</span>mnt<span class="regexp">/opt:/</span><span class="string">opt:</span>rw -v <span class="regexp">/etc/</span><span class="string">docker:</span><span class="regexp">/etc/</span><span class="string">docker:</span>ro -v <span class="regexp">/mnt/</span>var<span class="regexp">/lib/</span><span class="string">docker:</span><span class="regexp">/var/</span>lib<span class="regexp">/docker --name=docker docker:dind  -H tcp:/</span><span class="regexp">/0.0.0.0:2376 --storage-driver=aufs --tlsverify --tlscacert /</span>etc<span class="regexp">/docker/</span>ca.pem --tlscert <span class="regexp">/etc/</span>docker<span class="regexp">/server.pem --tlskey /</span>etc<span class="regexp">/docker/</span>server-key.pem</div></pre></td></tr></table></figure></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Run docker in docker<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td]]>
+    
+      &lt;p&gt;Run docker in docker&lt;br&gt;&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class
+    
     </summary>
     
-      <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
-    
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+    
+      <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[use nc send udp packet]]></title>
+    <title>use nc send udp packet</title>
     <link href="http://keyangxiang.com/2016/03/31/use-nc-send-udp-packet/"/>
     <id>http://keyangxiang.com/2016/03/31/use-nc-send-udp-packet/</id>
     <published>2016-03-31T16:09:54.000Z</published>
     <updated>2016-03-31T16:16:01.000Z</updated>
-    <content type="html"><![CDATA[<p>Netcat (nc) is very powerful tool. Install <code>apt-get install netcat</code><br>Send UDP packet with netcat:<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">echo</span> <span class="string">"content goes to server"</span> | nc -u &lt;ip&gt; &lt;<span class="foreign"><span class="keyword">port</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+    
+    <content type="html"><![CDATA[<p>Netcat (nc) is very powerful tool. Install <code>apt-get install netcat</code><br>Send UDP packet with netcat:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> <span class="string">"content goes to server"</span> | nc -<span class="keyword">u</span> <span class="symbol">&lt;ip&gt;</span> <span class="symbol">&lt;port&gt;</span></div></pre></td></tr></table></figure></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Netcat (nc) is very powerful tool. Install <code>apt-get install netcat</code><br>Send UDP packet with netcat:<br><figure class="highligh]]>
+    
+      &lt;p&gt;Netcat (nc) is very powerful tool. Install &lt;code&gt;apt-get install netcat&lt;/code&gt;&lt;br&gt;Send UDP packet with netcat:&lt;br&gt;&lt;figure class=&quot;highligh
+    
     </summary>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
     
       <category term="cli" scheme="http://keyangxiang.com/tags/cli/"/>
     
       <category term="linux" scheme="http://keyangxiang.com/tags/linux/"/>
     
-      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Customised select styles]]></title>
+    <title>Customised select styles</title>
     <link href="http://keyangxiang.com/2016/03/31/Customised-select-styles/"/>
     <id>http://keyangxiang.com/2016/03/31/Customised-select-styles/</id>
     <published>2016-03-30T23:25:15.000Z</published>
     <updated>2016-03-30T23:26:32.000Z</updated>
-    <content type="html"><![CDATA[<p>e.g.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.select-type-1</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-appearance</span>:<span class="value"> none</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">-moz-appearance</span>:<span class="value"> none</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">appearance</span>:<span class="value"> none</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">1em</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#ee7122</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">0px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-border-radius</span>:<span class="value"> <span class="number">0px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.12</span>) <span class="function">url</span>(<span class="string">"../img/arrowdown.png"</span>) no-repeat <span class="number">90%</span> <span class="number">50%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-size</span>:<span class="value"><span class="number">10%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+    
+    <content type="html"><![CDATA[<p>e.g.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.select-type-1</span>&#123;</div><div class="line">  <span class="attribute">-webkit-appearance</span>: none;</div><div class="line">  <span class="attribute">-moz-appearance</span>: none;</div><div class="line">  <span class="attribute">appearance</span>: none;</div><div class="line">  <span class="attribute">padding</span>:<span class="number">1em</span>;</div><div class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#ee7122</span>;</div><div class="line">  <span class="attribute">color</span>:white;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(255, 255, 255, 0.12) <span class="built_in">url</span>(<span class="string">"../img/arrowdown.png"</span>) no-repeat <span class="number">90%</span> <span class="number">50%</span>;</div><div class="line">  <span class="attribute">background-size</span>:<span class="number">10%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>self-explained.</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>e.g.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><s]]>
+    
+      &lt;p&gt;e.g.&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;li
+    
     </summary>
     
-      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
     
       <category term="html" scheme="http://keyangxiang.com/tags/html/"/>
     
-      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Docker multi-hosting network quick note]]></title>
+    <title>Docker multi-hosting network quick note</title>
     <link href="http://keyangxiang.com/2016/03/30/Docker-multi-hosting-network-quick-note/"/>
     <id>http://keyangxiang.com/2016/03/30/Docker-multi-hosting-network-quick-note/</id>
     <published>2016-03-30T17:24:17.000Z</published>
     <updated>2016-03-30T19:10:53.000Z</updated>
+    
     <content type="html"><![CDATA[<p>To create an <code>overlay</code> network on multiple hosts over swarm, following are required:</p>
 <ul>
 <li>a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used for discovery</li>
@@ -106,76 +128,86 @@
 </ul>
 </li>
 </ul>
-<h1 id="Setup_consul_KV_store">Setup consul KV store</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    -<span class="ruby">p <span class="string">"8500:8500"</span> \</span><br><span class="line"></span>    -<span class="ruby">h <span class="string">"consul"</span> \</span><br><span class="line"></span>    -<span class="ruby">-restart=<span class="keyword">unless</span>-stopped \</span><br><span class="line"></span>    -<span class="ruby">-name=<span class="string">"kv_store"</span>\</span><br><span class="line"></span>    progrium/consul -server -bootstrap</span><br></pre></td></tr></table></figure>
-<h1 id="Daemon_Options">Daemon Options</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">-engine-opt=<span class="string">"cluster-store=consul://$(docker-machine ip mh-keystore):8500"</span></span><br><span class="line"></span>-<span class="ruby">-engine-opt=<span class="string">"cluster-advertise=eth1:2376"</span></span></span><br></pre></td></tr></table></figure>
-<p><strong>All</strong> swarm-agents should have these options otherwise it will be likely get this error:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Error</span> <span class="built_in">response</span> from daemon: <span class="number">500</span> Internal <span class="built_in">Server</span> <span class="keyword">Error</span>: failed <span class="keyword">to</span> parse pool <span class="built_in">request</span> <span class="keyword">for</span> address <span class="built_in">space</span> <span class="string">"GlobalDefault"</span> pool <span class="string">""</span> subpool <span class="string">""</span>: cannot find address <span class="built_in">space</span> GlobalDefault (most likely the backing datastore <span class="keyword">is</span> <span class="keyword">not</span> configured)</span><br></pre></td></tr></table></figure></p>
-<h1 id="Create_overlay_network">Create overlay network</h1><p>If using docker-compose, there is nothing need to do. As docker-compose will automatically create defaul network if:</p>
+<h1 id="Setup-consul-KV-store"><a href="#Setup-consul-KV-store" class="headerlink" title="Setup consul KV store"></a>Setup consul KV store</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">docker run -d \</div><div class="line">    -<span class="ruby">p <span class="string">"8500:8500"</span> \</span></div><div class="line">    -<span class="ruby">h <span class="string">"consul"</span> \</span></div><div class="line">    -<span class="ruby">-restart=<span class="keyword">unless</span>-stopped \</span></div><div class="line">    -<span class="ruby">-name=<span class="string">"kv_store"</span>\</span></div><div class="line">    progrium/consul -server -bootstrap</div></pre></td></tr></table></figure>
+<h1 id="Daemon-Options"><a href="#Daemon-Options" class="headerlink" title="Daemon Options"></a>Daemon Options</h1><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">--engine-opt</span>=<span class="string">"cluster-store=consul://$(docker-machine ip mh-keystore):8500"</span></div><div class="line"><span class="attr">--engine-opt</span>=<span class="string">"cluster-advertise=eth1:2376"</span></div></pre></td></tr></table></figure>
+<p><strong>All</strong> swarm-agents should have these options otherwise it will be likely get this error:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Error</span> <span class="built_in">response</span> from daemon: <span class="number">500</span> Internal <span class="built_in">Server</span> <span class="keyword">Error</span>: failed <span class="keyword">to</span> parse pool <span class="built_in">request</span> <span class="keyword">for</span> address <span class="built_in">space</span> <span class="string">"GlobalDefault"</span> pool <span class="string">""</span> subpool <span class="string">""</span>: cannot find address <span class="built_in">space</span> GlobalDefault (most likely the backing datastore <span class="keyword">is</span> <span class="keyword">not</span> configured)</div></pre></td></tr></table></figure></p>
+<h1 id="Create-overlay-network"><a href="#Create-overlay-network" class="headerlink" title="Create overlay network"></a>Create overlay network</h1><p>If using docker-compose, there is nothing need to do. As docker-compose will automatically create defaul network if:</p>
 <ul>
 <li>Single host: it will create a bridge</li>
 <li>Multiple host: it will create a overlay</li>
 </ul>
 <p>Once docker-compose file finished, just run <code>docker-compose up -d</code> which will create network correspondingly.</p>
-<p>otherwise simply use following command at your <code>swarm</code>:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create --driver overlay --subnet=<span class="number">10.0</span><span class="number">.9</span><span class="number">.0</span>/<span class="number">24</span> my-net</span><br></pre></td></tr></table></figure></p>
-<h1 id="Docker-compose_build_on_Swarm">Docker-compose build on Swarm</h1><p>There is limitation for docker-compose build as it cannot find the target node to build the image.<br>The only way currently is to build on the node and tag it rather than on swarm.<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t &lt;tag <span class="property">name</span>&gt; path/<span class="keyword">to</span>/dockerfile</span><br></pre></td></tr></table></figure></p>
+<p>otherwise simply use following command at your <code>swarm</code>:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker network create --driver overlay --subnet=<span class="number">10.0</span><span class="number">.9</span><span class="number">.0</span>/<span class="number">24</span> my-net</div></pre></td></tr></table></figure></p>
+<h1 id="Docker-compose-build-on-Swarm"><a href="#Docker-compose-build-on-Swarm" class="headerlink" title="Docker-compose build on Swarm"></a>Docker-compose build on Swarm</h1><p>There is limitation for docker-compose build as it cannot find the target node to build the image.<br>The only way currently is to build on the node and tag it rather than on swarm.<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker build -t &lt;tag <span class="built_in">name</span>&gt; path/<span class="keyword">to</span>/dockerfile</div></pre></td></tr></table></figure></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>To create an <code>overlay</code> network on multiple hosts over swarm, following are required:</p>
-<ul>
-<li>a key-value store service: t]]>
+    
+      &lt;p&gt;To create an &lt;code&gt;overlay&lt;/code&gt; network on multiple hosts over swarm, following are required:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a key-value store service: t
+    
     </summary>
     
-      <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
-    
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+    
+      <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[get client ip address in express.js]]></title>
+    <title>get client ip address in express.js</title>
     <link href="http://keyangxiang.com/2016/03/30/get-client-ip-address-in-express-js/"/>
     <id>http://keyangxiang.com/2016/03/30/get-client-ip-address-in-express-js/</id>
     <published>2016-03-30T12:47:49.000Z</published>
     <updated>2016-03-30T12:49:42.000Z</updated>
+    
     <content type="html"><![CDATA[<p>According to <a href="http://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node" target="_blank" rel="external">this</a>, do following to determine the client ipaddress:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ip = (req.headers[<span class="string">'x-forwarded-for'</span>] ||</span><br><span class="line">     req.connection.remoteAddress ||</span><br><span class="line">     req.socket.remoteAddress ||</span><br><span class="line">     req.connection.socket.remoteAddress).split(<span class="string">","</span>)[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ip = (req.headers[<span class="string">'x-forwarded-for'</span>] ||</div><div class="line">     req.connection.remoteAddress ||</div><div class="line">     req.socket.remoteAddress ||</div><div class="line">     req.connection.socket.remoteAddress).split(<span class="string">","</span>)[<span class="number">0</span>];</div></pre></td></tr></table></figure>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>According to <a href="http://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node" target="_blank" rel="extern]]>
+    
+      &lt;p&gt;According to &lt;a href=&quot;http://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node&quot; target=&quot;_blank&quot; rel=&quot;extern
+    
     </summary>
     
-      <category term="express.js" scheme="http://keyangxiang.com/tags/express-js/"/>
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
     
       <category term="node.js" scheme="http://keyangxiang.com/tags/node-js/"/>
     
-      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+      <category term="express.js" scheme="http://keyangxiang.com/tags/express-js/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Quick Note for Unit Tests in Angularjs]]></title>
+    <title>Quick Note for Unit Tests in Angularjs</title>
     <link href="http://keyangxiang.com/2016/03/28/Quick-Note-for-Unit-Tests-in-Angularjs/"/>
     <id>http://keyangxiang.com/2016/03/28/Quick-Note-for-Unit-Tests-in-Angularjs/</id>
     <published>2016-03-28T14:05:54.000Z</published>
     <updated>2016-03-28T14:32:54.000Z</updated>
+    
     <content type="html"><![CDATA[<p>Testing with web app is always fun. Angularjs makes it even better.<br>This quick note bootstrap any angular.js projects embracing with unit tests.</p>
-<h1 id="Tools">Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
-<p>Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="operator"><span class="keyword">install</span> <span class="comment">--save angular-mocks</span></span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
+<p>Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">bower </span><span class="keyword">install </span>--save angular-mocks</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h1 id="Npm_dependencies">Npm dependencies</h1><p>Following npm packages are needed and add them as devDependencies:<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"jasmine-core"</span>: <span class="string">"^2.3.4"</span>,</span><br><span class="line"><span class="string">"karma"</span>: <span class="string">"~0.12"</span>,</span><br><span class="line"><span class="string">"karma-chrome-launcher"</span>: <span class="string">"^0.1.12"</span>,</span><br><span class="line"><span class="string">"karma-firefox-launcher"</span>: <span class="string">"^0.1.6"</span>,</span><br><span class="line"><span class="string">"karma-jasmine"</span>: <span class="string">"^0.3.5"</span>,</span><br><span class="line"><span class="string">"karma-junit-reporter"</span>: <span class="string">"^0.2.2"</span>,</span><br><span class="line"><span class="string">"protractor"</span>: <span class="string">"^2.1.0"</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="karma-conf-js">karma.conf.js</h1><p>Configuration for karma:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line">  config.set(&#123;</span><br><span class="line"></span><br><span class="line">    basePath : <span class="string">'./'</span>,</span><br><span class="line"></span><br><span class="line">    files : [</span><br><span class="line">      <span class="string">'www/bower_components/angular/angular.js'</span>,</span><br><span class="line">      <span class="string">'www/bower_components/angular-ui-router/release/angular-ui-router.js'</span>,</span><br><span class="line">      <span class="string">'www/bower_components/angular-mocks/angular-mocks.js'</span>,</span><br><span class="line">      <span class="string">'www/bower_components/jquery/dist/jquery.js'</span>,</span><br><span class="line">      <span class="comment">//all other lib dependencies</span></span><br><span class="line">      <span class="string">'www/app.gen.js'</span>, <span class="comment">// app js file &lt;- generated by browserfi</span></span><br><span class="line">      <span class="string">'www/app/**/test_*.js'</span> <span class="comment">// all tests file</span></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    autoWatch : <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">    frameworks: [<span class="string">'jasmine'</span>],</span><br><span class="line"></span><br><span class="line">    browsers : [<span class="string">'Chrome'</span>],</span><br><span class="line"></span><br><span class="line">    plugins : [</span><br><span class="line">            <span class="string">'karma-chrome-launcher'</span>,</span><br><span class="line">            <span class="string">'karma-firefox-launcher'</span>,</span><br><span class="line">            <span class="string">'karma-jasmine'</span>,</span><br><span class="line">            <span class="string">'karma-junit-reporter'</span></span><br><span class="line">            ],</span><br><span class="line"></span><br><span class="line">    junitReporter : &#123;</span><br><span class="line">      outputFile: <span class="string">'test_out/unit.xml'</span>,</span><br><span class="line">      suite: <span class="string">'unit'</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Npm-dependencies"><a href="#Npm-dependencies" class="headerlink" title="Npm dependencies"></a>Npm dependencies</h1><p>Following npm packages are needed and add them as devDependencies:<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="string">"jasmine-core"</span>: <span class="string">"^2.3.4"</span>,</div><div class="line"><span class="string">"karma"</span>: <span class="string">"~0.12"</span>,</div><div class="line"><span class="string">"karma-chrome-launcher"</span>: <span class="string">"^0.1.12"</span>,</div><div class="line"><span class="string">"karma-firefox-launcher"</span>: <span class="string">"^0.1.6"</span>,</div><div class="line"><span class="string">"karma-jasmine"</span>: <span class="string">"^0.3.5"</span>,</div><div class="line"><span class="string">"karma-junit-reporter"</span>: <span class="string">"^0.2.2"</span>,</div><div class="line"><span class="string">"protractor"</span>: <span class="string">"^2.1.0"</span></div></pre></td></tr></table></figure></p>
+<h1 id="karma-conf-js"><a href="#karma-conf-js" class="headerlink" title="karma.conf.js"></a>karma.conf.js</h1><p>Configuration for karma:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">config</span>)</span>&#123;</div><div class="line">  config.set(&#123;</div><div class="line"></div><div class="line">    basePath : <span class="string">'./'</span>,</div><div class="line"></div><div class="line">    files : [</div><div class="line">      <span class="string">'www/bower_components/angular/angular.js'</span>,</div><div class="line">      <span class="string">'www/bower_components/angular-ui-router/release/angular-ui-router.js'</span>,</div><div class="line">      <span class="string">'www/bower_components/angular-mocks/angular-mocks.js'</span>,</div><div class="line">      <span class="string">'www/bower_components/jquery/dist/jquery.js'</span>,</div><div class="line">      <span class="comment">//all other lib dependencies</span></div><div class="line">      <span class="string">'www/app.gen.js'</span>, <span class="comment">// app js file &lt;- generated by browserfi</span></div><div class="line">      <span class="string">'www/app/**/test_*.js'</span> <span class="comment">// all tests file</span></div><div class="line">    ],</div><div class="line"></div><div class="line">    autoWatch : <span class="literal">true</span>,</div><div class="line"></div><div class="line">    frameworks: [<span class="string">'jasmine'</span>],</div><div class="line"></div><div class="line">    browsers : [<span class="string">'Chrome'</span>],</div><div class="line"></div><div class="line">    plugins : [</div><div class="line">            <span class="string">'karma-chrome-launcher'</span>,</div><div class="line">            <span class="string">'karma-firefox-launcher'</span>,</div><div class="line">            <span class="string">'karma-jasmine'</span>,</div><div class="line">            <span class="string">'karma-junit-reporter'</span></div><div class="line">            ],</div><div class="line"></div><div class="line">    junitReporter : &#123;</div><div class="line">      outputFile: <span class="string">'test_out/unit.xml'</span>,</div><div class="line">      suite: <span class="string">'unit'</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>Put this file at root of project.</p>
-<h1 id="Run_test">Run test</h1><ol>
+<h1 id="Run-test"><a href="#Run-test" class="headerlink" title="Run test"></a>Run test</h1><ol>
 <li>install karma-cli: <code>npm i -g karma-cli</code></li>
 <li>run <code>karma start karma.conf.js</code></li>
 </ol>
 <p>This will watch all files and re-run tests if any file changes. Strongly recommended having this opened when developing.</p>
-<h1 id="Unit_tests_for_angular-js">Unit tests for angular.js</h1><p>Once above setup are done, it is ready to write unit tests.</p>
-<h2 id="Simple_example">Simple example</h2><p>Add <code>test_user.js</code> to <code>www/app/user/</code> folder or similar. Just keep <code>test_</code> file name prefix.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">"user module"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">'user'</span>));</span><br><span class="line">  describe(<span class="string">"auth factory"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    it (<span class="string">"should manage user session"</span>,inject(<span class="function"><span class="keyword">function</span>(<span class="params">auth</span>)</span>&#123;</span><br><span class="line">      auth.initUserWithToken(<span class="string">"abc"</span>);</span><br><span class="line">      expect(auth.getToken().token).toEqual(<span class="string">"abc"</span>);</span><br><span class="line">      auth.setPin(<span class="string">"1234"</span>);</span><br><span class="line">      expect(auth.getToken().pin).toEqual(<span class="string">"1234"</span>);</span><br><span class="line">      expect(auth.validatePin(<span class="string">"1234"</span>)).toBe(<span class="literal">true</span>);</span><br><span class="line">      expect(auth.validatePin(<span class="string">"2234"</span>)).toBe(<span class="literal">false</span>);</span><br><span class="line">      auth.logout();</span><br><span class="line">      expect(auth.validatePin(<span class="string">"1234"</span>)).toBe(<span class="literal">false</span>);</span><br><span class="line">      expect(auth.getToken()).toBe(<span class="literal">null</span>);</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="Unit-tests-for-angular-js"><a href="#Unit-tests-for-angular-js" class="headerlink" title="Unit tests for angular.js"></a>Unit tests for angular.js</h1><p>Once above setup are done, it is ready to write unit tests.</p>
+<h2 id="Simple-example"><a href="#Simple-example" class="headerlink" title="Simple example"></a>Simple example</h2><p>Add <code>test_user.js</code> to <code>www/app/user/</code> folder or similar. Just keep <code>test_</code> file name prefix.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">"user module"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">'user'</span>));</div><div class="line">  describe(<span class="string">"auth factory"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    it (<span class="string">"should manage user session"</span>,inject(<span class="function"><span class="keyword">function</span>(<span class="params">auth</span>)</span>&#123;</div><div class="line">      auth.initUserWithToken(<span class="string">"abc"</span>);</div><div class="line">      expect(auth.getToken().token).toEqual(<span class="string">"abc"</span>);</div><div class="line">      auth.setPin(<span class="string">"1234"</span>);</div><div class="line">      expect(auth.getToken().pin).toEqual(<span class="string">"1234"</span>);</div><div class="line">      expect(auth.validatePin(<span class="string">"1234"</span>)).toBe(<span class="literal">true</span>);</div><div class="line">      expect(auth.validatePin(<span class="string">"2234"</span>)).toBe(<span class="literal">false</span>);</div><div class="line">      auth.logout();</div><div class="line">      expect(auth.validatePin(<span class="string">"1234"</span>)).toBe(<span class="literal">false</span>);</div><div class="line">      expect(auth.getToken()).toBe(<span class="literal">null</span>);</div><div class="line">    &#125;));</div><div class="line">  &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>Above, it first injects user module and then runs simple tests.</p>
-<h2 id="Override_providers_(factory_/_service)">Override providers (factory / service)</h2><p>If component depends on other providers, it’s able to use <code>jasmine.createSpy</code> to create dummy function.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">"account module"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">'account'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$provide</span>)</span>&#123;</span><br><span class="line">    $provide.value(<span class="string">'server'</span>, &#123;</span><br><span class="line">      call: jasmine.createSpy(<span class="string">'call'</span>),</span><br><span class="line">      setHeader:jasmine.createSpy(<span class="string">'setHeader'</span>)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;));</span><br><span class="line">  describe(<span class="string">"account factory"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    it (<span class="string">"should manage accounts"</span>,inject(<span class="function"><span class="keyword">function</span>(<span class="params">account,server</span>)</span>&#123;</span><br><span class="line">      account.save();</span><br><span class="line">      expect(server.call).toHaveBeenCalled();  </span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="Use_$httpBackend_for_$http_calls">Use $httpBackend for $http calls</h2><p>Example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">"downStreamStore"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> ds,s,ht;</span><br><span class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">"dataSync"</span>))</span><br><span class="line">  beforeEach(inject(<span class="function"><span class="keyword">function</span>(<span class="params">downStreamStore,server,$httpBackend</span>)</span>&#123;</span><br><span class="line">      ds=downStreamStore;</span><br><span class="line">      s=server;</span><br><span class="line">      ht=$httpBackend;</span><br><span class="line">  &#125;))</span><br><span class="line">  afterEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       ht.verifyNoOutstandingExpectation();</span><br><span class="line">       ht.verifyNoOutstandingRequest();</span><br><span class="line">     &#125;);</span><br><span class="line">  it (<span class="string">"should retrieve data"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ht.when(<span class="string">"GET"</span>,<span class="string">"/test"</span>).respond(&#123;<span class="string">"hello"</span>:<span class="string">"test"</span>&#125;)</span><br><span class="line">    ht.expectGET(<span class="string">"/test"</span>);</span><br><span class="line">    ds.syncData(<span class="string">"test"</span>,<span class="string">"/test"</span>)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      expect(ds.get(<span class="string">"test"</span>).hello).toBe(<span class="string">"test"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">      expect(e).toBeUndefined();</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    ht.flush();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Override-providers-factory-service"><a href="#Override-providers-factory-service" class="headerlink" title="Override providers (factory / service)"></a>Override providers (factory / service)</h2><p>If component depends on other providers, it’s able to use <code>jasmine.createSpy</code> to create dummy function.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">"account module"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">'account'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$provide</span>)</span>&#123;</div><div class="line">    $provide.value(<span class="string">'server'</span>, &#123;</div><div class="line">      call: jasmine.createSpy(<span class="string">'call'</span>),</div><div class="line">      setHeader:jasmine.createSpy(<span class="string">'setHeader'</span>)</div><div class="line">    &#125;);</div><div class="line">  &#125;));</div><div class="line">  describe(<span class="string">"account factory"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    it (<span class="string">"should manage accounts"</span>,inject(<span class="function"><span class="keyword">function</span>(<span class="params">account,server</span>)</span>&#123;</div><div class="line">      account.save();</div><div class="line">      expect(server.call).toHaveBeenCalled();  </div><div class="line">    &#125;));</div><div class="line">  &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="Use-httpBackend-for-http-calls"><a href="#Use-httpBackend-for-http-calls" class="headerlink" title="Use $httpBackend for $http calls"></a>Use $httpBackend for $http calls</h2><p>Example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">"downStreamStore"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> ds,s,ht;</div><div class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">"dataSync"</span>))</div><div class="line">  beforeEach(inject(<span class="function"><span class="keyword">function</span>(<span class="params">downStreamStore,server,$httpBackend</span>)</span>&#123;</div><div class="line">      ds=downStreamStore;</div><div class="line">      s=server;</div><div class="line">      ht=$httpBackend;</div><div class="line">  &#125;))</div><div class="line">  afterEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">       ht.verifyNoOutstandingExpectation();</div><div class="line">       ht.verifyNoOutstandingRequest();</div><div class="line">     &#125;);</div><div class="line">  it (<span class="string">"should retrieve data"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    ht.when(<span class="string">"GET"</span>,<span class="string">"/test"</span>).respond(&#123;<span class="string">"hello"</span>:<span class="string">"test"</span>&#125;)</div><div class="line">    ht.expectGET(<span class="string">"/test"</span>);</div><div class="line">    ds.syncData(<span class="string">"test"</span>,<span class="string">"/test"</span>)</div><div class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      expect(ds.get(<span class="string">"test"</span>).hello).toBe(<span class="string">"test"</span>);</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">      expect(e).toBeUndefined();</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    ht.flush();</div><div class="line">  &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p>the test above is synchrounous but with promises. Therefore no need use Jasmine async with <code>done</code>;</p>
-<h1 id="Quick_Reference:">Quick Reference:</h1><ul>
+<h1 id="Quick-Reference"><a href="#Quick-Reference" class="headerlink" title="Quick Reference:"></a>Quick Reference:</h1><ul>
 <li><a href="http://jasmine.github.io/2.0/introduction.html" target="_blank" rel="external">Jamine</a></li>
 <li><a href="http://karma-runner.github.io/0.13/config/configuration-file.html" target="_blank" rel="external">Karma Config</a></li>
 <li><a href="https://docs.angularjs.org/guide/unit-testing" target="_blank" rel="external">Angular Unit Testing</a></li>
@@ -183,60 +215,71 @@
 <li><a href="https://docs.angularjs.org/api/ngMock/service/$httpBackend" target="_blank" rel="external">Angular $httpBackend</a></li>
 </ul>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Testing with web app is always fun. Angularjs makes it even better.<br>This quick note bootstrap any angular.js projects embracing with unit tests.</p>
-<h1 id="Tools">Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
-<p>Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="operator"><span class="keyword">install</span> <span class="comment">--save angular-mocks</span></span></span><br></pre></td></tr></table></figure></p>]]>
+    
+      &lt;p&gt;Testing with web app is always fun. Angularjs makes it even better.&lt;br&gt;This quick note bootstrap any angular.js projects embracing with unit tests.&lt;/p&gt;
+&lt;h1 id=&quot;Tools&quot;&gt;&lt;a href=&quot;#Tools&quot; class=&quot;headerlink&quot; title=&quot;Tools&quot;&gt;&lt;/a&gt;Tools&lt;/h1&gt;&lt;p&gt;Unit testing in Angularjs is using (by default) Jasmine and Karma.&lt;/p&gt;
+&lt;p&gt;Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.&lt;br&gt;&lt;figure class=&quot;highlight mipsasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;bower &lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;install &lt;/span&gt;--save angular-mocks&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
     
       <category term="angularjs" scheme="http://keyangxiang.com/tags/angularjs/"/>
     
       <category term="test" scheme="http://keyangxiang.com/tags/test/"/>
     
-      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[mongoosejs: setters schema]]></title>
+    <title>mongoosejs: setters schema</title>
     <link href="http://keyangxiang.com/2016/03/20/mongoosejs-setters-schema/"/>
     <id>http://keyangxiang.com/2016/03/20/mongoosejs-setters-schema/</id>
     <published>2016-03-20T18:16:31.000Z</published>
-    <updated>2016-03-20T18:21:47.000Z</updated>
-    <content type="html"><![CDATA[<p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="external">doc</a> is not quite detailed and obselete.<br>Some example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  password:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    required:<span class="literal">true</span>,</span><br><span class="line">    set:hash</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hash</span>(<span class="params">plainPwd</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+    <updated>2016-05-13T09:33:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="external">doc</a> is not quite detailed and obselete.<br>Some example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">  password:&#123;</div><div class="line">    type:<span class="built_in">String</span>,</div><div class="line">    required:<span class="literal">true</span>,</div><div class="line">    set:hash</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hash</span>(<span class="params">plainPwd</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>The <code>hash</code> will be called mainly on following scenarios:</p>
 <ul>
 <li><p>When a new doc being created.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.create(&#123;password:<span class="string">"12345"</span>&#125;) <span class="comment">//password will be hashed</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">model.create(&#123;password:<span class="string">"12345"</span>&#125;) <span class="comment">//password will be hashed</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>When set a value to a doc.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doc.password=<span class="string">"22222"</span> <span class="comment">// 22222 will be hashed</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">doc.password=<span class="string">"22222"</span> <span class="comment">// 22222 will be hashed</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>However, this will not work for <code>update</code> query:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">model.update(&#123;_id:<span class="xml"><span class="tag">&lt;<span class="name">id</span>&gt;</span>&#125;,&#123;$set:&#123;password:"12345"&#125;&#125;) // password will not be hashed</span></div><div class="line">model.findOneAndUpdate</div><div class="line">model.findAndUpdate</div></pre></td></tr></table></figure></p>
+<p>For password, it is able to write beforeUpdateHook<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">schema.methods.beforeUpdateHook=<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (!data || <span class="keyword">this</span>.password === data.password)&#123;</div><div class="line">    <span class="keyword">return</span> ;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (data.password)&#123;</div><div class="line">    data.password=hash(data.password);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/d]]>
+    
+      &lt;p&gt;According to mongoose.js doc, it is able to set setters to a field on schema.&lt;br&gt;However, the &lt;a href=&quot;http://mongoosejs.com/docs/2.7.x/d
+    
     </summary>
     
-      <category term="mongoose.js" scheme="http://keyangxiang.com/tags/mongoose-js/"/>
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
     
       <category term="node.js" scheme="http://keyangxiang.com/tags/node-js/"/>
     
-      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+      <category term="mongoose.js" scheme="http://keyangxiang.com/tags/mongoose-js/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Mongodb two phase lock example (with mongoose)]]></title>
+    <title>Mongodb two phase lock example (with mongoose)</title>
     <link href="http://keyangxiang.com/2016/03/17/Mongodb-two-phase-lock-example/"/>
     <id>http://keyangxiang.com/2016/03/17/Mongodb-two-phase-lock-example/</id>
     <published>2016-03-17T22:34:09.000Z</published>
     <updated>2016-03-17T23:12:59.000Z</updated>
-    <content type="html"><![CDATA[<p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  lastModified:<span class="built_in">Date</span>,</span><br><span class="line">  status:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</span><br><span class="line">    index:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+    
+    <content type="html"><![CDATA[<p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">  lastModified:<span class="built_in">Date</span>,</div><div class="line">  status:&#123;</div><div class="line">    type:<span class="built_in">String</span>,</div><div class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</div><div class="line">    index:<span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  data:&#123;&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code><br><a id="more"></a></p>
-<h2 id="New">New</h2><p>The transaction is just created and waiting to be started.<br>Once the transaction is created, the <code>data</code> field would contain all information. e.g. source, destination, cash amount.</p>
-<h2 id="Pending">Pending</h2><p>The transaction has started but some collection(s) have not finished its operation.</p>
+<h2 id="New"><a href="#New" class="headerlink" title="New"></a>New</h2><p>The transaction is just created and waiting to be started.<br>Once the transaction is created, the <code>data</code> field would contain all information. e.g. source, destination, cash amount.</p>
+<h2 id="Pending"><a href="#Pending" class="headerlink" title="Pending"></a>Pending</h2><p>The transaction has started but some collection(s) have not finished its operation.</p>
 <p>When process pending transaction, there are always a series of operations on all related collections and documents. For example, apply a promotion code to an account needs change both promotion collection and user account collection. The changes can happen in parallel or sequence which do not matter.</p>
 <p>The only important thing is the operation will only affect documents that has not this pending transaction and the operation on the document is done with pushing the pending transaction to the doc.</p>
 <p>This will need following design:</p>
@@ -244,94 +287,113 @@
 <li>the collection should have a <code>pendingTransaction</code> field which record all current pending transactions on a document.</li>
 <li>Developer should use <code>update</code> method to update target fields and the pendingTransaction <strong>at the same time</strong>.</li>
 </ul>
-<p>Example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> UserSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">    money:<span class="built_in">Number</span>,</span><br><span class="line">    pendingTransaction:[ObjectId]</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Process transaction</span></span><br><span class="line"><span class="keyword">var</span> transaction;</span><br><span class="line">UserModel.findAndUpdate(&#123; <span class="comment">//the query find specified user and gurantee it has not been applied before</span></span><br><span class="line">  $ne:&#123;</span><br><span class="line">    pendingTransaction:transaction._id</span><br><span class="line">  &#125;,</span><br><span class="line">  _id:transaction.data.targetUser</span><br><span class="line">&#125;,&#123; <span class="comment">//update to increase the money and push the transaction to pendingTransaction to mark current user has been applied with the transaction so next application will skip this user account.</span></span><br><span class="line">  $push:&#123;</span><br><span class="line">    pendingTransaction:transaction._id</span><br><span class="line">  &#125;,</span><br><span class="line">  $inc:&#123;</span><br><span class="line">    money:transaction.data.amount</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>Example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserSchema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">    money:<span class="built_in">Number</span>,</div><div class="line">    pendingTransaction:[ObjectId]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//Process transaction</span></div><div class="line"><span class="keyword">var</span> transaction;</div><div class="line">UserModel.findAndUpdate(&#123; <span class="comment">//the query find specified user and gurantee it has not been applied before</span></div><div class="line">  $ne:&#123;</div><div class="line">    pendingTransaction:transaction._id</div><div class="line">  &#125;,</div><div class="line">  _id:transaction.data.targetUser</div><div class="line">&#125;,&#123; <span class="comment">//update to increase the money and push the transaction to pendingTransaction to mark current user has been applied with the transaction so next application will skip this user account.</span></div><div class="line">  $push:&#123;</div><div class="line">    pendingTransaction:transaction._id</div><div class="line">  &#125;,</div><div class="line">  $inc:&#123;</div><div class="line">    money:transaction.data.amount</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p>After all operations finished, transaction will be marked as <code>applied</code>. If any problems happens during the transaction (e.g. system crashes), the next run through the transaction will ‘skip’ the documents that already being applied and continue applying other operations until the transaction is marked as <code>applied</code>.</p>
-<h2 id="Applied">Applied</h2><p>The transaction has made modifications to all related documents. This stage is to clear the pendingTransaction field of those documents ($pull the transaction id from the field.)</p>
-<h2 id="Done">Done</h2><p>The transaction has completed</p>
-<h1 id="Roll_Back">Roll Back</h1><p>The lastModified field in transaction can be used to judge if a transaction needs to roll-back. (e.g. the lastModified was 5 mins ago but still not successful)</p>
+<h2 id="Applied"><a href="#Applied" class="headerlink" title="Applied"></a>Applied</h2><p>The transaction has made modifications to all related documents. This stage is to clear the pendingTransaction field of those documents ($pull the transaction id from the field.)</p>
+<h2 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h2><p>The transaction has completed</p>
+<h1 id="Roll-Back"><a href="#Roll-Back" class="headerlink" title="Roll Back"></a>Roll Back</h1><p>The lastModified field in transaction can be used to judge if a transaction needs to roll-back. (e.g. the lastModified was 5 mins ago but still not successful)</p>
 <p>Only <code>pending</code> transactions need to be rolled-back as it means there are unfinished changes and some changes have been applied. The roll-back operation is a reverse operation of application operation. e.g. for user document with transaction id in pendingTransaction, pull transaction id from pendingTransaction and decrease the money amount.</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  lastModified:<span class="built_in">Date</span>,</span><br><span class="line">  status:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</span><br><span class="line">    index:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code><br>]]>
+    
+      &lt;p&gt;Mongodb needs extra collection for two phase lock.&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; transactionSchema=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Schema(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  lastModified:&lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  status:&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    type:&lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;new&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    index:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  data:&amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The transaction life cycle is &lt;code&gt;new-&amp;gt;pending-&amp;gt;applied-&amp;gt;done&lt;/code&gt;&lt;br&gt;
     
     </summary>
     
-      <category term="mongodb" scheme="http://keyangxiang.com/tags/mongodb/"/>
-    
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+    
+      <category term="mongodb" scheme="http://keyangxiang.com/tags/mongodb/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[wordpress reverse proxy headers]]></title>
+    <title>wordpress reverse proxy headers</title>
     <link href="http://keyangxiang.com/2016/03/17/wordpress-reverse-proxy-headers/"/>
     <id>http://keyangxiang.com/2016/03/17/wordpress-reverse-proxy-headers/</id>
     <published>2016-03-17T21:32:31.000Z</published>
     <updated>2016-03-17T21:35:44.000Z</updated>
+    
     <content type="html"><![CDATA[<p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">proxy_set_header X-Real-IP <span class="variable">$remote</span>_addr;</span><br><span class="line">proxy_set_header X-Forwarded-For <span class="variable">$proxy</span>_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">proxy_set_header X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">proxy_set_header HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">proxy_<span class="built_in">set</span>_header Host <span class="variable">$host</span>;</div><div class="line">proxy_<span class="built_in">set</span>_header X-Real-IP <span class="variable">$remote_addr</span>;</div><div class="line">proxy_<span class="built_in">set</span>_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</div><div class="line"></div><div class="line">proxy_<span class="built_in">set</span>_header X-Forwarded-Proto <span class="variable">$scheme</span>;</div><div class="line">proxy_<span class="built_in">set</span>_header HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</div></pre></td></tr></table></figure>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p>
-<figure class="highlight xquery"><table><]]>
+    
+      &lt;p&gt;When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr
+    
     </summary>
     
-      <category term="nginx" scheme="http://keyangxiang.com/tags/nginx/"/>
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
     
       <category term="wordpress" scheme="http://keyangxiang.com/tags/wordpress/"/>
     
-      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+      <category term="nginx" scheme="http://keyangxiang.com/tags/nginx/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[minimist: a neat cli argv parser]]></title>
+    <title>minimist: a neat cli argv parser</title>
     <link href="http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/"/>
     <id>http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/</id>
     <published>2016-03-16T17:41:36.000Z</published>
     <updated>2016-03-17T21:36:37.000Z</updated>
+    
     <content type="html"><![CDATA[<p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line arguments) parser:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</div><div class="line"></div><div class="line"><span class="comment">//output:</span></div><div class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</div><div class="line">  x: <span class="number">3</span>,</div><div class="line">  y: <span class="number">4</span>,</div><div class="line">  n: <span class="number">5</span>,</div><div class="line">  a: <span class="literal">true</span>,</div><div class="line">  b: <span class="literal">true</span>,</div><div class="line">  c: <span class="literal">true</span>,</div><div class="line">  beep: <span class="string">'boop'</span> &#125;</div></pre></td></tr></table></figure>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line ar]]>
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/substack/minimist&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;minimist&lt;/a&gt; is a lightweight cli argument (command line ar
+    
     </summary>
+    
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
     
       <category term="node.js" scheme="http://keyangxiang.com/tags/node-js/"/>
     
       <category term="npm" scheme="http://keyangxiang.com/tags/npm/"/>
     
-      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[css: font-smoothing]]></title>
+    <title>css: font-smoothing</title>
     <link href="http://keyangxiang.com/2016/03/16/css-font-smoothing/"/>
     <id>http://keyangxiang.com/2016/03/16/css-font-smoothing/</id>
     <published>2016-03-16T17:30:36.000Z</published>
     <updated>2016-03-17T21:36:27.000Z</updated>
-    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">-webkit-font-smoothing</span>: <span class="tag">antialiased</span>;</span><br><span class="line"><span class="tag">-moz-osx-font-smoothing</span>: <span class="tag">grayscale</span></span><br></pre></td></tr></table></figure>
+    
+    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-webkit-font-smoothing</span>: <span class="selector-tag">antialiased</span>;</div><div class="line"><span class="selector-tag">-moz-osx-font-smoothing</span>: <span class="selector-tag">grayscale</span></div></pre></td></tr></table></figure>
 <p>Makes text clearer</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><t]]>
+    
+      &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;cod
+    
     </summary>
     
-      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
-    
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+    
+      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Docker Quick Notes]]></title>
+    <title>Docker Quick Notes</title>
     <link href="http://keyangxiang.com/2016/02/10/docker-quick-notes/"/>
     <id>http://keyangxiang.com/2016/02/10/docker-quick-notes/</id>
     <published>2016-02-10T00:00:00.000Z</published>
     <updated>2016-03-30T17:32:51.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="What_is_Docker_and_why?">What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker" target="_blank" rel="external">See here</a></p>
+    
+    <content type="html"><![CDATA[<h1 id="What-is-Docker-and-why"><a href="#What-is-Docker-and-why" class="headerlink" title="What is Docker and why?"></a>What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker" target="_blank" rel="external">See here</a></p>
 <p>In short:</p>
 <ul>
 <li>Docker is a container tech based on LXC</li>
@@ -341,9 +403,9 @@
 <li>and easier system operation</li>
 </ul>
 <p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases" target="_blank" rel="external">use cases here</a><br><a id="more"></a></p>
-<h1 id="Docker_Engine">Docker Engine</h1><h2 id="General">General</h2><p>Docker engine is a command line which interacts with docker daemon to perform RESTful web requests like pulling images, spawn containers etc.</p>
+<h1 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="Docker Engine"></a>Docker Engine</h1><h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><p>Docker engine is a command line which interacts with docker daemon to perform RESTful web requests like pulling images, spawn containers etc.</p>
 <p>Once docker being installed successfully, it is able to use <code>docker</code> in command line to run docker engine.</p>
-<h2 id="Cannot_connect_to_the_Docker_daemon-_Is_the_docker_daemon_running_on_this_host?">Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h2><p>This error is given if <code>docker</code> cannot connect to $DOCKER_HOST.</p>
+<h2 id="Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h2><p>This error is given if <code>docker</code> cannot connect to $DOCKER_HOST.</p>
 <p>There are 3 env vars needed to run <code>docker</code> command correctly:</p>
 <ul>
 <li>DOCKER_HOST: The docker daemon host. It could be something like “tcp://xxx.xxx.xxx.xxx:2376” depends on daemon configuration.</li>
@@ -351,21 +413,21 @@
 <li>DOCKER_CERT_PATH: If TLS is enabled, where to find related certs. It points to a folder containing current client private key, certificate and a trusted CA certificate. (ca / cert / key).pem. For more information about TLS, please see <a href="https://docs.docker.com/engine/security/https/" target="_blank" rel="external">here</a>.</li>
 </ul>
 <p>To switch between Docker daemon instances, change the 3 env vars above to correct ones. With help of <a href="#docker-machine">Docker Machine</a>, we do not need to do this manually.</p>
-<h2 id="Tips">Tips</h2><h3 id="Run_a_docker_image">Run a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd &lt;image name&gt;</span><br><span class="line"><span class="comment">#e.g. docker run -itd nginx</span></span><br></pre></td></tr></table></figure>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="Run-a-docker-image"><a href="#Run-a-docker-image" class="headerlink" title="Run a docker image"></a>Run a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -itd &lt;image name&gt;</div><div class="line"><span class="comment">#e.g. docker run -itd nginx</span></div></pre></td></tr></table></figure>
 <p>This command will pull the image from docker hub if image not existed and then run the default command of the image.</p>
 <ul>
 <li>-i: Keep STDIN open</li>
 <li>-t: Allocate a pseudo-TTY. This is essential for logs which directly write to stdout/stderr</li>
 <li>-d: Detached / run the image in background</li>
 </ul>
-<h3 id="Run_a_one-time_command_in_a_docker_image">Run a one-time command in a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm &lt;image name&gt; &lt;path to shell or bash&gt;</span><br><span class="line"><span class="comment">#e.g. docker run -it --rm nginx bash</span></span><br></pre></td></tr></table></figure>
+<h3 id="Run-a-one-time-command-in-a-docker-image"><a href="#Run-a-one-time-command-in-a-docker-image" class="headerlink" title="Run a one-time command in a docker image"></a>Run a one-time command in a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -it --rm &lt;image name&gt; &lt;path to shell or bash&gt;</div><div class="line"><span class="comment">#e.g. docker run -it --rm nginx bash</span></div></pre></td></tr></table></figure>
 <p>This will promt a bash shell allowing typing commands. Typically using this to debug an image see if everything in Dockerfile is correct.</p>
 <ul>
 <li>–rm: Remove the container after container exited. Without it, the container will remain in container list <code>docker ps -a</code>.</li>
 </ul>
-<h3 id="Run_a_command_in_a_running_docker_container">Run a command in a running docker container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it &lt;container name or <span class="built_in">hash</span>&gt; &lt;path to <span class="built_in">command</span>&gt;</span><br><span class="line"><span class="comment">#e.g. docker exec -it my_nginx_1 bash</span></span><br></pre></td></tr></table></figure>
+<h3 id="Run-a-command-in-a-running-docker-container"><a href="#Run-a-command-in-a-running-docker-container" class="headerlink" title="Run a command in a running docker container"></a>Run a command in a running docker container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">exec</span> -it &lt;container name or <span class="built_in">hash</span>&gt; &lt;path to <span class="built_in">command</span>&gt;</div><div class="line"><span class="comment">#e.g. docker exec -it my_nginx_1 bash</span></div></pre></td></tr></table></figure>
 <p>This will make the <strong>running</strong> containner to run the command provided. This is very useful to debug a running container.</p>
-<h1 id="Docker_Compose">Docker Compose</h1><p>Docker compose is a single configuration file containing multiple docker containers (services). It allows batching running / stopping.</p>
+<h1 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h1><p>Docker compose is a single configuration file containing multiple docker containers (services). It allows batching running / stopping.</p>
 <p>The power of docker compose is it gives very clear architecture of system:</p>
 <ul>
 <li>The dependencies of each component (services)</li>
@@ -374,39 +436,39 @@
 <li>What ports have been exposed to public</li>
 <li>What environemnt has been configured to each service.</li>
 </ul>
-<h2 id="Wordpress_Example_(docker-compose-yaml):">Wordpress Example (docker-compose.yaml):</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">version: &#39;2&#39;&#10;services:&#10;  nginx:&#10;      image: nginx&#10;      ports:&#10;        - 80:80&#10;        - 443:443&#10;      links:&#10;        -blog&#10;      volumes:&#10;        - /opt/www:/opt/www:ro&#10;        - /opt/nginx:/etc/nginx/conf.d:ro&#10;  blog:&#10;    image: wordpress&#10;    links:&#10;      - blog_db&#10;    environment:&#10;      - WORDPRESS_DB_HOST=blog_db&#10;      - WORDPRESS_DB_PASSWORD=xxxxxx&#10;    volumes:&#10;      - /opt/www/blog:/var/www/html&#10;&#10;  blog_db:&#10;    image: mariadb&#10;    environment:&#10;      - MYSQL_ROOT_PASSWORD=xxxxxx&#10;    volumes:&#10;      - /opt/data/blog:/var/lib/mysql:rw</span><br></pre></td></tr></table></figure>
+<h2 id="Wordpress-Example-docker-compose-yaml"><a href="#Wordpress-Example-docker-compose-yaml" class="headerlink" title="Wordpress Example (docker-compose.yaml):"></a>Wordpress Example (docker-compose.yaml):</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="attr">version:</span> <span class="string">'2'</span></div><div class="line"><span class="attr">services:</span></div><div class="line"><span class="attr">  nginx:</span></div><div class="line"><span class="attr">      image:</span> nginx</div><div class="line"><span class="attr">      ports:</span></div><div class="line"><span class="bullet">        -</span> <span class="number">80</span>:<span class="number">80</span></div><div class="line"><span class="bullet">        -</span> <span class="number">443</span>:<span class="number">443</span></div><div class="line"><span class="attr">      links:</span></div><div class="line"><span class="bullet">        -</span>blog</div><div class="line"><span class="attr">      volumes:</span></div><div class="line"><span class="bullet">        -</span> /opt/www:/opt/www:ro</div><div class="line"><span class="bullet">        -</span> /opt/nginx:/etc/nginx/conf.d:ro</div><div class="line"><span class="attr">  blog:</span></div><div class="line"><span class="attr">    image:</span> wordpress</div><div class="line"><span class="attr">    links:</span></div><div class="line"><span class="bullet">      -</span> blog_db</div><div class="line"><span class="attr">    environment:</span></div><div class="line"><span class="bullet">      -</span> WORDPRESS_DB_HOST=blog_db</div><div class="line"><span class="bullet">      -</span> WORDPRESS_DB_PASSWORD=xxxxxx</div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">      -</span> /opt/www/blog:/var/www/html</div><div class="line"></div><div class="line"><span class="attr">  blog_db:</span></div><div class="line"><span class="attr">    image:</span> mariadb</div><div class="line"><span class="attr">    environment:</span></div><div class="line"><span class="bullet">      -</span> MYSQL_ROOT_PASSWORD=xxxxxx</div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">      -</span> /opt/data/blog:/var/lib/mysql:rw</div></pre></td></tr></table></figure>
 <p>The example above show the cluster has 3 parts which compose a wordpress blog system.</p>
 <p>For more about docker compose. See <a href="https://docs.docker.com/compose/overview/" target="_blank" rel="external">here</a>.</p>
-<h2 id="Network_&amp;&amp;_Links">Network &amp;&amp; Links</h2><p>Docker compose will automatically create a overlay network which has all services registered under same network. That means all service can access each other through its name. In the example, it is able to <code>ping blog</code> from <em>nginx</em> container.</p>
-<h1 id="Docker_Machine">Docker Machine</h1><p>Docker machine is a VM level tool. It helps provision a bare VM (or non-bare VM) to be docker ready.</p>
+<h2 id="Network-amp-amp-Links"><a href="#Network-amp-amp-Links" class="headerlink" title="Network &amp;&amp; Links"></a>Network &amp;&amp; Links</h2><p>Docker compose will automatically create a overlay network which has all services registered under same network. That means all service can access each other through its name. In the example, it is able to <code>ping blog</code> from <em>nginx</em> container.</p>
+<h1 id="Docker-Machine"><a href="#Docker-Machine" class="headerlink" title="Docker Machine"></a>Docker Machine</h1><p>Docker machine is a VM level tool. It helps provision a bare VM (or non-bare VM) to be docker ready.</p>
 <p>It is highly recommended to provision Docker daemon using this way on your own VM.</p>
 <p>It has a bunch of built-in drivers like digital ocean, aws etc. However, as long as you got SSH access and root account, it should not be a big problem.</p>
-<h2 id="Example:_provision_on_Digital_Ocean">Example: provision on Digital Ocean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-machine create <span class="operator">-d</span> <span class="string">"digitalocean"</span> --digitalocean-access-token <span class="string">"&lt;digitalocean api token&gt;"</span> -digitalocean-region <span class="string">"lon1"</span> my-dm</span><br></pre></td></tr></table></figure>
+<h2 id="Example-provision-on-Digital-Ocean"><a href="#Example-provision-on-Digital-Ocean" class="headerlink" title="Example: provision on Digital Ocean"></a>Example: provision on Digital Ocean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker-machine create <span class="_">-d</span> <span class="string">"digitalocean"</span> --digitalocean-access-token <span class="string">"&lt;digitalocean api token&gt;"</span> -digitalocean-region <span class="string">"lon1"</span> my-dm</div></pre></td></tr></table></figure>
 <ul>
 <li>-d: driver to use. See <a href="https://docs.docker.com/machine/drivers/" target="_blank" rel="external">here</a> for list of drivers.</li>
 </ul>
 <p>Once it is finished. The new machine can be found with <code>docker-machine ps</code>.</p>
-<h2 id="Point_to_a_machine">Point to a machine</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> $(docker-machine env &lt;my-dm&gt;)</span><br></pre></td></tr></table></figure>
+<h2 id="Point-to-a-machine"><a href="#Point-to-a-machine" class="headerlink" title="Point to a machine"></a>Point to a machine</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> $(docker-machine env &lt;my-dm&gt;)</div></pre></td></tr></table></figure>
 <p>This command will set essential env vars for <a href="#docker-engine">docker engine</a>.</p>
-<h2 id="Backup_your_machines_!!!">Backup your machines !!!</h2><p>The docker-machine will use <home>/.docker/machine to store all your certs / configurations.<br>Backup it and protect it.</home></p>
-<h1 id="Docker_Swarm">Docker Swarm</h1><p>Docker swarm is an awesome concept that treats multiple docker daemons as one. This means you can horizontally scale your cluster without worrying about many changes in your DevOps progress.</p>
+<h2 id="Backup-your-machines"><a href="#Backup-your-machines" class="headerlink" title="Backup your machines !!!"></a>Backup your machines !!!</h2><p>The docker-machine will use <home>/.docker/machine to store all your certs / configurations.<br>Backup it and protect it.</home></p>
+<h1 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="Docker Swarm"></a>Docker Swarm</h1><p>Docker swarm is an awesome concept that treats multiple docker daemons as one. This means you can horizontally scale your cluster without worrying about many changes in your DevOps progress.</p>
 <p>Docker swarm is another RESTful service layer which has exact same endpoints as Docker Daemon does. It has <a href="https://docs.docker.com/swarm/scheduler/strategy/" target="_blank" rel="external">builtin strategies</a> (like spread) to pick the actual node (server) to use.</p>
 <p>Docker engine 100% works with docker swarm service. Docker swarm is transparent to any docker engine.</p>
-<h2 id="Is_it_completely_transparent?">Is it completely transparent?</h2><p>No. There are still some configuration needed to make things work like network, volume mapping etc. With help of <a href="#docker-compose">Docker compose</a>, the swarm can be configured easily. See <a href="https://docs.docker.com/compose/swarm/" target="_blank" rel="external">here</a> for limitations with Docker Swarm.</p>
-<h2 id="Discovery">Discovery</h2><p>Docker swarm depends on a discovery service which itself could be a docker service.<br>The swarm network and discovery service is de-centralised and clustered which means better availability.<br>Using <code>swarm join</code> will regiser itself to discovery service and swarm manager can then collect information from the discovery service.<br>It is able to use:</p>
+<h2 id="Is-it-completely-transparent"><a href="#Is-it-completely-transparent" class="headerlink" title="Is it completely transparent?"></a>Is it completely transparent?</h2><p>No. There are still some configuration needed to make things work like network, volume mapping etc. With help of <a href="#docker-compose">Docker compose</a>, the swarm can be configured easily. See <a href="https://docs.docker.com/compose/swarm/" target="_blank" rel="external">here</a> for limitations with Docker Swarm.</p>
+<h2 id="Discovery"><a href="#Discovery" class="headerlink" title="Discovery"></a>Discovery</h2><p>Docker swarm depends on a discovery service which itself could be a docker service.<br>The swarm network and discovery service is de-centralised and clustered which means better availability.<br>Using <code>swarm join</code> will regiser itself to discovery service and swarm manager can then collect information from the discovery service.<br>It is able to use:</p>
 <ul>
 <li>token proto: for non production</li>
 <li>etcd</li>
 <li>consul<br>and some other key-value stores.</li>
 </ul>
-<h3 id="Token">Token</h3><p>token is hosted on docker.com. Typeically not used for prod.</p>
-<p>Generate a token:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="command">run</span> <span class="comment">--rm swarm create</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h3><p>token is hosted on docker.com. Typeically not used for prod.</p>
+<p>Generate a token:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">run</span> <span class="comment">--rm swarm create</span></div></pre></td></tr></table></figure></p>
 <p>Then it is able to use <code>token://&lt;tokenID&gt;</code> as discovery service</p>
-<h2 id="Swarm_Manager_TLS">Swarm Manager TLS</h2><p>As docker swarm manager needs to actively manage swarm agents, it needs have its own TLS certificates signed by same CA. Otherwise, swarm manager will not be able to talk to swarm agents.<br>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="operator">-d</span> -p <span class="number">3376</span>:<span class="number">3376</span> -t -v /var/lib/boot2docker:/certs:ro swarm manage -H <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">3376</span> --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://<span class="number">123456789</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="Run_container_on_specific_Swarm_agent">Run container on specific Swarm agent</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">environment:&#10;  - &#34;constraint:node==node-1&#34;</span><br></pre></td></tr></table></figure>
+<h2 id="Swarm-Manager-TLS"><a href="#Swarm-Manager-TLS" class="headerlink" title="Swarm Manager TLS"></a>Swarm Manager TLS</h2><p>As docker swarm manager needs to actively manage swarm agents, it needs have its own TLS certificates signed by same CA. Otherwise, swarm manager will not be able to talk to swarm agents.<br>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run <span class="_">-d</span> -p 3376:3376 -t -v /var/lib/boot2docker:/certs:ro swarm manage -H 0.0.0.0:3376 --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://123456789</div></pre></td></tr></table></figure></p>
+<h2 id="Run-container-on-specific-Swarm-agent"><a href="#Run-container-on-specific-Swarm-agent" class="headerlink" title="Run container on specific Swarm agent"></a>Run container on specific Swarm agent</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">environment:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">"constraint:node==node-1"</span></div></pre></td></tr></table></figure>
 <p>the <code>node-1</code> can be name of the docker machine.</p>
 <p>#Docker Engine</p>
-<h2 id="Restart_policy">Restart policy</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="command">run</span> <span class="comment">--restart =&lt;restart strategy &gt; &lt;image name&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Restart-policy"><a href="#Restart-policy" class="headerlink" title="Restart policy"></a>Restart policy</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --<span class="built_in">restart</span> =&lt;<span class="built_in">restart</span> strategy &gt; &lt;<span class="built_in">image</span> name&gt;</div></pre></td></tr></table></figure>
 <p>Restart strategies:</p>
 <ul>
 <li>no</li>
@@ -414,35 +476,39 @@
 <li>always</li>
 <li>unless-stopped</li>
 </ul>
-<h2 id="give_a_name">give a name</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --<span class="built_in">name</span>=&lt;<span class="built_in">name</span>&gt; &lt;<span class="built_in">image</span> <span class="built_in">name</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="give-a-name"><a href="#give-a-name" class="headerlink" title="give a name"></a>give a name</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --<span class="built_in">name</span>=&lt;<span class="built_in">name</span>&gt; &lt;<span class="built_in">image</span> <span class="built_in">name</span>&gt;</div></pre></td></tr></table></figure>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h1 id="What_is_Docker_and_why?">What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker">See here</a></p>
-<p>In short:</p>
-<ul>
-<li>Docker is a container tech based on LXC</li>
-<li>Much less resource than VM by sharing cores</li>
-<li>But provide full run-time isolation</li>
-<li>It makes system deployment much faster</li>
-<li>and easier system operation</li>
-</ul>
-<p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases">use cases here</a><br>]]>
+    
+      &lt;h1 id=&quot;What-is-Docker-and-why&quot;&gt;&lt;a href=&quot;#What-is-Docker-and-why&quot; class=&quot;headerlink&quot; title=&quot;What is Docker and why?&quot;&gt;&lt;/a&gt;What is Docker and why?&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.docker.com/what-docker&quot;&gt;See here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In short:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker is a container tech based on LXC&lt;/li&gt;
+&lt;li&gt;Much less resource than VM by sharing cores&lt;/li&gt;
+&lt;li&gt;But provide full run-time isolation&lt;/li&gt;
+&lt;li&gt;It makes system deployment much faster&lt;/li&gt;
+&lt;li&gt;and easier system operation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Still don’t know why? Check out &lt;a href=&quot;https://www.docker.com/use-cases&quot;&gt;use cases here&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
-      <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
-    
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
+    
+      <category term="docker" scheme="http://keyangxiang.com/tags/docker/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[textarea quick hack]]></title>
+    <title>textarea quick hack</title>
     <link href="http://keyangxiang.com/2016/01/12/textarea-quick-hack/"/>
     <id>http://keyangxiang.com/2016/01/12/textarea-quick-hack/</id>
     <published>2016-01-12T10:35:25.000Z</published>
     <updated>2016-03-17T21:35:56.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="Resize">Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">style</span>=<span class="value">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+    
+    <content type="html"><![CDATA[<h3 id="Resize"><a href="#Resize" class="headerlink" title="Resize"></a>Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">style</span>=<span class="string">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <textarea style="resize:horizontal"></textarea>
 
 <p>The resize property can be either:</p>
@@ -451,73 +517,86 @@
 <li>horizontal: only resize horizontally</li>
 <li>none: disable resize (also remove the resize area on right bottom.)</li>
 </ul>
-<h3 id="Outline">Outline</h3><p>Remove or change style of outline when textarea is focused on safari / chrome etc.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">class</span>=<span class="value">"customize"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.customize</span><span class="pseudo">:focus</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">outline-color</span>:<span class="value">red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h3><p>Remove or change style of outline when textarea is focused on safari / chrome etc.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"customize"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.customize</span><span class="selector-pseudo">:focus</span>&#123;</div><div class="line">  <span class="attribute">outline-color</span>:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><style>.customize:focus{ outline-color:red; }</style></p>
 <textarea class="customize"></textarea>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h3 id="Resize">Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table]]>
+    
+      &lt;h3 id=&quot;Resize&quot;&gt;&lt;a href=&quot;#Resize&quot; class=&quot;headerlink&quot; title=&quot;Resize&quot;&gt;&lt;/a&gt;Resize&lt;/h3&gt;&lt;p&gt;Switch on / off resize of a textarea on horizontal / v
+    
     </summary>
     
-      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
+      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+    
     
       <category term="html" scheme="http://keyangxiang.com/tags/html/"/>
     
-      <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
+      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Move to Hexo]]></title>
-    <link href="http://keyangxiang.com/2016/01/10/move-to-hexo-blog/"/>
-    <id>http://keyangxiang.com/2016/01/10/move-to-hexo-blog/</id>
-    <published>2016-01-10T13:47:15.000Z</published>
+    <title>Move to Hexo</title>
+    <link href="http://keyangxiang.com/2015/11/11/move-to-hexo-blog/"/>
+    <id>http://keyangxiang.com/2015/11/11/move-to-hexo-blog/</id>
+    <published>2015-11-11T22:39:31.000Z</published>
     <updated>2016-01-10T13:47:15.000Z</updated>
+    
     <content type="html"><![CDATA[<p>Today, I moved my blog from Wordpress to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. I use github.io to host the blog.</p>
 <p>The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.</p>
 <p>Hexo is a very powerful static content generator which converts MarkDown posts to Html.</p>
 <a id="more"></a>
 <p>To install Hexo, simply:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line">hex init  <span class="comment">#create a new blog in current folder</span></span><br><span class="line">npm install . <span class="comment">#install dependencies</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div><div class="line">hex init  <span class="comment">#create a new blog in current folder</span></div><div class="line">npm install . <span class="comment">#install dependencies</span></div></pre></td></tr></table></figure>
 <p>To serve content locally:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo serve</div></pre></td></tr></table></figure>
 <p>To generate static content:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
 <p>To deploy to github:</p>
 <ol>
 <li>open _config.yml</li>
 <li>add deploy section:</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: git&#10;  repo: &#60;your github.io repo&#62;&#10;  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> &lt;your github.io repo<span class="string">&gt;</span></div><div class="line"><span class="attr">  branch:</span> master</div></pre></td></tr></table></figure>
 <ol>
 <li>then run:</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy -g</div></pre></td></tr></table></figure>
 <p>There are still a lot of powerful function in Hexo. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">here</a> for more details.</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Today, I moved my blog from Wordpress to <a href="https://hexo.io/">Hexo</a>. I use github.io to host the blog.</p>
-<p>The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.</p>
-<p>Hexo is a very powerful static content generator which converts MarkDown posts to Html.</p>]]>
+    
+      &lt;p&gt;Today, I moved my blog from Wordpress to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;. I use github.io to host the blog.&lt;/p&gt;
+&lt;p&gt;The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.&lt;/p&gt;
+&lt;p&gt;Hexo is a very powerful static content generator which converts MarkDown posts to Html.&lt;/p&gt;
     
     </summary>
+    
     
   </entry>
   
   <entry>
-    <title><![CDATA[Online CSV to JSON Convert]]></title>
+    <title>Online CSV to JSON Convert</title>
     <link href="http://keyangxiang.com/2012/03/27/csv2json/"/>
     <id>http://keyangxiang.com/2012/03/27/csv2json/</id>
     <published>2012-03-26T23:00:00.000Z</published>
     <updated>2016-01-11T16:27:01.000Z</updated>
+    
     <content type="html"><![CDATA[<p>Demo: Click  <a href="http://keyangxiang.com/csvtojson/">here</a></p>
 <p>Document &amp; API: See <a href="https://github.com/Keyang/node-csvtojson" target="_blank" rel="external">Github site</a> for more information.</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Demo: Click  <a href="http://keyangxiang.com/csvtojson/">here</a></p>
-<p>Document &amp; API: See <a href="https://github.com/Keyang/node-]]>
+    
+      &lt;p&gt;Demo: Click  &lt;a href=&quot;http://keyangxiang.com/csvtojson/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Document &amp;amp; API: See &lt;a href=&quot;https://github.com/Keyang/node-
+    
     </summary>
+    
     
       <category term="misc" scheme="http://keyangxiang.com/tags/misc/"/>
     

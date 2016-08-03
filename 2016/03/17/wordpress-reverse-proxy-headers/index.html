@@ -26,8 +26,8 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
- <script src="/js/require-jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/require-jquery.js"></script>
 </head>
 
 <body>
@@ -103,6 +103,8 @@
 				        
 							<li><a href="/csvtojson">csvtojson</a></li>
 				        
+							<li><a href="/simplepsd">Simple PSD</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -160,6 +162,8 @@
 					<li><a href="/archives">Articles</a></li>
 		        
 					<li><a href="/csvtojson">csvtojson</a></li>
+		        
+					<li><a href="/simplepsd">Simple PSD</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -219,7 +223,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">proxy_set_header X-Real-IP <span class="variable">$remote</span>_addr;</span><br><span class="line">proxy_set_header X-Forwarded-For <span class="variable">$proxy</span>_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">proxy_set_header X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line">proxy_set_header HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">proxy_<span class="built_in">set</span>_header Host <span class="variable">$host</span>;</div><div class="line">proxy_<span class="built_in">set</span>_header X-Real-IP <span class="variable">$remote_addr</span>;</div><div class="line">proxy_<span class="built_in">set</span>_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</div><div class="line"></div><div class="line">proxy_<span class="built_in">set</span>_header X-Forwarded-Proto <span class="variable">$scheme</span>;</div><div class="line">proxy_<span class="built_in">set</span>_header HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -287,7 +291,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -303,7 +307,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
 
 <!-- Google Analytics -->

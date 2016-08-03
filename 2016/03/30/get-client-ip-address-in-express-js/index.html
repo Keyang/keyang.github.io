@@ -26,8 +26,8 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
- <script src="/js/require-jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/require-jquery.js"></script>
 </head>
 
 <body>
@@ -103,6 +103,8 @@
 				        
 							<li><a href="/csvtojson">csvtojson</a></li>
 				        
+							<li><a href="/simplepsd">Simple PSD</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -160,6 +162,8 @@
 					<li><a href="/archives">Articles</a></li>
 		        
 					<li><a href="/csvtojson">csvtojson</a></li>
+		        
+					<li><a href="/simplepsd">Simple PSD</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -219,7 +223,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>According to <a href="http://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node" target="_blank" rel="external">this</a>, do following to determine the client ipaddress:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ip = (req.headers[<span class="string">'x-forwarded-for'</span>] ||</span><br><span class="line">     req.connection.remoteAddress ||</span><br><span class="line">     req.socket.remoteAddress ||</span><br><span class="line">     req.connection.socket.remoteAddress).split(<span class="string">","</span>)[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ip = (req.headers[<span class="string">'x-forwarded-for'</span>] ||</div><div class="line">     req.connection.remoteAddress ||</div><div class="line">     req.socket.remoteAddress ||</div><div class="line">     req.connection.socket.remoteAddress).split(<span class="string">","</span>)[<span class="number">0</span>];</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -287,7 +291,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -303,7 +307,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
 
 <!-- Google Analytics -->

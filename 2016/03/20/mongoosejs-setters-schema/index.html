@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://keyangxiang.com/2016/03/20/mongoosejs-setters-schema/index.html">
 <meta property="og:site_name" content="Keyang's Blog">
 <meta property="og:description" content="According to mongoose.js doc, it is able to set setters to a field on schema.However, the doc is not quite detailed and obselete.Some example:1234567891011var schema=new Schema(&amp;#123;  password:&amp;#123;">
-<meta property="og:updated_time" content="2016-03-20T18:21:47.000Z">
+<meta property="og:updated_time" content="2016-05-13T09:33:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongoosejs: setters schema">
 <meta name="twitter:description" content="According to mongoose.js doc, it is able to set setters to a field on schema.However, the doc is not quite detailed and obselete.Some example:1234567891011var schema=new Schema(&amp;#123;  password:&amp;#123;">
@@ -23,8 +23,8 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
- <script src="/js/require-jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/require-jquery.js"></script>
 </head>
 
 <body>
@@ -100,6 +100,8 @@
 				        
 							<li><a href="/csvtojson">csvtojson</a></li>
 				        
+							<li><a href="/simplepsd">Simple PSD</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -158,6 +160,8 @@
 		        
 					<li><a href="/csvtojson">csvtojson</a></li>
 		        
+					<li><a href="/simplepsd">Simple PSD</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
@@ -215,16 +219,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="external">doc</a> is not quite detailed and obselete.<br>Some example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  password:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    required:<span class="literal">true</span>,</span><br><span class="line">    set:hash</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hash</span>(<span class="params">plainPwd</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="external">doc</a> is not quite detailed and obselete.<br>Some example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">  password:&#123;</div><div class="line">    type:<span class="built_in">String</span>,</div><div class="line">    required:<span class="literal">true</span>,</div><div class="line">    set:hash</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hash</span>(<span class="params">plainPwd</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>The <code>hash</code> will be called mainly on following scenarios:</p>
 <ul>
 <li><p>When a new doc being created.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.create(&#123;password:<span class="string">"12345"</span>&#125;) <span class="comment">//password will be hashed</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">model.create(&#123;password:<span class="string">"12345"</span>&#125;) <span class="comment">//password will be hashed</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>When set a value to a doc.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doc.password=<span class="string">"22222"</span> <span class="comment">// 22222 will be hashed</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">doc.password=<span class="string">"22222"</span> <span class="comment">// 22222 will be hashed</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>However, this will not work for <code>update</code> query:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">model.update(&#123;_id:<span class="xml"><span class="tag">&lt;<span class="name">id</span>&gt;</span>&#125;,&#123;$set:&#123;password:"12345"&#125;&#125;) // password will not be hashed</span></div><div class="line">model.findOneAndUpdate</div><div class="line">model.findAndUpdate</div></pre></td></tr></table></figure></p>
+<p>For password, it is able to write beforeUpdateHook<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">schema.methods.beforeUpdateHook=<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (!data || <span class="keyword">this</span>.password === data.password)&#123;</div><div class="line">    <span class="keyword">return</span> ;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (data.password)&#123;</div><div class="line">    data.password=hash(data.password);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -292,7 +298,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -308,7 +314,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
 
 <!-- Google Analytics -->

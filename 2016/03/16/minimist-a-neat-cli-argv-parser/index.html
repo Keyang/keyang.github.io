@@ -26,8 +26,8 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
- <script src="/js/require-jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/require-jquery.js"></script>
 </head>
 
 <body>
@@ -103,6 +103,8 @@
 				        
 							<li><a href="/csvtojson">csvtojson</a></li>
 				        
+							<li><a href="/simplepsd">Simple PSD</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -160,6 +162,8 @@
 					<li><a href="/archives">Articles</a></li>
 		        
 					<li><a href="/csvtojson">csvtojson</a></li>
+		        
+					<li><a href="/simplepsd">Simple PSD</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -219,7 +223,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line arguments) parser:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</div><div class="line"></div><div class="line"><span class="comment">//output:</span></div><div class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</div><div class="line">  x: <span class="number">3</span>,</div><div class="line">  y: <span class="number">4</span>,</div><div class="line">  n: <span class="number">5</span>,</div><div class="line">  a: <span class="literal">true</span>,</div><div class="line">  b: <span class="literal">true</span>,</div><div class="line">  c: <span class="literal">true</span>,</div><div class="line">  beep: <span class="string">'boop'</span> &#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -287,7 +291,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -303,7 +307,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
 
 <!-- Google Analytics -->

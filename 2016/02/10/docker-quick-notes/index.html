@@ -41,8 +41,8 @@ It makes system deployment much faste">
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
- <script src="/js/require-jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/require-jquery.js"></script>
 </head>
 
 <body>
@@ -118,6 +118,8 @@ It makes system deployment much faste">
 				        
 							<li><a href="/csvtojson">csvtojson</a></li>
 				        
+							<li><a href="/simplepsd">Simple PSD</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -176,6 +178,8 @@ It makes system deployment much faste">
 		        
 					<li><a href="/csvtojson">csvtojson</a></li>
 		        
+					<li><a href="/simplepsd">Simple PSD</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
@@ -233,7 +237,7 @@ It makes system deployment much faste">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="What_is_Docker_and_why?">What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker" target="_blank" rel="external">See here</a></p>
+        <h1 id="What-is-Docker-and-why"><a href="#What-is-Docker-and-why" class="headerlink" title="What is Docker and why?"></a>What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker" target="_blank" rel="external">See here</a></p>
 <p>In short:</p>
 <ul>
 <li>Docker is a container tech based on LXC</li>
@@ -243,9 +247,9 @@ It makes system deployment much faste">
 <li>and easier system operation</li>
 </ul>
 <p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases" target="_blank" rel="external">use cases here</a><br><a id="more"></a></p>
-<h1 id="Docker_Engine">Docker Engine</h1><h2 id="General">General</h2><p>Docker engine is a command line which interacts with docker daemon to perform RESTful web requests like pulling images, spawn containers etc.</p>
+<h1 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="Docker Engine"></a>Docker Engine</h1><h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><p>Docker engine is a command line which interacts with docker daemon to perform RESTful web requests like pulling images, spawn containers etc.</p>
 <p>Once docker being installed successfully, it is able to use <code>docker</code> in command line to run docker engine.</p>
-<h2 id="Cannot_connect_to_the_Docker_daemon-_Is_the_docker_daemon_running_on_this_host?">Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h2><p>This error is given if <code>docker</code> cannot connect to $DOCKER_HOST.</p>
+<h2 id="Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h2><p>This error is given if <code>docker</code> cannot connect to $DOCKER_HOST.</p>
 <p>There are 3 env vars needed to run <code>docker</code> command correctly:</p>
 <ul>
 <li>DOCKER_HOST: The docker daemon host. It could be something like “tcp://xxx.xxx.xxx.xxx:2376” depends on daemon configuration.</li>
@@ -253,21 +257,21 @@ It makes system deployment much faste">
 <li>DOCKER_CERT_PATH: If TLS is enabled, where to find related certs. It points to a folder containing current client private key, certificate and a trusted CA certificate. (ca / cert / key).pem. For more information about TLS, please see <a href="https://docs.docker.com/engine/security/https/" target="_blank" rel="external">here</a>.</li>
 </ul>
 <p>To switch between Docker daemon instances, change the 3 env vars above to correct ones. With help of <a href="#docker-machine">Docker Machine</a>, we do not need to do this manually.</p>
-<h2 id="Tips">Tips</h2><h3 id="Run_a_docker_image">Run a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd &lt;image name&gt;</span><br><span class="line"><span class="comment">#e.g. docker run -itd nginx</span></span><br></pre></td></tr></table></figure>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="Run-a-docker-image"><a href="#Run-a-docker-image" class="headerlink" title="Run a docker image"></a>Run a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -itd &lt;image name&gt;</div><div class="line"><span class="comment">#e.g. docker run -itd nginx</span></div></pre></td></tr></table></figure>
 <p>This command will pull the image from docker hub if image not existed and then run the default command of the image.</p>
 <ul>
 <li>-i: Keep STDIN open</li>
 <li>-t: Allocate a pseudo-TTY. This is essential for logs which directly write to stdout/stderr</li>
 <li>-d: Detached / run the image in background</li>
 </ul>
-<h3 id="Run_a_one-time_command_in_a_docker_image">Run a one-time command in a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm &lt;image name&gt; &lt;path to shell or bash&gt;</span><br><span class="line"><span class="comment">#e.g. docker run -it --rm nginx bash</span></span><br></pre></td></tr></table></figure>
+<h3 id="Run-a-one-time-command-in-a-docker-image"><a href="#Run-a-one-time-command-in-a-docker-image" class="headerlink" title="Run a one-time command in a docker image"></a>Run a one-time command in a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -it --rm &lt;image name&gt; &lt;path to shell or bash&gt;</div><div class="line"><span class="comment">#e.g. docker run -it --rm nginx bash</span></div></pre></td></tr></table></figure>
 <p>This will promt a bash shell allowing typing commands. Typically using this to debug an image see if everything in Dockerfile is correct.</p>
 <ul>
 <li>–rm: Remove the container after container exited. Without it, the container will remain in container list <code>docker ps -a</code>.</li>
 </ul>
-<h3 id="Run_a_command_in_a_running_docker_container">Run a command in a running docker container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it &lt;container name or <span class="built_in">hash</span>&gt; &lt;path to <span class="built_in">command</span>&gt;</span><br><span class="line"><span class="comment">#e.g. docker exec -it my_nginx_1 bash</span></span><br></pre></td></tr></table></figure>
+<h3 id="Run-a-command-in-a-running-docker-container"><a href="#Run-a-command-in-a-running-docker-container" class="headerlink" title="Run a command in a running docker container"></a>Run a command in a running docker container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">exec</span> -it &lt;container name or <span class="built_in">hash</span>&gt; &lt;path to <span class="built_in">command</span>&gt;</div><div class="line"><span class="comment">#e.g. docker exec -it my_nginx_1 bash</span></div></pre></td></tr></table></figure>
 <p>This will make the <strong>running</strong> containner to run the command provided. This is very useful to debug a running container.</p>
-<h1 id="Docker_Compose">Docker Compose</h1><p>Docker compose is a single configuration file containing multiple docker containers (services). It allows batching running / stopping.</p>
+<h1 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h1><p>Docker compose is a single configuration file containing multiple docker containers (services). It allows batching running / stopping.</p>
 <p>The power of docker compose is it gives very clear architecture of system:</p>
 <ul>
 <li>The dependencies of each component (services)</li>
@@ -276,39 +280,39 @@ It makes system deployment much faste">
 <li>What ports have been exposed to public</li>
 <li>What environemnt has been configured to each service.</li>
 </ul>
-<h2 id="Wordpress_Example_(docker-compose-yaml):">Wordpress Example (docker-compose.yaml):</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">version: &#39;2&#39;&#10;services:&#10;  nginx:&#10;      image: nginx&#10;      ports:&#10;        - 80:80&#10;        - 443:443&#10;      links:&#10;        -blog&#10;      volumes:&#10;        - /opt/www:/opt/www:ro&#10;        - /opt/nginx:/etc/nginx/conf.d:ro&#10;  blog:&#10;    image: wordpress&#10;    links:&#10;      - blog_db&#10;    environment:&#10;      - WORDPRESS_DB_HOST=blog_db&#10;      - WORDPRESS_DB_PASSWORD=xxxxxx&#10;    volumes:&#10;      - /opt/www/blog:/var/www/html&#10;&#10;  blog_db:&#10;    image: mariadb&#10;    environment:&#10;      - MYSQL_ROOT_PASSWORD=xxxxxx&#10;    volumes:&#10;      - /opt/data/blog:/var/lib/mysql:rw</span><br></pre></td></tr></table></figure>
+<h2 id="Wordpress-Example-docker-compose-yaml"><a href="#Wordpress-Example-docker-compose-yaml" class="headerlink" title="Wordpress Example (docker-compose.yaml):"></a>Wordpress Example (docker-compose.yaml):</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="attr">version:</span> <span class="string">'2'</span></div><div class="line"><span class="attr">services:</span></div><div class="line"><span class="attr">  nginx:</span></div><div class="line"><span class="attr">      image:</span> nginx</div><div class="line"><span class="attr">      ports:</span></div><div class="line"><span class="bullet">        -</span> <span class="number">80</span>:<span class="number">80</span></div><div class="line"><span class="bullet">        -</span> <span class="number">443</span>:<span class="number">443</span></div><div class="line"><span class="attr">      links:</span></div><div class="line"><span class="bullet">        -</span>blog</div><div class="line"><span class="attr">      volumes:</span></div><div class="line"><span class="bullet">        -</span> /opt/www:/opt/www:ro</div><div class="line"><span class="bullet">        -</span> /opt/nginx:/etc/nginx/conf.d:ro</div><div class="line"><span class="attr">  blog:</span></div><div class="line"><span class="attr">    image:</span> wordpress</div><div class="line"><span class="attr">    links:</span></div><div class="line"><span class="bullet">      -</span> blog_db</div><div class="line"><span class="attr">    environment:</span></div><div class="line"><span class="bullet">      -</span> WORDPRESS_DB_HOST=blog_db</div><div class="line"><span class="bullet">      -</span> WORDPRESS_DB_PASSWORD=xxxxxx</div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">      -</span> /opt/www/blog:/var/www/html</div><div class="line"></div><div class="line"><span class="attr">  blog_db:</span></div><div class="line"><span class="attr">    image:</span> mariadb</div><div class="line"><span class="attr">    environment:</span></div><div class="line"><span class="bullet">      -</span> MYSQL_ROOT_PASSWORD=xxxxxx</div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">      -</span> /opt/data/blog:/var/lib/mysql:rw</div></pre></td></tr></table></figure>
 <p>The example above show the cluster has 3 parts which compose a wordpress blog system.</p>
 <p>For more about docker compose. See <a href="https://docs.docker.com/compose/overview/" target="_blank" rel="external">here</a>.</p>
-<h2 id="Network_&amp;&amp;_Links">Network &amp;&amp; Links</h2><p>Docker compose will automatically create a overlay network which has all services registered under same network. That means all service can access each other through its name. In the example, it is able to <code>ping blog</code> from <em>nginx</em> container.</p>
-<h1 id="Docker_Machine">Docker Machine</h1><p>Docker machine is a VM level tool. It helps provision a bare VM (or non-bare VM) to be docker ready.</p>
+<h2 id="Network-amp-amp-Links"><a href="#Network-amp-amp-Links" class="headerlink" title="Network &amp;&amp; Links"></a>Network &amp;&amp; Links</h2><p>Docker compose will automatically create a overlay network which has all services registered under same network. That means all service can access each other through its name. In the example, it is able to <code>ping blog</code> from <em>nginx</em> container.</p>
+<h1 id="Docker-Machine"><a href="#Docker-Machine" class="headerlink" title="Docker Machine"></a>Docker Machine</h1><p>Docker machine is a VM level tool. It helps provision a bare VM (or non-bare VM) to be docker ready.</p>
 <p>It is highly recommended to provision Docker daemon using this way on your own VM.</p>
 <p>It has a bunch of built-in drivers like digital ocean, aws etc. However, as long as you got SSH access and root account, it should not be a big problem.</p>
-<h2 id="Example:_provision_on_Digital_Ocean">Example: provision on Digital Ocean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-machine create <span class="operator">-d</span> <span class="string">"digitalocean"</span> --digitalocean-access-token <span class="string">"&lt;digitalocean api token&gt;"</span> -digitalocean-region <span class="string">"lon1"</span> my-dm</span><br></pre></td></tr></table></figure>
+<h2 id="Example-provision-on-Digital-Ocean"><a href="#Example-provision-on-Digital-Ocean" class="headerlink" title="Example: provision on Digital Ocean"></a>Example: provision on Digital Ocean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker-machine create <span class="_">-d</span> <span class="string">"digitalocean"</span> --digitalocean-access-token <span class="string">"&lt;digitalocean api token&gt;"</span> -digitalocean-region <span class="string">"lon1"</span> my-dm</div></pre></td></tr></table></figure>
 <ul>
 <li>-d: driver to use. See <a href="https://docs.docker.com/machine/drivers/" target="_blank" rel="external">here</a> for list of drivers.</li>
 </ul>
 <p>Once it is finished. The new machine can be found with <code>docker-machine ps</code>.</p>
-<h2 id="Point_to_a_machine">Point to a machine</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> $(docker-machine env &lt;my-dm&gt;)</span><br></pre></td></tr></table></figure>
+<h2 id="Point-to-a-machine"><a href="#Point-to-a-machine" class="headerlink" title="Point to a machine"></a>Point to a machine</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> $(docker-machine env &lt;my-dm&gt;)</div></pre></td></tr></table></figure>
 <p>This command will set essential env vars for <a href="#docker-engine">docker engine</a>.</p>
-<h2 id="Backup_your_machines_!!!">Backup your machines !!!</h2><p>The docker-machine will use <home>/.docker/machine to store all your certs / configurations.<br>Backup it and protect it.</home></p>
-<h1 id="Docker_Swarm">Docker Swarm</h1><p>Docker swarm is an awesome concept that treats multiple docker daemons as one. This means you can horizontally scale your cluster without worrying about many changes in your DevOps progress.</p>
+<h2 id="Backup-your-machines"><a href="#Backup-your-machines" class="headerlink" title="Backup your machines !!!"></a>Backup your machines !!!</h2><p>The docker-machine will use <home>/.docker/machine to store all your certs / configurations.<br>Backup it and protect it.</home></p>
+<h1 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="Docker Swarm"></a>Docker Swarm</h1><p>Docker swarm is an awesome concept that treats multiple docker daemons as one. This means you can horizontally scale your cluster without worrying about many changes in your DevOps progress.</p>
 <p>Docker swarm is another RESTful service layer which has exact same endpoints as Docker Daemon does. It has <a href="https://docs.docker.com/swarm/scheduler/strategy/" target="_blank" rel="external">builtin strategies</a> (like spread) to pick the actual node (server) to use.</p>
 <p>Docker engine 100% works with docker swarm service. Docker swarm is transparent to any docker engine.</p>
-<h2 id="Is_it_completely_transparent?">Is it completely transparent?</h2><p>No. There are still some configuration needed to make things work like network, volume mapping etc. With help of <a href="#docker-compose">Docker compose</a>, the swarm can be configured easily. See <a href="https://docs.docker.com/compose/swarm/" target="_blank" rel="external">here</a> for limitations with Docker Swarm.</p>
-<h2 id="Discovery">Discovery</h2><p>Docker swarm depends on a discovery service which itself could be a docker service.<br>The swarm network and discovery service is de-centralised and clustered which means better availability.<br>Using <code>swarm join</code> will regiser itself to discovery service and swarm manager can then collect information from the discovery service.<br>It is able to use:</p>
+<h2 id="Is-it-completely-transparent"><a href="#Is-it-completely-transparent" class="headerlink" title="Is it completely transparent?"></a>Is it completely transparent?</h2><p>No. There are still some configuration needed to make things work like network, volume mapping etc. With help of <a href="#docker-compose">Docker compose</a>, the swarm can be configured easily. See <a href="https://docs.docker.com/compose/swarm/" target="_blank" rel="external">here</a> for limitations with Docker Swarm.</p>
+<h2 id="Discovery"><a href="#Discovery" class="headerlink" title="Discovery"></a>Discovery</h2><p>Docker swarm depends on a discovery service which itself could be a docker service.<br>The swarm network and discovery service is de-centralised and clustered which means better availability.<br>Using <code>swarm join</code> will regiser itself to discovery service and swarm manager can then collect information from the discovery service.<br>It is able to use:</p>
 <ul>
 <li>token proto: for non production</li>
 <li>etcd</li>
 <li>consul<br>and some other key-value stores.</li>
 </ul>
-<h3 id="Token">Token</h3><p>token is hosted on docker.com. Typeically not used for prod.</p>
-<p>Generate a token:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="command">run</span> <span class="comment">--rm swarm create</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h3><p>token is hosted on docker.com. Typeically not used for prod.</p>
+<p>Generate a token:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">run</span> <span class="comment">--rm swarm create</span></div></pre></td></tr></table></figure></p>
 <p>Then it is able to use <code>token://&lt;tokenID&gt;</code> as discovery service</p>
-<h2 id="Swarm_Manager_TLS">Swarm Manager TLS</h2><p>As docker swarm manager needs to actively manage swarm agents, it needs have its own TLS certificates signed by same CA. Otherwise, swarm manager will not be able to talk to swarm agents.<br>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="operator">-d</span> -p <span class="number">3376</span>:<span class="number">3376</span> -t -v /var/lib/boot2docker:/certs:ro swarm manage -H <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">3376</span> --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://<span class="number">123456789</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="Run_container_on_specific_Swarm_agent">Run container on specific Swarm agent</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">environment:&#10;  - &#34;constraint:node==node-1&#34;</span><br></pre></td></tr></table></figure>
+<h2 id="Swarm-Manager-TLS"><a href="#Swarm-Manager-TLS" class="headerlink" title="Swarm Manager TLS"></a>Swarm Manager TLS</h2><p>As docker swarm manager needs to actively manage swarm agents, it needs have its own TLS certificates signed by same CA. Otherwise, swarm manager will not be able to talk to swarm agents.<br>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run <span class="_">-d</span> -p 3376:3376 -t -v /var/lib/boot2docker:/certs:ro swarm manage -H 0.0.0.0:3376 --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://123456789</div></pre></td></tr></table></figure></p>
+<h2 id="Run-container-on-specific-Swarm-agent"><a href="#Run-container-on-specific-Swarm-agent" class="headerlink" title="Run container on specific Swarm agent"></a>Run container on specific Swarm agent</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">environment:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">"constraint:node==node-1"</span></div></pre></td></tr></table></figure>
 <p>the <code>node-1</code> can be name of the docker machine.</p>
 <p>#Docker Engine</p>
-<h2 id="Restart_policy">Restart policy</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="command">run</span> <span class="comment">--restart =&lt;restart strategy &gt; &lt;image name&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Restart-policy"><a href="#Restart-policy" class="headerlink" title="Restart policy"></a>Restart policy</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --<span class="built_in">restart</span> =&lt;<span class="built_in">restart</span> strategy &gt; &lt;<span class="built_in">image</span> name&gt;</div></pre></td></tr></table></figure>
 <p>Restart strategies:</p>
 <ul>
 <li>no</li>
@@ -316,7 +320,7 @@ It makes system deployment much faste">
 <li>always</li>
 <li>unless-stopped</li>
 </ul>
-<h2 id="give_a_name">give a name</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --<span class="built_in">name</span>=&lt;<span class="built_in">name</span>&gt; &lt;<span class="built_in">image</span> <span class="built_in">name</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="give-a-name"><a href="#give-a-name" class="headerlink" title="give a name"></a>give a name</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --<span class="built_in">name</span>=&lt;<span class="built_in">name</span>&gt; &lt;<span class="built_in">image</span> <span class="built_in">name</span>&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -384,7 +388,7 @@ It makes system deployment much faste">
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -400,7 +404,7 @@ It makes system deployment much faste">
 		open_in_new: false
 	}
 </script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
 
 <!-- Google Analytics -->

@@ -7,23 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Keyang's Blog">
 <meta property="og:url" content="http://keyangxiang.com/page/2/index.html">
 <meta property="og:site_name" content="Keyang's Blog">
-<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keyang's Blog">
-<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
- <script src="/js/require-jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/require-jquery.js"></script>
 </head>
 
 <body>
@@ -99,6 +96,8 @@
 				        
 							<li><a href="/csvtojson">csvtojson</a></li>
 				        
+							<li><a href="/simplepsd">Simple PSD</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -157,6 +156,8 @@
 		        
 					<li><a href="/csvtojson">csvtojson</a></li>
 		        
+					<li><a href="/simplepsd">Simple PSD</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
@@ -202,7 +203,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="https://github.com/substack/minimist" target="_blank" rel="external">minimist</a> is a lightweight cli argument (command line arguments) parser:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</div><div class="line"></div><div class="line"><span class="comment">//output:</span></div><div class="line">&#123; _: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</div><div class="line">  x: <span class="number">3</span>,</div><div class="line">  y: <span class="number">4</span>,</div><div class="line">  n: <span class="number">5</span>,</div><div class="line">  a: <span class="literal">true</span>,</div><div class="line">  b: <span class="literal">true</span>,</div><div class="line">  c: <span class="literal">true</span>,</div><div class="line">  beep: <span class="string">'boop'</span> &#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -262,7 +263,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">-webkit-font-smoothing</span>: <span class="tag">antialiased</span>;</span><br><span class="line"><span class="tag">-moz-osx-font-smoothing</span>: <span class="tag">grayscale</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-webkit-font-smoothing</span>: <span class="selector-tag">antialiased</span>;</div><div class="line"><span class="selector-tag">-moz-osx-font-smoothing</span>: <span class="selector-tag">grayscale</span></div></pre></td></tr></table></figure>
 <p>Makes text clearer</p>
 
       
@@ -323,7 +324,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="What_is_Docker_and_why?">What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker">See here</a></p>
+        <h1 id="What-is-Docker-and-why"><a href="#What-is-Docker-and-why" class="headerlink" title="What is Docker and why?"></a>What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker">See here</a></p>
 <p>In short:</p>
 <ul>
 <li>Docker is a container tech based on LXC</li>
@@ -394,7 +395,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Resize">Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">style</span>=<span class="value">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+        <h3 id="Resize"><a href="#Resize" class="headerlink" title="Resize"></a>Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">style</span>=<span class="string">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <textarea style="resize:horizontal"></textarea>
 
 <p>The resize property can be either:</p>
@@ -403,8 +404,8 @@
 <li>horizontal: only resize horizontally</li>
 <li>none: disable resize (also remove the resize area on right bottom.)</li>
 </ul>
-<h3 id="Outline">Outline</h3><p>Remove or change style of outline when textarea is focused on safari / chrome etc.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">class</span>=<span class="value">"customize"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.customize</span><span class="pseudo">:focus</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">outline-color</span>:<span class="value">red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h3><p>Remove or change style of outline when textarea is focused on safari / chrome etc.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"customize"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.customize</span><span class="selector-pseudo">:focus</span>&#123;</div><div class="line">  <span class="attribute">outline-color</span>:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><style>.customize:focus{ outline-color:red; }</style></p>
 <textarea class="customize"></textarea>
 
@@ -443,8 +444,8 @@
     <article id="post-move-to-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/10/move-to-hexo-blog/" class="article-date">
-  	<time datetime="2016-01-10T13:47:15.000Z" itemprop="datePublished">2016-01-10</time>
+      <a href="/2015/11/11/move-to-hexo-blog/" class="article-date">
+  	<time datetime="2015-11-11T22:39:31.000Z" itemprop="datePublished">2015-11-11</time>
 </a>
     </div>
   
@@ -457,7 +458,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/move-to-hexo-blog/">Move to Hexo</a>
+      <a class="article-title" href="/2015/11/11/move-to-hexo-blog/">Move to Hexo</a>
     </h1>
   
 
@@ -470,7 +471,7 @@
 <p>The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.</p>
 <p>Hexo is a very powerful static content generator which converts MarkDown posts to Html.</p>
         <p class="article-more-link">
-          <a  href="/2016/01/10/move-to-hexo-blog/">more >></a>
+          <a  href="/2015/11/11/move-to-hexo-blog/">more >></a>
         </p>
       
     </div>
@@ -573,7 +574,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -589,7 +590,7 @@
 		open_in_new: false
 	}
 </script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/main.js"></script>
 
 
 <!-- Google Analytics -->
