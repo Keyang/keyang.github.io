@@ -11,15 +11,36 @@ body{
   overflow:hidden;
 }
 #nav{
-  position:absolute;
+  /*position:absolute;
   top:0;
   bottom:0;
-  left:0;
+  left:0;*/
   width:250px;
   background: #3C3E3F;
   border-right:1px solid black;
+  position: relative;
+}
+#main{
+  /*position:absolute;
+  top:0;
+  bottom:0;
+  left:250px;
+  right:250px;*/
+  position: relative;
 }
 
+#auxi{
+  /*position:absolute;
+  top:0;
+  bottom:0;*/
+  width:250px;
+  /*right:0;*/
+  background: #333;
+-webkit-box-shadow: -1px 0 1px 0 #000000;
+box-shadow: -1px 0 1px 0 #000000;
+overflow-y: auto;
+position: relative;
+}
 .flex{
   display:-webkit-box;
   display:-ms-flexbox;
@@ -58,13 +79,6 @@ body{
               -ms-grid-row-align:center;
           align-items:center;
 }
-#main{
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:250px;
-  right:250px;
-}
 #mainNav{
   position: absolute;
   top:0;
@@ -81,17 +95,6 @@ body{
   bottom: 0;
   right:0;
   left:50px;
-}
-#auxi{
-  position:absolute;
-  top:0;
-  bottom:0;
-  width:250px;
-  right:0;
-  background: #333;
--webkit-box-shadow: -1px 0 1px 0 #000000;
-box-shadow: -1px 0 1px 0 #000000;
-overflow-y: auto;
 }
 
 .wrapper{
@@ -139,8 +142,9 @@ overflow-y: auto;
 }
 #fileLoader{
   cursor: pointer;
+  margin-bottom:10px;
 }
-#fileLoader input{
+#fileLoader input[type=file]{
   display: none;
 }
 #basicInfo{
@@ -187,9 +191,79 @@ span{
   overflow:auto;
 }
 
-#canvasWrapper{
+#tool{
   position: absolute;
   top:0;
+  left:0;
+  height:60px;
+  right:0;
+  background: #333;
+  z-index:2;
+}
+.toolItem{
+    display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-direction:column;
+    background: #999;
+    flex-shrink: 0;
+
+}
+.toolItem .head{
+    font-size: 0.8em;
+    text-transform: capitalize;
+    color: #111;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    border-bottom:2px solid #ccc;
+    text-align: center;
+}
+.toolItem .body{
+   display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  display: -webkit-flex;
+   -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-direction:row;
+    -webkit-box-align: center;
+      -ms-flex-align:center;
+              -ms-grid-row-align:center;
+          align-items:center;
+            -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0px;
+  -webkit-flex:1 0 0px;
+  padding-left:3px;
+  padding-right:3px;
+  background: #666;
+      border-right:1px solid #333;
+    border-left:1px solid #333;
+}
+
+input{
+  outline: none ;
+  border:1px solid #999 ;
+  background: #333;
+  color:white;
+}
+button{
+  outline:none !important;
+}
+input:focus{
+  border:1px solid white;
+}
+#canvasWrapper{
+  position: absolute;
+  top:50px;
   left:0;
   right:0;
   bottom:50px;
@@ -265,6 +339,9 @@ span{
 .bg_black{
   background:black;
 }
+.relative{
+  position:relative;
+}
 .box{
 }
 .box h3{
@@ -312,3 +389,27 @@ span{
   font-size:2em;
   color: #666;
 }
+#dlg{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  right:0;
+  z-index:100;
+  background: rgba(0,0,0,0.7);
+}
+#dlg>div{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  padding:15px;
+  background: #333;
+  border: 1px solid black;
+  color:#999;
+}
+.slider.slider-horizontal{
+  width:150px;
+}
+
+
