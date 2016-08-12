@@ -10,6 +10,10 @@ body{
   background: #222;
   overflow:hidden;
 }
+ul{
+  padding:0;
+  margin: 0;
+}
 #nav{
   /*position:absolute;
   top:0;
@@ -78,6 +82,12 @@ position: relative;
       -ms-flex-align:center;
               -ms-grid-row-align:center;
           align-items:center;
+}
+.align-items-start{
+  -webkit-box-align: flex-start;
+      -ms-flex-align:flex-start;
+              -ms-grid-row-align:flex-start;
+          align-items:flex-start;
 }
 #mainNav{
   position: absolute;
@@ -413,3 +423,16 @@ input:focus{
 }
 
 
+
+.psd-file-item{
+  padding:10px;
+  border-bottom:1px solid #efefef;
+  cursor: pointer;
+}
+
+.psd-file-item span{
+  color:white;
+}
+.psd-file-item:hover{
+  background: #033363;
+}
