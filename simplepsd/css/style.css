@@ -9,6 +9,7 @@ body{
   right:0;
   background: #222;
   overflow:hidden;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 ul{
   padding:0;
@@ -152,7 +153,6 @@ position: relative;
 }
 #fileLoader{
   cursor: pointer;
-  margin-bottom:10px;
 }
 #fileLoader input[type=file]{
   display: none;
@@ -393,12 +393,6 @@ input:focus{
     border: 1px dashed #ccc;
 
 }
-.introBox{
-  padding:20px;
-  border:3px dashed #3C3E3F;
-  font-size:2em;
-  color: #666;
-}
 #dlg{
   position: absolute;
   top:0;
@@ -435,4 +429,77 @@ input:focus{
 }
 .psd-file-item:hover{
   background: #033363;
+}
+#main_start{
+  display: flex;
+  flex-direction: column;
+}
+#main_start .title{
+  text-align: center;
+  color:white;
+}
+#main_start .containt_wrapper{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    display: -webkit-flex;
+     -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-direction:row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap:wrap;
+  -ms-flex-wrap: wrap;
+  padding:20px;
+}
+#main_start .introBox{
+  padding:10px;
+  border:1px solid #3C3E3F;
+  color: #999;
+  width:180px;
+  margin-bottom:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #333;
+  margin-right:20px;
+}
+#main_start .introBox:hover{
+  background: #3C3E3F;
+}
+#main_start>.intro{
+  background: #666;
+  padding: 10px;
+  font-size:1.2em;
+  color:white;
+  letter-spacing: 0.1em;
+}
+#main_start .introBox .icon{
+  font-size: 48px;
+}
+#main_start .introBox .icon img{
+  width:48px;
+}
+#main_start .introBox .intro{
+  font-weight: bold;
+  font-size:1.3em;
+}
+
+
+.slider.slider-horizontal .slider-track{
+    height: 4px;
+    margin-top: -2px;
+    background:#333;
+}
+.slider-handle{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
+background: rgb(76,76,76); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
