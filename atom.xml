@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-04-25T13:15:52.000Z</updated>
+  <updated>2016-11-13T21:52:54.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webworker notes</title>
+    <link href="http://keyangxiang.com/2016/11/13/webworker-notes/"/>
+    <id>http://keyangxiang.com/2016/11/13/webworker-notes/</id>
+    <published>2016-11-13T21:43:04.000Z</published>
+    <updated>2016-11-13T21:52:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>WebWorker has now been supported by majority of browsers (<a href="http://caniuse.com/#feat=webworkers" target="_blank" rel="external">link</a>). I have started to use WebWorkers seriously in my projects (web pages / web apps / cordova mobile apps).</p>
+<p>Below reference pages were used while doing my study:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" target="_blank" rel="external">Using webworkers</a></li>
+<li><a href="http://stackoverflow.com/questions/28642547/phonegap-and-webworkers" target="_blank" rel="external">webworker and phonegap</a></li>
+</ul>
+<h2 id="What-webworker-can-do"><a href="#What-webworker-can-do" class="headerlink" title="What webworker can do"></a>What webworker can do</h2><p>According to reference page, webworker</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;WebWorker has now been supported by majority of browsers (&lt;a href=&quot;http://caniuse.com/#feat=webworkers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;li
+    
+    </summary>
+    
+    
+      <category term="web, javascript" scheme="http://keyangxiang.com/tags/web-javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>openssl quick note</title>
