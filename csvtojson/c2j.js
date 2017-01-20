@@ -7,7 +7,10 @@ $(function() {
   toggleParams();
 });
 
-var defParam=(new csvtojson.Converter({})).param  ;
+var defParam=defaultParam();
+function defaultParam(){
+  return csvtojson().param;
+}
 var paramsOn = false;
 $.get("https://raw.githubusercontent.com/Keyang/node-csvtojson/master/bin/options.json",function(res){
   var options=JSON.parse(res).options;
@@ -114,6 +117,7 @@ function convert() {
     $("#jsonRes").val(JSON.stringify(result, null, 2));
     $("#source").hide();
     $("#result").fadeIn();
+    defParam=defaultParam();
   });
 }
 
