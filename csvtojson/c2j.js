@@ -102,6 +102,7 @@ function getParams(defParam) {
 }
 
 function convert() {
+  document.querrySelector("ins").click();
   var csv = $("#csvTxt").val();
   var conv;
   var params = {};
