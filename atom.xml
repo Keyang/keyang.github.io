@@ -382,9 +382,9 @@
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
     
     
-      <category term="npm" scheme="http://keyangxiang.com/tags/npm/"/>
-    
       <category term="node.js" scheme="http://keyangxiang.com/tags/node-js/"/>
+    
+      <category term="npm" scheme="http://keyangxiang.com/tags/npm/"/>
     
   </entry>
   
