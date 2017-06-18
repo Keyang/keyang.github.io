@@ -4,7 +4,7 @@ $(function() {
   $("#jsonRes").on("click", selectRes);
   $("#toggleParams").on("click", toggleParams);
   // init();
-  toggleParams();
+  // toggleParams();
 });
 
 var defParam=defaultParam();
