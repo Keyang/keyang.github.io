@@ -21,6 +21,25 @@
   
   <link rel="stylesheet" href="/css/style.css">
  <script src="/js/require-jquery.js"></script>
+ <script type="application/ld+json">
+  {
+    "@context" : "http://schema.org",
+    "@type" : "WebSite",
+    "name" : "Keyang&#39;s Blog",
+    "url" : "http://keyangxiang.com"
+  }
+</script>
+
+<script type="application/ld+json">
+  { "@context" : "http://schema.org",
+    "@type" : "Organization",
+    "name" : "Keyang Xiang",
+    "url" : "http://keyangxiang.com",
+    "logo": "https://avatars3.githubusercontent.com/u/1092855",
+    "sameAs" : [ "" ]
+  }
+</script>
+
 </head>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -121,7 +140,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/cli/" style="font-size: 10px;">cli</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/web-javascript/" style="font-size: 10px;">web, javascript</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/cli/" style="font-size: 10px;">cli</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/macosx-trick/" style="font-size: 10px;">macosx trick</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/web-javascript/" style="font-size: 10px;">web, javascript</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
 					</div>
 				</section>
 				
@@ -182,6 +201,73 @@
 </nav>
 
       <div class="body-wrap">
+
+  
+    <article id="post-how-to-change-MacOSX-screenshot-location" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/21/how-to-change-MacOSX-screenshot-location/" class="article-date">
+  	<time datetime="2016-12-21T20:12:34.000Z" itemprop="datePublished">2016-12-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/21/how-to-change-MacOSX-screenshot-location/">how to change MacOSX screenshot location</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Taking screenshots with MacOSX is very useful when writting blogs or documents. The system has powerful built-in screenshot function. However, the default location to store the screenshot files is Desktop.</p>
+<p>This blog will go through how to change the location of screenshots to another folder.</p>
+<h1 id="Step-1-Create-a-folder"><a href="#Step-1-Create-a-folder" class="headerlink" title="Step 1 Create a folder"></a>Step 1 Create a folder</h1><p>Create a new folder anywhere using <code>finder</code> or <code>terminal</code>. Here I created <code>blog_statics</code> folder in my Google Drive folder.</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiVkVNYWJsWEJHbWc" alt="Picture"></p>
+<h1 id="Step-2-Change-default-location-of-screenshots"><a href="#Step-2-Change-default-location-of-screenshots" class="headerlink" title="Step 2 Change default location of screenshots"></a>Step 2 Change default location of screenshots</h1><p>Click the created folder in last step and press <code>Command+C</code> to copy the full path to clipboard.</p>
+<p>Press <code>Command + Space</code> and type <code>terminal</code> to open <code>terminal</code></p>
+<p>In terminal, type following command:</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults <span class="keyword">write</span> com.apple.screencapture <span class="keyword">location</span> <span class="title">&lt;Folder</span> Location&gt;</div></pre></td></tr></table></figure>
+<p>Note the <folder location=""> is the location of your create folder. You could <code>Command+V</code> to paste it from clipboard</folder></p>
+<p>It should give following result:</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiLUF6V2Q1alo4M3M" alt="img"></p>
+<p>Now all new screenshots should be stored in that place.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macosx-trick/">macosx trick</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
 
   
     <article id="post-webworker-notes" class="article article-type-post" itemscope itemprop="blogPost">
@@ -737,69 +823,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoose-js/">mongoose.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/tech/">tech</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Mongodb-two-phase-lock-example" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/Mongodb-two-phase-lock-example/" class="article-date">
-  	<time datetime="2016-03-17T22:34:09.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/Mongodb-two-phase-lock-example/">Mongodb two phase lock example (with mongoose)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">  <span class="attr">lastModified</span>:<span class="built_in">Date</span>,</div><div class="line">  <span class="attr">status</span>:&#123;</div><div class="line">    <span class="attr">type</span>:<span class="built_in">String</span>,</div><div class="line">    <span class="attr">default</span>:<span class="string">"new"</span>,</div><div class="line">    <span class="attr">index</span>:<span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">data</span>:&#123;&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code><br>
-        <p class="article-more-link">
-          <a  href="/2016/03/17/Mongodb-two-phase-lock-example/">more >></a>
-        </p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
 	</div>
 
       

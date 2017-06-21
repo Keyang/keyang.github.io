@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keyangxiang.com/"/>
-  <updated>2016-11-22T17:44:46.000Z</updated>
+  <updated>2017-06-21T10:38:27.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>how to change MacOSX screenshot location</title>
+    <link href="http://keyangxiang.com/2016/12/21/how-to-change-MacOSX-screenshot-location/"/>
+    <id>http://keyangxiang.com/2016/12/21/how-to-change-MacOSX-screenshot-location/</id>
+    <published>2016-12-21T20:12:34.000Z</published>
+    <updated>2017-06-21T10:38:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Taking screenshots with MacOSX is very useful when writting blogs or documents. The system has powerful built-in screenshot function. However, the default location to store the screenshot files is Desktop.</p>
+<p>This blog will go through how to change the location of screenshots to another folder.</p>
+<h1 id="Step-1-Create-a-folder"><a href="#Step-1-Create-a-folder" class="headerlink" title="Step 1 Create a folder"></a>Step 1 Create a folder</h1><p>Create a new folder anywhere using <code>finder</code> or <code>terminal</code>. Here I created <code>blog_statics</code> folder in my Google Drive folder.</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiVkVNYWJsWEJHbWc" alt="Picture"></p>
+<h1 id="Step-2-Change-default-location-of-screenshots"><a href="#Step-2-Change-default-location-of-screenshots" class="headerlink" title="Step 2 Change default location of screenshots"></a>Step 2 Change default location of screenshots</h1><p>Click the created folder in last step and press <code>Command+C</code> to copy the full path to clipboard.</p>
+<p>Press <code>Command + Space</code> and type <code>terminal</code> to open <code>terminal</code></p>
+<p>In terminal, type following command:</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults <span class="keyword">write</span> com.apple.screencapture <span class="keyword">location</span> <span class="title">&lt;Folder</span> Location&gt;</div></pre></td></tr></table></figure>
+<p>Note the <folder location=""> is the location of your create folder. You could <code>Command+V</code> to paste it from clipboard</folder></p>
+<p>It should give following result:</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiLUF6V2Q1alo4M3M" alt="img"></p>
+<p>Now all new screenshots should be stored in that place.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Taking screenshots with MacOSX is very useful when writting blogs or documents. The system has powerful built-in screenshot function. How
+    
+    </summary>
+    
+    
+      <category term="macosx trick" scheme="http://keyangxiang.com/tags/macosx-trick/"/>
+    
+  </entry>
   
   <entry>
     <title>webworker notes</title>
