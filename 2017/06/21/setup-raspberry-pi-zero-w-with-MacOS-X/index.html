@@ -5,18 +5,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Move to Hexo | Keyang&#39;s Blog</title>
+  <title>How to setup raspberry pi zero w with MacOS X | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog. The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
+  <meta name="description" content="Step 1 Prepare toolsTo setup a brand new raspberrypi zero w you need prepare following tools:  A raspberrypi zero w mini HDMI to HDMI convert Micro SD card USB OTG Mouse &amp;amp; Keyboard An external SD">
+<meta name="keywords" content="raspberrypi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Move to Hexo">
-<meta property="og:url" content="http://keyangxiang.com/2015/11/11/move-to-hexo-blog/index.html">
+<meta property="og:title" content="How to setup raspberry pi zero w with MacOS X">
+<meta property="og:url" content="http://keyangxiang.com/2017/06/21/setup-raspberry-pi-zero-w-with-MacOS-X/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
-<meta property="og:description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog. The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
-<meta property="og:updated_time" content="2016-01-10T13:47:15.000Z">
+<meta property="og:description" content="Step 1 Prepare toolsTo setup a brand new raspberrypi zero w you need prepare following tools:  A raspberrypi zero w mini HDMI to HDMI convert Micro SD card USB OTG Mouse &amp;amp; Keyboard An external SD">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiSnZ4VW91d1lWRXc">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiemZJXzdLZzFHM3c">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtib0MxZUR5QUJOc3M">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFticTM3R3lna0FudzA">
+<meta property="og:updated_time" content="2017-06-21T22:38:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Move to Hexo">
-<meta name="twitter:description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog. The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
+<meta name="twitter:title" content="How to setup raspberry pi zero w with MacOS X">
+<meta name="twitter:description" content="Step 1 Prepare toolsTo setup a brand new raspberrypi zero w you need prepare following tools:  A raspberrypi zero w mini HDMI to HDMI convert Micro SD card USB OTG Mouse &amp;amp; Keyboard An external SD">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiSnZ4VW91d1lWRXc">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +210,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-move-to-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-setup-raspberry-pi-zero-w-with-MacOS-X" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/11/move-to-hexo-blog/" class="article-date">
-  	<time datetime="2015-11-11T22:39:31.000Z" itemprop="datePublished">2015-11-11</time>
+      <a href="/2017/06/21/setup-raspberry-pi-zero-w-with-MacOS-X/" class="article-date">
+  	<time datetime="2017-06-21T22:38:44.000Z" itemprop="datePublished">2017-06-21</time>
 </a>
     </div>
   
@@ -221,7 +227,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Move to Hexo
+      How to setup raspberry pi zero w with MacOS X
     </h1>
   
 
@@ -229,6 +235,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberrypi/">raspberrypi</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -237,27 +247,38 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Today, I moved my blog from Wordpress to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. I use github.io to host the blog.</p>
-<p>The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.</p>
-<p>Hexo is a very powerful static content generator which converts MarkDown posts to Html.</p>
-<a id="more"></a>
-<p>To install Hexo, simply:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div><div class="line">hex init  <span class="comment">#create a new blog in current folder</span></div><div class="line">npm install . <span class="comment">#install dependencies</span></div></pre></td></tr></table></figure>
-<p>To serve content locally:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo serve</div></pre></td></tr></table></figure>
-<p>To generate static content:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
-<p>To deploy to github:</p>
-<ol>
-<li>open _config.yml</li>
-<li>add deploy section:</li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> &lt;your github.io repo<span class="string">&gt;</span></div><div class="line"><span class="attr">  branch:</span> master</div></pre></td></tr></table></figure>
-<ol>
-<li>then run:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy -g</div></pre></td></tr></table></figure>
-<p>There are still a lot of powerful function in Hexo. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">here</a> for more details.</p>
+        <h1 id="Step-1-Prepare-tools"><a href="#Step-1-Prepare-tools" class="headerlink" title="Step 1 Prepare tools"></a>Step 1 Prepare tools</h1><p>To setup a brand new <a href="https://www.raspberrypi.org/products/pi-zero-w/" target="_blank" rel="external">raspberrypi zero w</a> you need prepare following tools:</p>
+<ul>
+<li>A raspberrypi zero w</li>
+<li>mini HDMI to HDMI convert</li>
+<li>Micro SD card</li>
+<li>USB OTG</li>
+<li>Mouse &amp; Keyboard</li>
+<li>An external SD card reader</li>
+</ul>
+<p>All coneectors can come from seller when you purchase Raspberrypi zero w.</p>
+<p>[[Picture]]</p>
+<h1 id="Step-2-Download-Raspbian-Image"><a href="#Step-2-Download-Raspbian-Image" class="headerlink" title="Step 2 Download Raspbian Image"></a>Step 2 Download Raspbian Image</h1><p>You can download official <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">Raspbian OS</a> from here. If you want use <a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="external">other operation systems</a>, it is same setup setups.</p>
+<h1 id="Step-3-Write-Image-to-Micro-SD-card"><a href="#Step-3-Write-Image-to-Micro-SD-card" class="headerlink" title="Step 3 Write Image to Micro SD card"></a>Step 3 Write Image to Micro SD card</h1><p><strong>Be aware, writing image to micro sd card will wipe all data on it</strong></p>
+<p>Connect micro sd card to your mac through micro sd card reader.</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiSnZ4VW91d1lWRXc" alt="Picture"></p>
+<p>Once you can see your sd card in <code>finder</code>, you need find out the <code>disk</code> in system.</p>
+<p>Open a <code>terminal</code> and run <code>diskutil list</code>:  </p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiemZJXzdLZzFHM3c" alt="Picture"></p>
+<p>Find your sd card disk by its name. On my machine, the <code>/dev/disk2</code> in red rectangle is the <code>disk</code> in system and copy <code>disk2</code> only (not <code>/dev/disk2</code>) into clipboard.</p>
+<p>Unmount the sd card from finder but do <strong>not</strong> unplug it.</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtib0MxZUR5QUJOc3M" alt="Picture"></p>
+<p>Now, we need flash the image downloaded to sd card. You may need unzip it if the downloaded file is zipped by double click the file in finder. Below is the command to use:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo <span class="selector-tag">dd</span> bs=<span class="number">4</span>M <span class="keyword">if</span>=&lt;path to downloaded <span class="selector-class">.img</span> file&gt;  of=/dev/r&lt;disk&gt;</div></pre></td></tr></table></figure>
+<p>Replace the <code>path</code> and <code>&lt;disk&gt;</code> to your own one. </p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFticTM3R3lna0FudzA" alt="Pic"></p>
+<h1 id="Step-4-Plugin-and-setup"><a href="#Step-4-Plugin-and-setup" class="headerlink" title="Step 4 Plugin and setup"></a>Step 4 Plugin and setup</h1><p>Now insert the flashed micro sd card to Raspberrypi Zero W and connect everything and you are ready to go.</p>
+<p>[Picture]</p>
+<h1 id="General-Problems"><a href="#General-Problems" class="headerlink" title="General Problems"></a>General Problems</h1><ul>
+<li>Resource busy: You need unmount the partitions mounted before you could use <code>dd</code> to write the disk. See above.</li>
+<li>Permission denied: Make sure write protection on your sd card is open. Also use external SD card reader instead of Mac built-in one which could cause this issue.</li>
+<li>Operation not permitted: Make sure your device exists in system (check /dev/diskN)</li>
+</ul>
 
       
     </div>
@@ -267,18 +288,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/12/textarea-quick-hack/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          textarea quick hack
-        
-      </div>
-    </a>
   
-  
-    <a href="/2012/03/27/csv2json/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Online CSV to JSON Convert</div>
+    <a href="/2016/12/21/how-to-change-MacOSX-screenshot-location/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">how to change MacOSX screenshot location</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
