@@ -7,9 +7,9 @@
     var fileName = null;
     parts.forEach(function (p) {
       if (p.indexOf("base64") > -1) {
-        data = p.replace("base64=", "");
+        data =decodeURIComponent(p.replace("base64=", ""));
       } else if (p.indexOf("fileName") > -1) {
-        fileName = p.replace("fileName=", "");
+        fileName = decodeURIComponent( p.replace("fileName=", ""));
       }
     });
     if (data && fileName) {
