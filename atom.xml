@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keyangxiang.com/"/>
-  <updated>2017-06-21T22:38:44.000Z</updated>
+  <updated>2017-07-19T00:04:12.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Use Stripe in Cordova apps / WebView</title>
+    <link href="http://keyangxiang.com/2017/07/19/Use-Stripe-in-Cordova-apps-WebView/"/>
+    <id>http://keyangxiang.com/2017/07/19/Use-Stripe-in-Cordova-apps-WebView/</id>
+    <published>2017-07-19T00:04:12.000Z</published>
+    <updated>2017-07-19T00:04:12.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>one line generate server x509 key/cert pair</title>
+    <link href="http://keyangxiang.com/2017/07/13/one-line-generate-server-x509-key-cert-pair/"/>
+    <id>http://keyangxiang.com/2017/07/13/one-line-generate-server-x509-key-cert-pair/</id>
+    <published>2017-07-13T12:20:08.000Z</published>
+    <updated>2017-07-13T12:20:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl req -nodes -new -x509 -keyout key<span class="selector-class">.pem</span> -out cert<span class="selector-class">.pem</span> -days <span class="number">365</span></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>How to setup raspberry pi zero w with MacOS X</title>
@@ -686,29 +718,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Online CSV to JSON Convert</title>
-    <link href="http://keyangxiang.com/2012/03/27/csv2json/"/>
-    <id>http://keyangxiang.com/2012/03/27/csv2json/</id>
-    <published>2012-03-26T23:00:00.000Z</published>
-    <updated>2016-01-11T16:27:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Demo: Click  <a href="http://keyangxiang.com/csvtojson/">here</a></p>
-<p>Document &amp; API: See <a href="https://github.com/Keyang/node-csvtojson" target="_blank" rel="external">Github site</a> for more information.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Demo: Click  &lt;a href=&quot;http://keyangxiang.com/csvtojson/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Document &amp;amp; API: See &lt;a href=&quot;https://github.com/Keyang/node-
-    
-    </summary>
-    
-    
-      <category term="misc" scheme="http://keyangxiang.com/tags/misc/"/>
     
   </entry>
   
