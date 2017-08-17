@@ -5,24 +5,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>How to setup raspberry pi zero w with MacOS X | Keyang&#39;s Blog</title>
+  <title>Using service worker enables web app offline usage | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Step 1 Prepare toolsTo setup a brand new raspberrypi zero w you need prepare following tools:  A raspberrypi zero w mini HDMI to HDMI convert Micro SD card USB OTG Mouse &amp;amp; Keyboard An external SD">
-<meta name="keywords" content="raspberrypi">
+  <meta name="description" content="What am I doingIt is incredibly easy to make a rich web application like psdetch working offline with Service Worker. 5 minutes are all you need!">
+<meta name="keywords" content="web,js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to setup raspberry pi zero w with MacOS X">
-<meta property="og:url" content="http://keyangxiang.com/2017/06/21/setup-raspberry-pi-zero-w-with-MacOS-X/index.html">
+<meta property="og:title" content="Using service worker enables web app offline usage">
+<meta property="og:url" content="http://keyangxiang.com/2017/08/17/Using-service-worker-enables-web-app-offline-usage/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
-<meta property="og:description" content="Step 1 Prepare toolsTo setup a brand new raspberrypi zero w you need prepare following tools:  A raspberrypi zero w mini HDMI to HDMI convert Micro SD card USB OTG Mouse &amp;amp; Keyboard An external SD">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiSnZ4VW91d1lWRXc">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiemZJXzdLZzFHM3c">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtib0MxZUR5QUJOc3M">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFticTM3R3lna0FudzA">
-<meta property="og:updated_time" content="2017-06-21T22:38:44.000Z">
+<meta property="og:description" content="What am I doingIt is incredibly easy to make a rich web application like psdetch working offline with Service Worker. 5 minutes are all you need!">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtieUQ0QVNuR1RMUUE">
+<meta property="og:updated_time" content="2017-08-17T21:57:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to setup raspberry pi zero w with MacOS X">
-<meta name="twitter:description" content="Step 1 Prepare toolsTo setup a brand new raspberrypi zero w you need prepare following tools:  A raspberrypi zero w mini HDMI to HDMI convert Micro SD card USB OTG Mouse &amp;amp; Keyboard An external SD">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiSnZ4VW91d1lWRXc">
+<meta name="twitter:title" content="Using service worker enables web app offline usage">
+<meta name="twitter:description" content="What am I doingIt is incredibly easy to make a rich web application like psdetch working offline with Service Worker. 5 minutes are all you need!">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtieUQ0QVNuR1RMUUE">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -214,11 +211,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-setup-raspberry-pi-zero-w-with-MacOS-X" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Using-service-worker-enables-web-app-offline-usage" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/21/setup-raspberry-pi-zero-w-with-MacOS-X/" class="article-date">
-  	<time datetime="2017-06-21T22:38:44.000Z" itemprop="datePublished">2017-06-21</time>
+      <a href="/2017/08/17/Using-service-worker-enables-web-app-offline-usage/" class="article-date">
+  	<time datetime="2017-08-17T21:23:54.000Z" itemprop="datePublished">2017-08-17</time>
 </a>
     </div>
   
@@ -231,7 +228,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      How to setup raspberry pi zero w with MacOS X
+      Using service worker enables web app offline usage
     </h1>
   
 
@@ -240,7 +237,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberrypi/">raspberrypi</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 	</div>
 
         
@@ -251,38 +248,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Step-1-Prepare-tools"><a href="#Step-1-Prepare-tools" class="headerlink" title="Step 1 Prepare tools"></a>Step 1 Prepare tools</h1><p>To setup a brand new <a href="https://www.raspberrypi.org/products/pi-zero-w/" target="_blank" rel="external">raspberrypi zero w</a> you need prepare following tools:</p>
-<ul>
-<li>A raspberrypi zero w</li>
-<li>mini HDMI to HDMI convert</li>
-<li>Micro SD card</li>
-<li>USB OTG</li>
-<li>Mouse &amp; Keyboard</li>
-<li>An external SD card reader</li>
+        <h2 id="What-am-I-doing"><a href="#What-am-I-doing" class="headerlink" title="What am I doing"></a>What am I doing</h2><p>It is incredibly easy to make a rich web application like <a href="https://studio.psdetch.com" target="_blank" rel="external">psdetch</a> working offline with <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" target="_blank" rel="external">Service Worker</a>. 5 minutes are all you need!</p>
+<a id="more"></a>
+<h2 id="Browser-support-–-by-time-being"><a href="#Browser-support-–-by-time-being" class="headerlink" title="Browser support – by time being"></a>Browser support – by time being</h2><ul>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>Edge – In development</li>
+<li>Safari – In development</li>
 </ul>
-<p>All coneectors can come from seller when you purchase Raspberrypi zero w.</p>
-<p>[[Picture]]</p>
-<h1 id="Step-2-Download-Raspbian-Image"><a href="#Step-2-Download-Raspbian-Image" class="headerlink" title="Step 2 Download Raspbian Image"></a>Step 2 Download Raspbian Image</h1><p>You can download official <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">Raspbian OS</a> from here. If you want use <a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="external">other operation systems</a>, it is same setup setups.</p>
-<h1 id="Step-3-Write-Image-to-Micro-SD-card"><a href="#Step-3-Write-Image-to-Micro-SD-card" class="headerlink" title="Step 3 Write Image to Micro SD card"></a>Step 3 Write Image to Micro SD card</h1><p><strong>Be aware, writing image to micro sd card will wipe all data on it</strong></p>
-<p>Connect micro sd card to your mac through micro sd card reader.</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiSnZ4VW91d1lWRXc" alt="Picture"></p>
-<p>Once you can see your sd card in <code>finder</code>, you need find out the <code>disk</code> in system.</p>
-<p>Open a <code>terminal</code> and run <code>diskutil list</code>:  </p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiemZJXzdLZzFHM3c" alt="Picture"></p>
-<p>Find your sd card disk by its name. On my machine, the <code>/dev/disk2</code> in red rectangle is the <code>disk</code> in system and copy <code>disk2</code> only (not <code>/dev/disk2</code>) into clipboard.</p>
-<p>Unmount the sd card from finder but do <strong>not</strong> unplug it.</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtib0MxZUR5QUJOc3M" alt="Picture"></p>
-<p>Now, we need flash the image downloaded to sd card. You may need unzip it if the downloaded file is zipped by double click the file in finder. Below is the command to use:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo <span class="selector-tag">dd</span> bs=<span class="number">4</span>M <span class="keyword">if</span>=&lt;path to downloaded <span class="selector-class">.img</span> file&gt;  of=/dev/r&lt;disk&gt;</div></pre></td></tr></table></figure>
-<p>Replace the <code>path</code> and <code>&lt;disk&gt;</code> to your own one. </p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFticTM3R3lna0FudzA" alt="Pic"></p>
-<h1 id="Step-4-Plugin-and-setup"><a href="#Step-4-Plugin-and-setup" class="headerlink" title="Step 4 Plugin and setup"></a>Step 4 Plugin and setup</h1><p>Now insert the flashed micro sd card to Raspberrypi Zero W and connect everything and you are ready to go.</p>
-<p>[Picture]</p>
-<h1 id="General-Problems"><a href="#General-Problems" class="headerlink" title="General Problems"></a>General Problems</h1><ul>
-<li>Resource busy: You need unmount the partitions mounted before you could use <code>dd</code> to write the disk. See above.</li>
-<li>Permission denied: Make sure write protection on your sd card is open. Also use external SD card reader instead of Mac built-in one which could cause this issue.</li>
-<li>Operation not permitted: Make sure your device exists in system (check /dev/diskN)</li>
-</ul>
+<p>More browser support details can be found <a href="https://caniuse.com/#search=service%20worker" target="_blank" rel="external">here</a></p>
+<h2 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h2><p>To make your online only web app (like <a href="https://studio.psdetch.com" target="_blank" rel="external">https://studio.psdetch.com</a>) working offline, your web app needs to use <code>https</code> for security request.</p>
+<h2 id="5-mins-development"><a href="#5-mins-development" class="headerlink" title="5 mins development"></a>5 mins development</h2><p>Very simple. The steps below works on any web apps:</p>
+<ol>
+<li>Follow <a href="https://googlechrome.github.io/sw-toolbox/" target="_blank" rel="external">this guide</a> to install <code>sw-toolbox</code></li>
+<li>Add <code>service-worker.js</code> at the root folder of your web app. Here, the location (root folder) is important.</li>
+<li>Add following script to <code>index.html</code></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/sw-toolbox/companion.js"</span> <span class="attr">data-service-worker</span>=<span class="string">"service-worker.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>Add content to <code>service-worker.js</code>. You can follow the tutorial <a href="https://googlechrome.github.io/sw-toolbox/usage.html#main" target="_blank" rel="external">here</a>. But most situation you can just use following scripts:</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">importScripts(<span class="string">"/path/to/sw-toolbox/sw-toolbox.js"</span>);</div><div class="line"><span class="comment">/* this will cache all files of current web app with </span></div><div class="line"> * "fastest" strategy. </div><div class="line"> */</div><div class="line">toolbox.router.get(<span class="string">"/(.*)"</span>,toolbox.fastest);</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">* Add external files here.e.g.</div><div class="line">* toolbox.router.get("https://code.jquery.com/jquery-3.2.1.min.js",toolbox.fastest);</div><div class="line">*/</div></pre></td></tr></table></figure>
+<p>You can check what I have used for <a href="https://studio.psdetch.com/service-worker.js" target="_blank" rel="external">psdetch</a>.</p>
+<p>And that’s it. Your whole web app can now work offline. With <code>fastest</code> strategy, response is always returned from Cache and updated immediately if possible. This dramatically increased user experience.</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtieUQ0QVNuR1RMUUE" alt="cat relax"></p>
 
       
     </div>
@@ -292,18 +281,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/07/13/one-line-generate-server-x509-key-cert-pair/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          one line generate server x509 key/cert pair
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/21/how-to-change-MacOSX-screenshot-location/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">how to change MacOSX screenshot location</div>
+    <a href="/2017/07/13/one-line-generate-server-x509-key-cert-pair/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">one line generate server x509 key/cert pair</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

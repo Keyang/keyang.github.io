@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keyangxiang.com/"/>
-  <updated>2017-07-19T00:04:12.000Z</updated>
+  <updated>2017-08-17T21:57:11.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -16,16 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Use Stripe in Cordova apps / WebView</title>
-    <link href="http://keyangxiang.com/2017/07/19/Use-Stripe-in-Cordova-apps-WebView/"/>
-    <id>http://keyangxiang.com/2017/07/19/Use-Stripe-in-Cordova-apps-WebView/</id>
-    <published>2017-07-19T00:04:12.000Z</published>
-    <updated>2017-07-19T00:04:12.000Z</updated>
+    <title>Using service worker enables web app offline usage</title>
+    <link href="http://keyangxiang.com/2017/08/17/Using-service-worker-enables-web-app-offline-usage/"/>
+    <id>http://keyangxiang.com/2017/08/17/Using-service-worker-enables-web-app-offline-usage/</id>
+    <published>2017-08-17T21:23:54.000Z</published>
+    <updated>2017-08-17T21:57:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="What-am-I-doing"><a href="#What-am-I-doing" class="headerlink" title="What am I doing"></a>What am I doing</h2><p>It is incredibly easy to make a rich web application like <a href="https://studio.psdetch.com" target="_blank" rel="external">psdetch</a> working offline with <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" target="_blank" rel="external">Service Worker</a>. 5 minutes are all you need!</p>
+<a id="more"></a>
+<h2 id="Browser-support-–-by-time-being"><a href="#Browser-support-–-by-time-being" class="headerlink" title="Browser support – by time being"></a>Browser support – by time being</h2><ul>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>Edge – In development</li>
+<li>Safari – In development</li>
+</ul>
+<p>More browser support details can be found <a href="https://caniuse.com/#search=service%20worker" target="_blank" rel="external">here</a></p>
+<h2 id="Requirement"><a href="#Requirement" class="headerlink" title="Requirement"></a>Requirement</h2><p>To make your online only web app (like <a href="https://studio.psdetch.com" target="_blank" rel="external">https://studio.psdetch.com</a>) working offline, your web app needs to use <code>https</code> for security request.</p>
+<h2 id="5-mins-development"><a href="#5-mins-development" class="headerlink" title="5 mins development"></a>5 mins development</h2><p>Very simple. The steps below works on any web apps:</p>
+<ol>
+<li>Follow <a href="https://googlechrome.github.io/sw-toolbox/" target="_blank" rel="external">this guide</a> to install <code>sw-toolbox</code></li>
+<li>Add <code>service-worker.js</code> at the root folder of your web app. Here, the location (root folder) is important.</li>
+<li>Add following script to <code>index.html</code></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/sw-toolbox/companion.js"</span> <span class="attr">data-service-worker</span>=<span class="string">"service-worker.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>Add content to <code>service-worker.js</code>. You can follow the tutorial <a href="https://googlechrome.github.io/sw-toolbox/usage.html#main" target="_blank" rel="external">here</a>. But most situation you can just use following scripts:</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">importScripts(<span class="string">"/path/to/sw-toolbox/sw-toolbox.js"</span>);</div><div class="line"><span class="comment">/* this will cache all files of current web app with </span></div><div class="line"> * "fastest" strategy. </div><div class="line"> */</div><div class="line">toolbox.router.get(<span class="string">"/(.*)"</span>,toolbox.fastest);</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">* Add external files here.e.g.</div><div class="line">* toolbox.router.get("https://code.jquery.com/jquery-3.2.1.min.js",toolbox.fastest);</div><div class="line">*/</div></pre></td></tr></table></figure>
+<p>You can check what I have used for <a href="https://studio.psdetch.com/service-worker.js" target="_blank" rel="external">psdetch</a>.</p>
+<p>And that’s it. Your whole web app can now work offline. With <code>fastest</code> strategy, response is always returned from Cache and updated immediately if possible. This dramatically increased user experience.</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtieUQ0QVNuR1RMUUE" alt="cat relax"></p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h2 id=&quot;What-am-I-doing&quot;&gt;&lt;a href=&quot;#What-am-I-doing&quot; class=&quot;headerlink&quot; title=&quot;What am I doing&quot;&gt;&lt;/a&gt;What am I doing&lt;/h2&gt;&lt;p&gt;It is incredibly easy to make a rich web application like &lt;a href=&quot;https://studio.psdetch.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;psdetch&lt;/a&gt; working offline with &lt;a href=&quot;https://developers.google.com/web/fundamentals/getting-started/primers/service-workers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Service Worker&lt;/a&gt;. 5 minutes are all you need!&lt;/p&gt;
+    
     </summary>
     
+    
+      <category term="web" scheme="http://keyangxiang.com/tags/web/"/>
+    
+      <category term="js" scheme="http://keyangxiang.com/tags/js/"/>
     
   </entry>
   
