@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keyangxiang.com/"/>
-  <updated>2017-08-17T21:57:11.000Z</updated>
+  <updated>2017-09-01T22:49:22.000Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ajax (XHR) download binary content as Blob</title>
+    <link href="http://keyangxiang.com/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/"/>
+    <id>http://keyangxiang.com/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/</id>
+    <published>2017-09-01T22:32:13.000Z</published>
+    <updated>2017-09-01T22:49:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Using <code>XMLHTTPRequest</code> (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as <code>ArrayBuffer</code> or <code>Blob</code>). This post will go through how to achieve it with <code>XMLHTTPRequest</code> and <code>jQuery</code>.</p>
+<a id="more"></a>
+<h1 id="XMLHTTPRequest"><a href="#XMLHTTPRequest" class="headerlink" title="XMLHTTPRequest"></a>XMLHTTPRequest</h1><p>For <code>XMLHTTPRequest</code>, just simply setup the <code>responseType</code> of <code>XHR</code> instance to either <code>arraybuffer</code> or <code>blob</code>. Example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr=<span class="keyword">new</span> XMLHTTPRequest();</div><div class="line">xhr.open(<span class="string">"GET"</span>, url, <span class="literal">true</span>);</div><div class="line"><span class="comment">//Now set response type</span></div><div class="line">xhr.responseType = <span class="string">'arraybuffer'</span>;</div><div class="line">xhr.addEventListener(<span class="string">'load'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (xhr.status === <span class="number">200</span>)&#123;</div><div class="line">    <span class="built_in">console</span>.log(xhr.response) <span class="comment">// ArrayBuffer</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span> Blob([xhr.response])) <span class="comment">// Blob</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+<h1 id="jQuery-Ajax-with-arraybuffer-or-blob"><a href="#jQuery-Ajax-with-arraybuffer-or-blob" class="headerlink" title="jQuery Ajax with arraybuffer or blob"></a>jQuery Ajax with arraybuffer or blob</h1><p><code>$.ajax</code> does not support either <code>arraybuffer</code> or <code>blob</code> as its <code>dataType</code>. Thus we need write a <code>beforeSend</code> handler:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//setup ajax</span></div><div class="line">$.ajaxSetup(&#123;</div><div class="line">  <span class="attr">beforeSend</span>:<span class="function"><span class="keyword">function</span>(<span class="params">jqXHR,settings</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (settings.dataType === <span class="string">'binary'</span>)&#123;</div><div class="line">      settings.xhr().responseType=<span class="string">'arraybuffer'</span>;</div><div class="line">      settings.processData=<span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//use ajax now</span></div><div class="line">$.ajax(&#123;</div><div class="line">  <span class="attr">url</span>:url,</div><div class="line">  <span class="attr">dataType</span>:<span class="string">"binary"</span>,</div><div class="line">  <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(data); <span class="comment">//ArrayBuffer</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span> Blob([data])) <span class="comment">// Blob</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Using &lt;code&gt;XMLHTTPRequest&lt;/code&gt; (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as &lt;code&gt;ArrayBuffer&lt;/code&gt; or &lt;code&gt;Blob&lt;/code&gt;). This post will go through how to achieve it with &lt;code&gt;XMLHTTPRequest&lt;/code&gt; and &lt;code&gt;jQuery&lt;/code&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="web" scheme="http://keyangxiang.com/tags/web/"/>
+    
+      <category term="js" scheme="http://keyangxiang.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>Using service worker enables web app offline usage</title>
@@ -254,9 +282,9 @@
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
     
     
-      <category term="linux" scheme="http://keyangxiang.com/tags/linux/"/>
-    
       <category term="cli" scheme="http://keyangxiang.com/tags/cli/"/>
+    
+      <category term="linux" scheme="http://keyangxiang.com/tags/linux/"/>
     
   </entry>
   
@@ -367,7 +395,7 @@
 <h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
 <p>Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">bower </span><span class="keyword">install </span>--save angular-mocks</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h1 id="Npm-dependencies"><a href="#Npm-dependencies" class="headerlink" title="Npm dependencies"></a>Npm dependencies</h1><p>Following npm packages are needed and add them as devDependencies:<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="string">"jasmine-core"</span>: <span class="string">"^2.3.4"</span>,</div><div class="line"><span class="string">"karma"</span>: <span class="string">"~0.12"</span>,</div><div class="line"><span class="string">"karma-chrome-launcher"</span>: <span class="string">"^0.1.12"</span>,</div><div class="line"><span class="string">"karma-firefox-launcher"</span>: <span class="string">"^0.1.6"</span>,</div><div class="line"><span class="string">"karma-jasmine"</span>: <span class="string">"^0.3.5"</span>,</div><div class="line"><span class="string">"karma-junit-reporter"</span>: <span class="string">"^0.2.2"</span>,</div><div class="line"><span class="string">"protractor"</span>: <span class="string">"^2.1.0"</span></div></pre></td></tr></table></figure></p>
+<h1 id="Npm-dependencies"><a href="#Npm-dependencies" class="headerlink" title="Npm dependencies"></a>Npm dependencies</h1><p>Following npm packages are needed and add them as devDependencies:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="string">"jasmine-core"</span>: <span class="string">"^2.3.4"</span>,</div><div class="line"><span class="string">"karma"</span>: <span class="string">"~0.12"</span>,</div><div class="line"><span class="string">"karma-chrome-launcher"</span>: <span class="string">"^0.1.12"</span>,</div><div class="line"><span class="string">"karma-firefox-launcher"</span>: <span class="string">"^0.1.6"</span>,</div><div class="line"><span class="string">"karma-jasmine"</span>: <span class="string">"^0.3.5"</span>,</div><div class="line"><span class="string">"karma-junit-reporter"</span>: <span class="string">"^0.2.2"</span>,</div><div class="line"><span class="string">"protractor"</span>: <span class="string">"^2.1.0"</span></div></pre></td></tr></table></figure></p>
 <h1 id="karma-conf-js"><a href="#karma-conf-js" class="headerlink" title="karma.conf.js"></a>karma.conf.js</h1><p>Configuration for karma:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">config</span>)</span>&#123;</div><div class="line">  config.set(&#123;</div><div class="line"></div><div class="line">    <span class="attr">basePath</span> : <span class="string">'./'</span>,</div><div class="line"></div><div class="line">    <span class="attr">files</span> : [</div><div class="line">      <span class="string">'www/bower_components/angular/angular.js'</span>,</div><div class="line">      <span class="string">'www/bower_components/angular-ui-router/release/angular-ui-router.js'</span>,</div><div class="line">      <span class="string">'www/bower_components/angular-mocks/angular-mocks.js'</span>,</div><div class="line">      <span class="string">'www/bower_components/jquery/dist/jquery.js'</span>,</div><div class="line">      <span class="comment">//all other lib dependencies</span></div><div class="line">      <span class="string">'www/app.gen.js'</span>, <span class="comment">// app js file &lt;- generated by browserfi</span></div><div class="line">      <span class="string">'www/app/**/test_*.js'</span> <span class="comment">// all tests file</span></div><div class="line">    ],</div><div class="line"></div><div class="line">    <span class="attr">autoWatch</span> : <span class="literal">true</span>,</div><div class="line"></div><div class="line">    <span class="attr">frameworks</span>: [<span class="string">'jasmine'</span>],</div><div class="line"></div><div class="line">    <span class="attr">browsers</span> : [<span class="string">'Chrome'</span>],</div><div class="line"></div><div class="line">    <span class="attr">plugins</span> : [</div><div class="line">            <span class="string">'karma-chrome-launcher'</span>,</div><div class="line">            <span class="string">'karma-firefox-launcher'</span>,</div><div class="line">            <span class="string">'karma-jasmine'</span>,</div><div class="line">            <span class="string">'karma-junit-reporter'</span></div><div class="line">            ],</div><div class="line"></div><div class="line">    <span class="attr">junitReporter</span> : &#123;</div><div class="line">      <span class="attr">outputFile</span>: <span class="string">'test_out/unit.xml'</span>,</div><div class="line">      <span class="attr">suite</span>: <span class="string">'unit'</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>Put this file at root of project.</p>
 <h1 id="Run-test"><a href="#Run-test" class="headerlink" title="Run test"></a>Run test</h1><ol>
@@ -709,47 +737,6 @@
       <category term="html" scheme="http://keyangxiang.com/tags/html/"/>
     
       <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Move to Hexo</title>
-    <link href="http://keyangxiang.com/2015/11/11/move-to-hexo-blog/"/>
-    <id>http://keyangxiang.com/2015/11/11/move-to-hexo-blog/</id>
-    <published>2015-11-11T22:39:31.000Z</published>
-    <updated>2016-01-10T13:47:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Today, I moved my blog from Wordpress to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. I use github.io to host the blog.</p>
-<p>The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.</p>
-<p>Hexo is a very powerful static content generator which converts MarkDown posts to Html.</p>
-<a id="more"></a>
-<p>To install Hexo, simply:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div><div class="line">hex init  <span class="comment">#create a new blog in current folder</span></div><div class="line">npm install . <span class="comment">#install dependencies</span></div></pre></td></tr></table></figure>
-<p>To serve content locally:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo serve</div></pre></td></tr></table></figure>
-<p>To generate static content:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
-<p>To deploy to github:</p>
-<ol>
-<li>open _config.yml</li>
-<li>add deploy section:</li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> &lt;your github.io repo<span class="string">&gt;</span></div><div class="line"><span class="attr">  branch:</span> master</div></pre></td></tr></table></figure>
-<ol>
-<li>then run:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy -g</div></pre></td></tr></table></figure>
-<p>There are still a lot of powerful function in Hexo. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">here</a> for more details.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Today, I moved my blog from Wordpress to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;. I use github.io to host the blog.&lt;/p&gt;
-&lt;p&gt;The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.&lt;/p&gt;
-&lt;p&gt;Hexo is a very powerful static content generator which converts MarkDown posts to Html.&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   

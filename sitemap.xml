@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://keyangxiang.com/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/</loc>
+    
+    <lastmod>2017-09-01T22:49:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://keyangxiang.com/index.html</loc>
+    
+    <lastmod>2017-08-17T22:13:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://keyangxiang.com/2017/08/17/Using-service-worker-enables-web-app-offline-usage/</loc>
     
     <lastmod>2017-08-17T21:57:11.000Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://keyangxiang.com/assets/css/home.css</loc>
     
     <lastmod>2017-08-16T23:43:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://keyangxiang.com/index.html</loc>
-    
-    <lastmod>2017-08-16T23:27:57.000Z</lastmod>
     
   </url>
   

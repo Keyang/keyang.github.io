@@ -5,18 +5,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Move to Hexo | Keyang&#39;s Blog</title>
+  <title>Ajax (XHR) download binary content as Blob | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog. The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
+  <meta name="description" content="Using XMLHTTPRequest (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as ArrayBuffer or Blob). This">
+<meta name="keywords" content="web,js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Move to Hexo">
-<meta property="og:url" content="http://keyangxiang.com/2015/11/11/move-to-hexo-blog/index.html">
+<meta property="og:title" content="Ajax (XHR) download binary content as Blob">
+<meta property="og:url" content="http://keyangxiang.com/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
-<meta property="og:description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog. The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
-<meta property="og:updated_time" content="2016-01-10T13:47:15.000Z">
+<meta property="og:description" content="Using XMLHTTPRequest (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as ArrayBuffer or Blob). This">
+<meta property="og:updated_time" content="2017-09-01T22:49:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Move to Hexo">
-<meta name="twitter:description" content="Today, I moved my blog from Wordpress to Hexo. I use github.io to host the blog. The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.">
+<meta name="twitter:title" content="Ajax (XHR) download binary content as Blob">
+<meta name="twitter:description" content="Using XMLHTTPRequest (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as ArrayBuffer or Blob). This">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -201,11 +202,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-move-to-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HTML5-XHR-download-binary-content-as-Blob" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/11/move-to-hexo-blog/" class="article-date">
-  	<time datetime="2015-11-11T22:39:31.000Z" itemprop="datePublished">2015-11-11</time>
+      <a href="/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/" class="article-date">
+  	<time datetime="2017-09-01T22:32:13.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     </div>
   
@@ -218,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Move to Hexo
+      Ajax (XHR) download binary content as Blob
     </h1>
   
 
@@ -226,6 +227,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -234,27 +239,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Today, I moved my blog from Wordpress to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. I use github.io to host the blog.</p>
-<p>The reason I choose Hexo not Jekyll mainly is I am more familiar with Node.js than Ruby so I can write plugins easily.</p>
-<p>Hexo is a very powerful static content generator which converts MarkDown posts to Html.</p>
+        <p>Using <code>XMLHTTPRequest</code> (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as <code>ArrayBuffer</code> or <code>Blob</code>). This post will go through how to achieve it with <code>XMLHTTPRequest</code> and <code>jQuery</code>.</p>
 <a id="more"></a>
-<p>To install Hexo, simply:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div><div class="line">hex init  <span class="comment">#create a new blog in current folder</span></div><div class="line">npm install . <span class="comment">#install dependencies</span></div></pre></td></tr></table></figure>
-<p>To serve content locally:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo serve</div></pre></td></tr></table></figure>
-<p>To generate static content:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
-<p>To deploy to github:</p>
-<ol>
-<li>open _config.yml</li>
-<li>add deploy section:</li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> &lt;your github.io repo<span class="string">&gt;</span></div><div class="line"><span class="attr">  branch:</span> master</div></pre></td></tr></table></figure>
-<ol>
-<li>then run:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy -g</div></pre></td></tr></table></figure>
-<p>There are still a lot of powerful function in Hexo. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">here</a> for more details.</p>
+<h1 id="XMLHTTPRequest"><a href="#XMLHTTPRequest" class="headerlink" title="XMLHTTPRequest"></a>XMLHTTPRequest</h1><p>For <code>XMLHTTPRequest</code>, just simply setup the <code>responseType</code> of <code>XHR</code> instance to either <code>arraybuffer</code> or <code>blob</code>. Example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr=<span class="keyword">new</span> XMLHTTPRequest();</div><div class="line">xhr.open(<span class="string">"GET"</span>, url, <span class="literal">true</span>);</div><div class="line"><span class="comment">//Now set response type</span></div><div class="line">xhr.responseType = <span class="string">'arraybuffer'</span>;</div><div class="line">xhr.addEventListener(<span class="string">'load'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (xhr.status === <span class="number">200</span>)&#123;</div><div class="line">    <span class="built_in">console</span>.log(xhr.response) <span class="comment">// ArrayBuffer</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span> Blob([xhr.response])) <span class="comment">// Blob</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+<h1 id="jQuery-Ajax-with-arraybuffer-or-blob"><a href="#jQuery-Ajax-with-arraybuffer-or-blob" class="headerlink" title="jQuery Ajax with arraybuffer or blob"></a>jQuery Ajax with arraybuffer or blob</h1><p><code>$.ajax</code> does not support either <code>arraybuffer</code> or <code>blob</code> as its <code>dataType</code>. Thus we need write a <code>beforeSend</code> handler:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//setup ajax</span></div><div class="line">$.ajaxSetup(&#123;</div><div class="line">  <span class="attr">beforeSend</span>:<span class="function"><span class="keyword">function</span>(<span class="params">jqXHR,settings</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (settings.dataType === <span class="string">'binary'</span>)&#123;</div><div class="line">      settings.xhr().responseType=<span class="string">'arraybuffer'</span>;</div><div class="line">      settings.processData=<span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//use ajax now</span></div><div class="line">$.ajax(&#123;</div><div class="line">  <span class="attr">url</span>:url,</div><div class="line">  <span class="attr">dataType</span>:<span class="string">"binary"</span>,</div><div class="line">  <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(data); <span class="comment">//ArrayBuffer</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span> Blob([data])) <span class="comment">// Blob</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -264,18 +254,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/01/12/textarea-quick-hack/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          textarea quick hack
-        
-      </div>
-    </a>
   
-  
-    <a href="/2012/03/27/csv2json/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Online CSV to JSON Convert</div>
+    <a href="/2017/08/17/Using-service-worker-enables-web-app-offline-usage/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Using service worker enables web app offline usage</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
