@@ -283,9 +283,9 @@
       <category term="tech" scheme="http://keyangxiang.com/categories/tech/"/>
     
     
-      <category term="linux" scheme="http://keyangxiang.com/tags/linux/"/>
-    
       <category term="cli" scheme="http://keyangxiang.com/tags/cli/"/>
+    
+      <category term="linux" scheme="http://keyangxiang.com/tags/linux/"/>
     
   </entry>
   
