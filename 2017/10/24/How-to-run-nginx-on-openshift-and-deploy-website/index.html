@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Mongodb two phase lock example (with mongoose) | Keyang&#39;s Blog</title>
+  <title>How to run nginx on openshift and deploy website? | Keyang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mongodb needs extra collection for two phase lock.123456789var transactionSchema=new Schema(&amp;#123;  lastModified:Date,  status:&amp;#123;    type:String,    default:&quot;new&quot;,    index:true  &amp;#125;,  data:&amp;#1">
-<meta name="keywords" content="mongodb">
+  <meta name="description" content="Although Openshift is able to use docker images, it has much more restrictions on permissions. Thus not all docker images can work straight on Openshift. Unfortunately, the official nginx docker image">
+<meta name="keywords" content="openshift,nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mongodb two phase lock example (with mongoose)">
-<meta property="og:url" content="http://keyangxiang.com/2016/03/17/Mongodb-two-phase-lock-example/index.html">
+<meta property="og:title" content="How to run nginx on openshift and deploy website?">
+<meta property="og:url" content="http://keyangxiang.com/2017/10/24/How-to-run-nginx-on-openshift-and-deploy-website/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
-<meta property="og:description" content="Mongodb needs extra collection for two phase lock.123456789var transactionSchema=new Schema(&amp;#123;  lastModified:Date,  status:&amp;#123;    type:String,    default:&quot;new&quot;,    index:true  &amp;#125;,  data:&amp;#1">
-<meta property="og:updated_time" content="2016-03-17T23:12:59.000Z">
+<meta property="og:description" content="Although Openshift is able to use docker images, it has much more restrictions on permissions. Thus not all docker images can work straight on Openshift. Unfortunately, the official nginx docker image">
+<meta property="og:updated_time" content="2017-10-24T22:07:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mongodb two phase lock example (with mongoose)">
-<meta name="twitter:description" content="Mongodb needs extra collection for two phase lock.123456789var transactionSchema=new Schema(&amp;#123;  lastModified:Date,  status:&amp;#123;    type:String,    default:&quot;new&quot;,    index:true  &amp;#125;,  data:&amp;#1">
+<meta name="twitter:title" content="How to run nginx on openshift and deploy website?">
+<meta name="twitter:description" content="Although Openshift is able to use docker images, it has much more restrictions on permissions. Thus not all docker images can work straight on Openshift. Unfortunately, the official nginx docker image">
   
     <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-Mongodb-two-phase-lock-example" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-How-to-run-nginx-on-openshift-and-deploy-website" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/17/Mongodb-two-phase-lock-example/" class="article-date">
-  	<time datetime="2016-03-17T22:34:09.000Z" itemprop="datePublished">2016-03-17</time>
+      <a href="/2017/10/24/How-to-run-nginx-on-openshift-and-deploy-website/" class="article-date">
+  	<time datetime="2017-10-24T21:04:14.000Z" itemprop="datePublished">2017-10-24</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Mongodb two phase lock example (with mongoose)
+      How to run nginx on openshift and deploy website?
     </h1>
   
 
@@ -228,14 +228,10 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openshift/">openshift</a></li></ul>
 	</div>
 
         
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/tech/">tech</a>
-	</div>
-
 
         <div class="clearfix"></div>
       </div>
@@ -243,23 +239,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">  <span class="attr">lastModified</span>:<span class="built_in">Date</span>,</div><div class="line">  <span class="attr">status</span>:&#123;</div><div class="line">    <span class="attr">type</span>:<span class="built_in">String</span>,</div><div class="line">    <span class="attr">default</span>:<span class="string">"new"</span>,</div><div class="line">    <span class="attr">index</span>:<span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">data</span>:&#123;&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code><br><a id="more"></a></p>
-<h2 id="New"><a href="#New" class="headerlink" title="New"></a>New</h2><p>The transaction is just created and waiting to be started.<br>Once the transaction is created, the <code>data</code> field would contain all information. e.g. source, destination, cash amount.</p>
-<h2 id="Pending"><a href="#Pending" class="headerlink" title="Pending"></a>Pending</h2><p>The transaction has started but some collection(s) have not finished its operation.</p>
-<p>When process pending transaction, there are always a series of operations on all related collections and documents. For example, apply a promotion code to an account needs change both promotion collection and user account collection. The changes can happen in parallel or sequence which do not matter.</p>
-<p>The only important thing is the operation will only affect documents that has not this pending transaction and the operation on the document is done with pushing the pending transaction to the doc.</p>
-<p>This will need following design:</p>
-<ul>
-<li>the collection should have a <code>pendingTransaction</code> field which record all current pending transactions on a document.</li>
-<li>Developer should use <code>update</code> method to update target fields and the pendingTransaction <strong>at the same time</strong>.</li>
-</ul>
-<p>Example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserSchema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">    <span class="attr">money</span>:<span class="built_in">Number</span>,</div><div class="line">    <span class="attr">pendingTransaction</span>:[ObjectId]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//Process transaction</span></div><div class="line"><span class="keyword">var</span> transaction;</div><div class="line">UserModel.findAndUpdate(&#123; <span class="comment">//the query find specified user and gurantee it has not been applied before</span></div><div class="line">  $ne:&#123;</div><div class="line">    <span class="attr">pendingTransaction</span>:transaction._id</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">_id</span>:transaction.data.targetUser</div><div class="line">&#125;,&#123; <span class="comment">//update to increase the money and push the transaction to pendingTransaction to mark current user has been applied with the transaction so next application will skip this user account.</span></div><div class="line">  $push:&#123;</div><div class="line">    <span class="attr">pendingTransaction</span>:transaction._id</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">$inc</span>:&#123;</div><div class="line">    <span class="attr">money</span>:transaction.data.amount</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>After all operations finished, transaction will be marked as <code>applied</code>. If any problems happens during the transaction (e.g. system crashes), the next run through the transaction will ‘skip’ the documents that already being applied and continue applying other operations until the transaction is marked as <code>applied</code>.</p>
-<h2 id="Applied"><a href="#Applied" class="headerlink" title="Applied"></a>Applied</h2><p>The transaction has made modifications to all related documents. This stage is to clear the pendingTransaction field of those documents ($pull the transaction id from the field.)</p>
-<h2 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h2><p>The transaction has completed</p>
-<h1 id="Roll-Back"><a href="#Roll-Back" class="headerlink" title="Roll Back"></a>Roll Back</h1><p>The lastModified field in transaction can be used to judge if a transaction needs to roll-back. (e.g. the lastModified was 5 mins ago but still not successful)</p>
-<p>Only <code>pending</code> transactions need to be rolled-back as it means there are unfinished changes and some changes have been applied. The roll-back operation is a reverse operation of application operation. e.g. for user document with transaction id in pendingTransaction, pull transaction id from pendingTransaction and decrease the money amount.</p>
+        <p>Although Openshift is able to use docker images, it has much more restrictions on permissions. Thus not all docker images can work straight on Openshift. Unfortunately, the official <code>nginx</code> docker image does not work on openshift.</p>
+<p>In this post, I will simply go through how to run <a href="https://access.redhat.com/containers/?tab=overview&amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="external">this</a> Official RedHat nginx image on Openshift and deploy a website onto it.</p>
+<a id="more"></a>
+<p>So, have your <a href="https://developers.openshift.com/managing-your-applications/client-tools.html" target="_blank" rel="external">openshift cli tool (oc)</a> ready, let’s get started.</p>
+<h1 id="Step-1-Import-Image"><a href="#Step-1-Import-Image" class="headerlink" title="Step 1 - Import Image"></a>Step 1 - Import Image</h1><p>First, we need to import above image to our project as an image stream.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oc import-image registry.access.redhat.com/rhscl/nginx-112-rhel7:latest --confirm=<span class="literal">true</span></div></pre></td></tr></table></figure>
+<p>The openshift will pull the image from the registry and register it locally as builder image which will allow building images along with source code of website.</p>
+<h1 id="Step-2-Create-Build-Config-Deploy-website-source-code"><a href="#Step-2-Create-Build-Config-Deploy-website-source-code" class="headerlink" title="Step 2 - Create Build Config / Deploy website source code"></a>Step 2 - Create Build Config / Deploy website source code</h1><p>Before this step, you need to upload the whole website to a git repo accessible from Openshift instance. If you want to build from local folder, keep reading.</p>
+<p>The image we imported in last step was a builder image – which cannot run without source code. This is <a href="https://docs.openshift.com/enterprise/3.2/architecture/core_concepts/builds_and_image_streams.html#source-build" target="_blank" rel="external">S2I</a> concept of Openshift. Thus before creating our nginx app, we need create a build config which builds the builder image with provided source code to a new image. </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#oc new-build [BuilderImage]~[Source Code Repo]</span></div><div class="line">oc new-build nginx-112-rhel7~https://github.com/Keyang/keyang.github.io.git --name=myapp</div></pre></td></tr></table></figure>
+<p>the <code>--name</code> parameter gives a name for the build config for convenience.</p>
+<p>Then you can to start the build manually:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oc start-build myapp</div></pre></td></tr></table></figure>
+<p>The command above will pull the code from repo and builder image will <code>assemble</code> the code into new built image for run.</p>
+<h2 id="Build-Local-Source"><a href="#Build-Local-Source" class="headerlink" title="Build Local Source"></a>Build Local Source</h2><p>If you have no accessible git repo, it is able to build againt local source.</p>
+<p>Slightly different, create a new build on current folder</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#oc new-build [BuilderImage]~[Source Code Repo]</span></div><div class="line">oc new-build nginx-112-rhel7~./ --name=myapp</div></pre></td></tr></table></figure>
+<p>This will not actually upload the source code from current folder to Openshift but just create a build config. Thus we need to start the build with extra parameters:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oc start-build myapp --from-dir=./</div></pre></td></tr></table></figure>
+<p>with <code>--from-dir</code> param, <code>oc</code> will upload content of current directory and builder image will <code>assemble</code> the code.</p>
+<h1 id="Step-3-Create-App-Expose-App"><a href="#Step-3-Create-App-Expose-App" class="headerlink" title="Step 3 - Create App / Expose App"></a>Step 3 - Create App / Expose App</h1><p>Once the image <code>myapp</code> being built, we could create an app from it.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oc new-app myapp --name=myapp</div></pre></td></tr></table></figure>
+<p>This will create corresponding <code>deployment config</code> and <code>service</code>. Once app is created, we could expose it through <code>router</code>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oc expose svc/myapp</div></pre></td></tr></table></figure>
+<p>Once it is exposed, your nginx server and your website should be accessible with the route associated.</p>
 
       
     </div>
@@ -269,18 +273,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/20/mongoosejs-setters-schema/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          mongoosejs: setters schema
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/17/wordpress-reverse-proxy-headers/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">wordpress reverse proxy headers</div>
+    <a href="/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ajax (XHR) download binary content as Blob</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
