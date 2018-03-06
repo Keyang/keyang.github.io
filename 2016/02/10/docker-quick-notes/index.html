@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Docker Quick Notes | Keyang&#39;s Blog</title>
+  <meta name="description" content="null" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="What is Docker and why?See here In short:  Docker is a container tech based on LXC Much less resource than VM by sharing cores But provide full run-time isolation It makes system deployment much faste">
 <meta name="keywords" content="docker">
@@ -14,236 +19,160 @@
 <meta property="og:url" content="http://keyangxiang.com/2016/02/10/docker-quick-notes/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
 <meta property="og:description" content="What is Docker and why?See here In short:  Docker is a container tech based on LXC Much less resource than VM by sharing cores But provide full run-time isolation It makes system deployment much faste">
-<meta property="og:updated_time" content="2016-03-30T17:32:51.000Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-12-23T00:22:10.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker Quick Notes">
 <meta name="twitter:description" content="What is Docker and why?See here In short:  Docker is a container tech based on LXC Much less resource than VM by sharing cores But provide full run-time isolation It makes system deployment much faste">
-  
-    <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css">
- <script src="/js/require-jquery.js"></script>
- <script type="application/ld+json">
-  {
-    "@context" : "http://schema.org",
-    "@type" : "WebSite",
-    "name" : "Keyang&#39;s Blog",
-    "url" : "http://keyangxiang.com"
-  }
-</script>
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29275086-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<script type="application/ld+json">
-  { "@context" : "http://schema.org",
-    "@type" : "Organization",
-    "name" : "Keyang Xiang",
-    "url" : "http://keyangxiang.com",
-    "logo": "https://avatars3.githubusercontent.com/u/1092855",
-    "sameAs" : [ "" ]
-  }
-</script>
-
+    gtag('config', 'UA-29275086-1');
+  </script>
 </head>
 
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="https://avatars3.githubusercontent.com/u/1092855" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Keyang Xiang</a></h1>
-		</hgroup>
-
-		
-		<p class="header-subtitle">A home of Javascript</p>
-		
-		<script>
-  (function() {
-    var cx = '008262195500319463689:yox48pfjzha';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						
-					</div>
-
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">Home</a></li>
-				        
-							<li><a href="/blog">Blogs</a></li>
-				        
-							<li><a href="/archives">Articles</a></li>
-				        
-							<li><a href="/csvtojson">csvtojson</a></li>
-				        
-							<li><a href="/simplepsd">Simple PSD</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/keyang" title="github">github</a>
-					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/cli/" style="font-size: 10px;">cli</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/macosx-trick/" style="font-size: 10px;">macosx trick</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openshift/" style="font-size: 10px;">openshift</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/raspberrypi/" style="font-size: 10px;">raspberrypi</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/web/" style="font-size: 15px;">web</a> <a href="/tags/web-javascript/" style="font-size: 10px;">web, javascript</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
-					</div>
-				</section>
-				
-
-				
-
-				
-			</div>
-		</div>
-	</header>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Keyang Xiang</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="https://avatars3.githubusercontent.com/u/1092855" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Keyang Xiang</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">A home of Javascript</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">Home</a></li>
-		        
-					<li><a href="/blog">Blogs</a></li>
-		        
-					<li><a href="/archives">Articles</a></li>
-		        
-					<li><a href="/csvtojson">csvtojson</a></li>
-		        
-					<li><a href="/simplepsd">Simple PSD</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Keyang's Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
 					
-						<a class="github" target="_blank" href="https://github.com/keyang" title="github">github</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
+						<li>
+							<a target="_self" class='flat-box nav-home' href='/'>
+								HOME
+							</a>
+						</li>
+					
+						<li>
+							<a target="_self" class='flat-box nav-csvtojson' href='/csvtojson'>
+								CSVTOJSON
+							</a>
+						</li>
+					
+						<li>
+							<a target="_blank" class='flat-box nav-psdetch' href='https://psdetch.com'>
+								PSDETCH
+							</a>
+						</li>
+					
+						<li>
+							<a target="_blank" class='flat-box nav-uml_editor' href='https://uml.keyangxiang.com'>
+								UML Editor
+							</a>
+						</li>
+					
+						<li>
+							<a target="_self" class='flat-box nav-archives' href='/archives'>
+								ARCHIVES
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
 				</div>
-			</nav>
-		</header>				
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
 	</div>
-</nav>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a target="_self" href="/" class="nav-home nav">
+				HOME
+			</a>
+		
+			<a target="_self" href="/csvtojson" class="nav-csvtojson nav">
+				CSVTOJSON
+			</a>
+		
+			<a target="_blank" href="https://psdetch.com" class="nav-psdetch nav">
+				PSDETCH
+			</a>
+		
+			<a target="_blank" href="https://uml.keyangxiang.com" class="nav-uml_editor nav">
+				UML Editor
+			</a>
+		
+			<a target="_self" href="/archives" class="nav-archives nav">
+				ARCHIVES
+			</a>
+		
+	</nav>
+</aside>
 
-      <div class="body-wrap"><article id="post-docker-quick-notes" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/10/docker-quick-notes/" class="article-date">
-  	<time datetime="2016-02-10T00:00:00.000Z" itemprop="datePublished">2016-02-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Docker Quick Notes
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
-	</div>
-
-        
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/tech/">tech</a>
-	</div>
-
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="What-is-Docker-and-why"><a href="#What-is-Docker-and-why" class="headerlink" title="What is Docker and why?"></a>What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker" target="_blank" rel="external">See here</a></p>
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-docker-quick-notes"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2016/02/10/docker-quick-notes/">
+    	Docker Quick Notes
+    </a>
+  </h2>
+	<time>
+	  Feb 10, 2016
+	</time>
+	
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#What-is-Docker-and-why"><span class="toc-number">1.</span> <span class="toc-text">What is Docker and why?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-Engine"><span class="toc-number">2.</span> <span class="toc-text">Docker Engine</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#General"><span class="toc-number">2.1.</span> <span class="toc-text">General</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><span class="toc-number">2.2.</span> <span class="toc-text">Cannot connect to the Docker daemon. Is the docker daemon running on this host?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tips"><span class="toc-number">2.3.</span> <span class="toc-text">Tips</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-a-docker-image"><span class="toc-number">2.3.1.</span> <span class="toc-text">Run a docker image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-a-one-time-command-in-a-docker-image"><span class="toc-number">2.3.2.</span> <span class="toc-text">Run a one-time command in a docker image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-a-command-in-a-running-docker-container"><span class="toc-number">2.3.3.</span> <span class="toc-text">Run a command in a running docker container</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-Compose"><span class="toc-number">3.</span> <span class="toc-text">Docker Compose</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wordpress-Example-docker-compose-yaml"><span class="toc-number">3.1.</span> <span class="toc-text">Wordpress Example (docker-compose.yaml):</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network-amp-amp-Links"><span class="toc-number">3.2.</span> <span class="toc-text">Network &amp;&amp; Links</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-Machine"><span class="toc-number">4.</span> <span class="toc-text">Docker Machine</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-provision-on-Digital-Ocean"><span class="toc-number">4.1.</span> <span class="toc-text">Example: provision on Digital Ocean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Point-to-a-machine"><span class="toc-number">4.2.</span> <span class="toc-text">Point to a machine</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Backup-your-machines"><span class="toc-number">4.3.</span> <span class="toc-text">Backup your machines !!!</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-Swarm"><span class="toc-number">5.</span> <span class="toc-text">Docker Swarm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Is-it-completely-transparent"><span class="toc-number">5.1.</span> <span class="toc-text">Is it completely transparent?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discovery"><span class="toc-number">5.2.</span> <span class="toc-text">Discovery</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Token"><span class="toc-number">5.2.1.</span> <span class="toc-text">Token</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swarm-Manager-TLS"><span class="toc-number">5.3.</span> <span class="toc-text">Swarm Manager TLS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Run-container-on-specific-Swarm-agent"><span class="toc-number">5.4.</span> <span class="toc-text">Run container on specific Swarm agent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Restart-policy"><span class="toc-number">5.5.</span> <span class="toc-text">Restart policy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#give-a-name"><span class="toc-number">5.6.</span> <span class="toc-text">give a name</span></a></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<h1 id="What-is-Docker-and-why"><a href="#What-is-Docker-and-why" class="headerlink" title="What is Docker and why?"></a>What is Docker and why?</h1><p><a href="https://www.docker.com/what-docker" target="_blank" rel="noopener">See here</a></p>
 <p>In short:</p>
 <ul>
 <li>Docker is a container tech based on LXC</li>
@@ -252,7 +181,7 @@
 <li>It makes system deployment much faster</li>
 <li>and easier system operation</li>
 </ul>
-<p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases" target="_blank" rel="external">use cases here</a><br><a id="more"></a></p>
+<p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">use cases here</a><br><a id="more"></a></p>
 <h1 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="Docker Engine"></a>Docker Engine</h1><h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><p>Docker engine is a command line which interacts with docker daemon to perform RESTful web requests like pulling images, spawn containers etc.</p>
 <p>Once docker being installed successfully, it is able to use <code>docker</code> in command line to run docker engine.</p>
 <h2 id="Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host"><a href="#Cannot-connect-to-the-Docker-daemon-Is-the-docker-daemon-running-on-this-host" class="headerlink" title="Cannot connect to the Docker daemon. Is the docker daemon running on this host?"></a>Cannot connect to the Docker daemon. Is the docker daemon running on this host?</h2><p>This error is given if <code>docker</code> cannot connect to $DOCKER_HOST.</p>
@@ -260,22 +189,22 @@
 <ul>
 <li>DOCKER_HOST: The docker daemon host. It could be something like “tcp://xxx.xxx.xxx.xxx:2376” depends on daemon configuration.</li>
 <li>DOCKER_TLS_VERIFY: Whether to verify the connection is TLS or not. It could be “1” – TLS only or “0” – TLS disabled. For production “1” is a must be.</li>
-<li>DOCKER_CERT_PATH: If TLS is enabled, where to find related certs. It points to a folder containing current client private key, certificate and a trusted CA certificate. (ca / cert / key).pem. For more information about TLS, please see <a href="https://docs.docker.com/engine/security/https/" target="_blank" rel="external">here</a>.</li>
+<li>DOCKER_CERT_PATH: If TLS is enabled, where to find related certs. It points to a folder containing current client private key, certificate and a trusted CA certificate. (ca / cert / key).pem. For more information about TLS, please see <a href="https://docs.docker.com/engine/security/https/" target="_blank" rel="noopener">here</a>.</li>
 </ul>
 <p>To switch between Docker daemon instances, change the 3 env vars above to correct ones. With help of <a href="#docker-machine">Docker Machine</a>, we do not need to do this manually.</p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="Run-a-docker-image"><a href="#Run-a-docker-image" class="headerlink" title="Run a docker image"></a>Run a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -itd &lt;image name&gt;</div><div class="line"><span class="comment">#e.g. docker run -itd nginx</span></div></pre></td></tr></table></figure>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="Run-a-docker-image"><a href="#Run-a-docker-image" class="headerlink" title="Run a docker image"></a>Run a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd &lt;image name&gt;</span><br><span class="line"><span class="comment">#e.g. docker run -itd nginx</span></span><br></pre></td></tr></table></figure>
 <p>This command will pull the image from docker hub if image not existed and then run the default command of the image.</p>
 <ul>
 <li>-i: Keep STDIN open</li>
 <li>-t: Allocate a pseudo-TTY. This is essential for logs which directly write to stdout/stderr</li>
 <li>-d: Detached / run the image in background</li>
 </ul>
-<h3 id="Run-a-one-time-command-in-a-docker-image"><a href="#Run-a-one-time-command-in-a-docker-image" class="headerlink" title="Run a one-time command in a docker image"></a>Run a one-time command in a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -it --rm &lt;image name&gt; &lt;path to shell or bash&gt;</div><div class="line"><span class="comment">#e.g. docker run -it --rm nginx bash</span></div></pre></td></tr></table></figure>
+<h3 id="Run-a-one-time-command-in-a-docker-image"><a href="#Run-a-one-time-command-in-a-docker-image" class="headerlink" title="Run a one-time command in a docker image"></a>Run a one-time command in a docker image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm &lt;image name&gt; &lt;path to shell or bash&gt;</span><br><span class="line"><span class="comment">#e.g. docker run -it --rm nginx bash</span></span><br></pre></td></tr></table></figure>
 <p>This will promt a bash shell allowing typing commands. Typically using this to debug an image see if everything in Dockerfile is correct.</p>
 <ul>
 <li>–rm: Remove the container after container exited. Without it, the container will remain in container list <code>docker ps -a</code>.</li>
 </ul>
-<h3 id="Run-a-command-in-a-running-docker-container"><a href="#Run-a-command-in-a-running-docker-container" class="headerlink" title="Run a command in a running docker container"></a>Run a command in a running docker container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">exec</span> -it &lt;container name or <span class="built_in">hash</span>&gt; &lt;path to <span class="built_in">command</span>&gt;</div><div class="line"><span class="comment">#e.g. docker exec -it my_nginx_1 bash</span></div></pre></td></tr></table></figure>
+<h3 id="Run-a-command-in-a-running-docker-container"><a href="#Run-a-command-in-a-running-docker-container" class="headerlink" title="Run a command in a running docker container"></a>Run a command in a running docker container</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it &lt;container name or <span class="built_in">hash</span>&gt; &lt;path to <span class="built_in">command</span>&gt;</span><br><span class="line"><span class="comment">#e.g. docker exec -it my_nginx_1 bash</span></span><br></pre></td></tr></table></figure>
 <p>This will make the <strong>running</strong> containner to run the command provided. This is very useful to debug a running container.</p>
 <h1 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h1><p>Docker compose is a single configuration file containing multiple docker containers (services). It allows batching running / stopping.</p>
 <p>The power of docker compose is it gives very clear architecture of system:</p>
@@ -286,25 +215,25 @@
 <li>What ports have been exposed to public</li>
 <li>What environemnt has been configured to each service.</li>
 </ul>
-<h2 id="Wordpress-Example-docker-compose-yaml"><a href="#Wordpress-Example-docker-compose-yaml" class="headerlink" title="Wordpress Example (docker-compose.yaml):"></a>Wordpress Example (docker-compose.yaml):</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="attr">version:</span> <span class="string">'2'</span></div><div class="line"><span class="attr">services:</span></div><div class="line"><span class="attr">  nginx:</span></div><div class="line"><span class="attr">      image:</span> nginx</div><div class="line"><span class="attr">      ports:</span></div><div class="line"><span class="bullet">        -</span> <span class="number">80</span>:<span class="number">80</span></div><div class="line"><span class="bullet">        -</span> <span class="number">443</span>:<span class="number">443</span></div><div class="line"><span class="attr">      links:</span></div><div class="line"><span class="bullet">        -</span>blog</div><div class="line"><span class="attr">      volumes:</span></div><div class="line"><span class="bullet">        -</span> /opt/www:/opt/www:ro</div><div class="line"><span class="bullet">        -</span> /opt/nginx:/etc/nginx/conf.d:ro</div><div class="line"><span class="attr">  blog:</span></div><div class="line"><span class="attr">    image:</span> wordpress</div><div class="line"><span class="attr">    links:</span></div><div class="line"><span class="bullet">      -</span> blog_db</div><div class="line"><span class="attr">    environment:</span></div><div class="line"><span class="bullet">      -</span> WORDPRESS_DB_HOST=blog_db</div><div class="line"><span class="bullet">      -</span> WORDPRESS_DB_PASSWORD=xxxxxx</div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">      -</span> /opt/www/blog:/var/www/html</div><div class="line"></div><div class="line"><span class="attr">  blog_db:</span></div><div class="line"><span class="attr">    image:</span> mariadb</div><div class="line"><span class="attr">    environment:</span></div><div class="line"><span class="bullet">      -</span> MYSQL_ROOT_PASSWORD=xxxxxx</div><div class="line"><span class="attr">    volumes:</span></div><div class="line"><span class="bullet">      -</span> /opt/data/blog:/var/lib/mysql:rw</div></pre></td></tr></table></figure>
+<h2 id="Wordpress-Example-docker-compose-yaml"><a href="#Wordpress-Example-docker-compose-yaml" class="headerlink" title="Wordpress Example (docker-compose.yaml):"></a>Wordpress Example (docker-compose.yaml):</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'2'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  nginx:</span></span><br><span class="line"><span class="attr">      image:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">      ports:</span></span><br><span class="line"><span class="bullet">        -</span> <span class="number">80</span><span class="string">:80</span></span><br><span class="line"><span class="bullet">        -</span> <span class="number">443</span><span class="string">:443</span></span><br><span class="line"><span class="attr">      links:</span></span><br><span class="line"><span class="bullet">        -</span><span class="string">blog</span></span><br><span class="line"><span class="attr">      volumes:</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">/opt/www:/opt/www:ro</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">/opt/nginx:/etc/nginx/conf.d:ro</span></span><br><span class="line"><span class="attr">  blog:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">wordpress</span></span><br><span class="line"><span class="attr">    links:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">blog_db</span></span><br><span class="line"><span class="attr">    environment:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">WORDPRESS_DB_HOST=blog_db</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">WORDPRESS_DB_PASSWORD=xxxxxx</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">/opt/www/blog:/var/www/html</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  blog_db:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">mariadb</span></span><br><span class="line"><span class="attr">    environment:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">MYSQL_ROOT_PASSWORD=xxxxxx</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">/opt/data/blog:/var/lib/mysql:rw</span></span><br></pre></td></tr></table></figure>
 <p>The example above show the cluster has 3 parts which compose a wordpress blog system.</p>
-<p>For more about docker compose. See <a href="https://docs.docker.com/compose/overview/" target="_blank" rel="external">here</a>.</p>
+<p>For more about docker compose. See <a href="https://docs.docker.com/compose/overview/" target="_blank" rel="noopener">here</a>.</p>
 <h2 id="Network-amp-amp-Links"><a href="#Network-amp-amp-Links" class="headerlink" title="Network &amp;&amp; Links"></a>Network &amp;&amp; Links</h2><p>Docker compose will automatically create a overlay network which has all services registered under same network. That means all service can access each other through its name. In the example, it is able to <code>ping blog</code> from <em>nginx</em> container.</p>
 <h1 id="Docker-Machine"><a href="#Docker-Machine" class="headerlink" title="Docker Machine"></a>Docker Machine</h1><p>Docker machine is a VM level tool. It helps provision a bare VM (or non-bare VM) to be docker ready.</p>
 <p>It is highly recommended to provision Docker daemon using this way on your own VM.</p>
 <p>It has a bunch of built-in drivers like digital ocean, aws etc. However, as long as you got SSH access and root account, it should not be a big problem.</p>
-<h2 id="Example-provision-on-Digital-Ocean"><a href="#Example-provision-on-Digital-Ocean" class="headerlink" title="Example: provision on Digital Ocean"></a>Example: provision on Digital Ocean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker-machine create <span class="_">-d</span> <span class="string">"digitalocean"</span> --digitalocean-access-token <span class="string">"&lt;digitalocean api token&gt;"</span> -digitalocean-region <span class="string">"lon1"</span> my-dm</div></pre></td></tr></table></figure>
+<h2 id="Example-provision-on-Digital-Ocean"><a href="#Example-provision-on-Digital-Ocean" class="headerlink" title="Example: provision on Digital Ocean"></a>Example: provision on Digital Ocean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-machine create -d <span class="string">"digitalocean"</span> --digitalocean-access-token <span class="string">"&lt;digitalocean api token&gt;"</span> -digitalocean-region <span class="string">"lon1"</span> my-dm</span><br></pre></td></tr></table></figure>
 <ul>
-<li>-d: driver to use. See <a href="https://docs.docker.com/machine/drivers/" target="_blank" rel="external">here</a> for list of drivers.</li>
+<li>-d: driver to use. See <a href="https://docs.docker.com/machine/drivers/" target="_blank" rel="noopener">here</a> for list of drivers.</li>
 </ul>
 <p>Once it is finished. The new machine can be found with <code>docker-machine ps</code>.</p>
-<h2 id="Point-to-a-machine"><a href="#Point-to-a-machine" class="headerlink" title="Point to a machine"></a>Point to a machine</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> $(docker-machine env &lt;my-dm&gt;)</div></pre></td></tr></table></figure>
+<h2 id="Point-to-a-machine"><a href="#Point-to-a-machine" class="headerlink" title="Point to a machine"></a>Point to a machine</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> $(docker-machine env &lt;my-dm&gt;)</span><br></pre></td></tr></table></figure>
 <p>This command will set essential env vars for <a href="#docker-engine">docker engine</a>.</p>
 <h2 id="Backup-your-machines"><a href="#Backup-your-machines" class="headerlink" title="Backup your machines !!!"></a>Backup your machines !!!</h2><p>The docker-machine will use <home>/.docker/machine to store all your certs / configurations.<br>Backup it and protect it.</home></p>
 <h1 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="Docker Swarm"></a>Docker Swarm</h1><p>Docker swarm is an awesome concept that treats multiple docker daemons as one. This means you can horizontally scale your cluster without worrying about many changes in your DevOps progress.</p>
-<p>Docker swarm is another RESTful service layer which has exact same endpoints as Docker Daemon does. It has <a href="https://docs.docker.com/swarm/scheduler/strategy/" target="_blank" rel="external">builtin strategies</a> (like spread) to pick the actual node (server) to use.</p>
+<p>Docker swarm is another RESTful service layer which has exact same endpoints as Docker Daemon does. It has <a href="https://docs.docker.com/swarm/scheduler/strategy/" target="_blank" rel="noopener">builtin strategies</a> (like spread) to pick the actual node (server) to use.</p>
 <p>Docker engine 100% works with docker swarm service. Docker swarm is transparent to any docker engine.</p>
-<h2 id="Is-it-completely-transparent"><a href="#Is-it-completely-transparent" class="headerlink" title="Is it completely transparent?"></a>Is it completely transparent?</h2><p>No. There are still some configuration needed to make things work like network, volume mapping etc. With help of <a href="#docker-compose">Docker compose</a>, the swarm can be configured easily. See <a href="https://docs.docker.com/compose/swarm/" target="_blank" rel="external">here</a> for limitations with Docker Swarm.</p>
+<h2 id="Is-it-completely-transparent"><a href="#Is-it-completely-transparent" class="headerlink" title="Is it completely transparent?"></a>Is it completely transparent?</h2><p>No. There are still some configuration needed to make things work like network, volume mapping etc. With help of <a href="#docker-compose">Docker compose</a>, the swarm can be configured easily. See <a href="https://docs.docker.com/compose/swarm/" target="_blank" rel="noopener">here</a> for limitations with Docker Swarm.</p>
 <h2 id="Discovery"><a href="#Discovery" class="headerlink" title="Discovery"></a>Discovery</h2><p>Docker swarm depends on a discovery service which itself could be a docker service.<br>The swarm network and discovery service is de-centralised and clustered which means better availability.<br>Using <code>swarm join</code> will regiser itself to discovery service and swarm manager can then collect information from the discovery service.<br>It is able to use:</p>
 <ul>
 <li>token proto: for non production</li>
@@ -312,13 +241,13 @@
 <li>consul<br>and some other key-value stores.</li>
 </ul>
 <h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h3><p>token is hosted on docker.com. Typeically not used for prod.</p>
-<p>Generate a token:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="built_in">run</span> <span class="comment">--rm swarm create</span></div></pre></td></tr></table></figure></p>
+<p>Generate a token:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">run</span> <span class="comment">--rm swarm create</span></span><br></pre></td></tr></table></figure></p>
 <p>Then it is able to use <code>token://&lt;tokenID&gt;</code> as discovery service</p>
-<h2 id="Swarm-Manager-TLS"><a href="#Swarm-Manager-TLS" class="headerlink" title="Swarm Manager TLS"></a>Swarm Manager TLS</h2><p>As docker swarm manager needs to actively manage swarm agents, it needs have its own TLS certificates signed by same CA. Otherwise, swarm manager will not be able to talk to swarm agents.<br>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run <span class="_">-d</span> -p 3376:3376 -t -v /var/lib/boot2docker:/certs:ro swarm manage -H 0.0.0.0:3376 --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://123456789</div></pre></td></tr></table></figure></p>
-<h2 id="Run-container-on-specific-Swarm-agent"><a href="#Run-container-on-specific-Swarm-agent" class="headerlink" title="Run container on specific Swarm agent"></a>Run container on specific Swarm agent</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">environment:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">"constraint:node==node-1"</span></div></pre></td></tr></table></figure>
+<h2 id="Swarm-Manager-TLS"><a href="#Swarm-Manager-TLS" class="headerlink" title="Swarm Manager TLS"></a>Swarm Manager TLS</h2><p>As docker swarm manager needs to actively manage swarm agents, it needs have its own TLS certificates signed by same CA. Otherwise, swarm manager will not be able to talk to swarm agents.<br>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3376:3376 -t -v /var/lib/boot2docker:/certs:ro swarm manage -H 0.0.0.0:3376 --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/server.pem --tlskey=/certs/server-key.pem token://123456789</span><br></pre></td></tr></table></figure></p>
+<h2 id="Run-container-on-specific-Swarm-agent"><a href="#Run-container-on-specific-Swarm-agent" class="headerlink" title="Run container on specific Swarm agent"></a>Run container on specific Swarm agent</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">environment:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">"constraint:node==node-1"</span></span><br></pre></td></tr></table></figure>
 <p>the <code>node-1</code> can be name of the docker machine.</p>
 <p>#Docker Engine</p>
-<h2 id="Restart-policy"><a href="#Restart-policy" class="headerlink" title="Restart policy"></a>Restart policy</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --<span class="built_in">restart</span> =&lt;<span class="built_in">restart</span> strategy &gt; &lt;<span class="built_in">image</span> name&gt;</div></pre></td></tr></table></figure>
+<h2 id="Restart-policy"><a href="#Restart-policy" class="headerlink" title="Restart policy"></a>Restart policy</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --<span class="built_in">restart</span> =&lt;<span class="built_in">restart</span> strategy &gt; &lt;<span class="built_in">image</span> name&gt;</span><br></pre></td></tr></table></figure>
 <p>Restart strategies:</p>
 <ul>
 <li>no</li>
@@ -326,110 +255,117 @@
 <li>always</li>
 <li>unless-stopped</li>
 </ul>
-<h2 id="give-a-name"><a href="#give-a-name" class="headerlink" title="give a name"></a>give a name</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --<span class="built_in">name</span>=&lt;<span class="built_in">name</span>&gt; &lt;<span class="built_in">image</span> <span class="built_in">name</span>&gt;</div></pre></td></tr></table></figure>
+<h2 id="give-a-name"><a href="#give-a-name" class="headerlink" title="give a name"></a>give a name</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="builtin-name">run</span> <span class="attribute">--name</span>=&lt;name&gt; &lt;image name&gt;</span><br></pre></td></tr></table></figure>
 
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-    </div>
+        <a href="/tags/docker/">docker</a>
+      
+	  </div>
     
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/03/16/css-font-smoothing/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          css: font-smoothing
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/01/12/textarea-quick-hack/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">textarea quick hack</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2016/03/16/css-font-smoothing/" rel="prev"  title="css: font-smoothing">
+						css: font-smoothing 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/2016/01/12/textarea-quick-hack/" rel="next"  title="How to make textarea resizable and change its default outline style">
+						How to make textarea resizable and change its default outline style
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+		<section id="comments">
+			<div id="disqus_thread"></div>
+		</section>
+	
 </article>
-
-
-
-
-
-
-
-
-<section id="comments">
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'keyangxiang'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2017 Keyang Xiang
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
-  </div>
-</footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
 <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
+	window.subData = {
+		title: 'Docker Quick Notes',
+		tools: true
 	}
 </script>
-<script src="/js/main.js"></script>
 
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-29275086-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-
-
+      </div>
+      
+      <script>setLoadingBarProgress(60);</script>
+    </div>
   </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/keyang" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/keyangxiang" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  <div>&copy;2018 Keyang Xiang </div>
+  <!-- <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div> -->
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+<script>
+  var disqus_shortname = 'keyangxiang';
+  
+  var disqus_url = 'http://keyangxiang.com/2016/02/10/docker-quick-notes/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src='/js/waves.min.js'></script>
+<script src="/js/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

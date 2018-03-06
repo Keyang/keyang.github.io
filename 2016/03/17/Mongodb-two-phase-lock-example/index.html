@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Mongodb two phase lock example (with mongoose) | Keyang&#39;s Blog</title>
+  <meta name="description" content="null" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Mongodb needs extra collection for two phase lock.123456789var transactionSchema=new Schema(&amp;#123;  lastModified:Date,  status:&amp;#123;    type:String,    default:&quot;new&quot;,    index:true  &amp;#125;,  data:&amp;#1">
 <meta name="keywords" content="mongodb">
@@ -14,236 +19,160 @@
 <meta property="og:url" content="http://keyangxiang.com/2016/03/17/Mongodb-two-phase-lock-example/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
 <meta property="og:description" content="Mongodb needs extra collection for two phase lock.123456789var transactionSchema=new Schema(&amp;#123;  lastModified:Date,  status:&amp;#123;    type:String,    default:&quot;new&quot;,    index:true  &amp;#125;,  data:&amp;#1">
-<meta property="og:updated_time" content="2016-03-17T23:12:59.000Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-12-23T00:22:24.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mongodb two phase lock example (with mongoose)">
 <meta name="twitter:description" content="Mongodb needs extra collection for two phase lock.123456789var transactionSchema=new Schema(&amp;#123;  lastModified:Date,  status:&amp;#123;    type:String,    default:&quot;new&quot;,    index:true  &amp;#125;,  data:&amp;#1">
-  
-    <link rel="alternative" href="/atom.xml" title="Keyang&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css">
- <script src="/js/require-jquery.js"></script>
- <script type="application/ld+json">
-  {
-    "@context" : "http://schema.org",
-    "@type" : "WebSite",
-    "name" : "Keyang&#39;s Blog",
-    "url" : "http://keyangxiang.com"
-  }
-</script>
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29275086-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<script type="application/ld+json">
-  { "@context" : "http://schema.org",
-    "@type" : "Organization",
-    "name" : "Keyang Xiang",
-    "url" : "http://keyangxiang.com",
-    "logo": "https://avatars3.githubusercontent.com/u/1092855",
-    "sameAs" : [ "" ]
-  }
-</script>
-
+    gtag('config', 'UA-29275086-1');
+  </script>
 </head>
 
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="https://avatars3.githubusercontent.com/u/1092855" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Keyang Xiang</a></h1>
-		</hgroup>
-
-		
-		<p class="header-subtitle">A home of Javascript</p>
-		
-		<script>
-  (function() {
-    var cx = '008262195500319463689:yox48pfjzha';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						
-					</div>
-
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">Home</a></li>
-				        
-							<li><a href="/blog">Blogs</a></li>
-				        
-							<li><a href="/archives">Articles</a></li>
-				        
-							<li><a href="/csvtojson">csvtojson</a></li>
-				        
-							<li><a href="/simplepsd">Simple PSD</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/keyang" title="github">github</a>
-					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/cli/" style="font-size: 10px;">cli</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/express-js/" style="font-size: 10px;">express.js</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/macosx-trick/" style="font-size: 10px;">macosx trick</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 10px;">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openshift/" style="font-size: 10px;">openshift</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/raspberrypi/" style="font-size: 10px;">raspberrypi</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/web/" style="font-size: 15px;">web</a> <a href="/tags/web-javascript/" style="font-size: 10px;">web, javascript</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
-					</div>
-				</section>
-				
-
-				
-
-				
-			</div>
-		</div>
-	</header>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Keyang Xiang</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="https://avatars3.githubusercontent.com/u/1092855" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Keyang Xiang</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">A home of Javascript</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">Home</a></li>
-		        
-					<li><a href="/blog">Blogs</a></li>
-		        
-					<li><a href="/archives">Articles</a></li>
-		        
-					<li><a href="/csvtojson">csvtojson</a></li>
-		        
-					<li><a href="/simplepsd">Simple PSD</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Keyang's Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
 					
-						<a class="github" target="_blank" href="https://github.com/keyang" title="github">github</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
+						<li>
+							<a target="_self" class='flat-box nav-home' href='/'>
+								HOME
+							</a>
+						</li>
+					
+						<li>
+							<a target="_self" class='flat-box nav-csvtojson' href='/csvtojson'>
+								CSVTOJSON
+							</a>
+						</li>
+					
+						<li>
+							<a target="_blank" class='flat-box nav-psdetch' href='https://psdetch.com'>
+								PSDETCH
+							</a>
+						</li>
+					
+						<li>
+							<a target="_blank" class='flat-box nav-uml_editor' href='https://uml.keyangxiang.com'>
+								UML Editor
+							</a>
+						</li>
+					
+						<li>
+							<a target="_self" class='flat-box nav-archives' href='/archives'>
+								ARCHIVES
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
 				</div>
-			</nav>
-		</header>				
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
 	</div>
-</nav>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a target="_self" href="/" class="nav-home nav">
+				HOME
+			</a>
+		
+			<a target="_self" href="/csvtojson" class="nav-csvtojson nav">
+				CSVTOJSON
+			</a>
+		
+			<a target="_blank" href="https://psdetch.com" class="nav-psdetch nav">
+				PSDETCH
+			</a>
+		
+			<a target="_blank" href="https://uml.keyangxiang.com" class="nav-uml_editor nav">
+				UML Editor
+			</a>
+		
+			<a target="_self" href="/archives" class="nav-archives nav">
+				ARCHIVES
+			</a>
+		
+	</nav>
+</aside>
 
-      <div class="body-wrap"><article id="post-Mongodb-two-phase-lock-example" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/Mongodb-two-phase-lock-example/" class="article-date">
-  	<time datetime="2016-03-17T22:34:09.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Mongodb two phase lock example (with mongoose)
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
-	</div>
-
-        
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/tech/">tech</a>
-	</div>
-
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">  <span class="attr">lastModified</span>:<span class="built_in">Date</span>,</div><div class="line">  <span class="attr">status</span>:&#123;</div><div class="line">    <span class="attr">type</span>:<span class="built_in">String</span>,</div><div class="line">    <span class="attr">default</span>:<span class="string">"new"</span>,</div><div class="line">    <span class="attr">index</span>:<span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">data</span>:&#123;&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-Mongodb-two-phase-lock-example"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2016/03/17/Mongodb-two-phase-lock-example/">
+    	Mongodb two phase lock example (with mongoose)
+    </a>
+  </h2>
+	<time>
+	  Mar 17, 2016
+	</time>
+	
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#New"><span class="toc-number">1.</span> <span class="toc-text">New</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pending"><span class="toc-number">2.</span> <span class="toc-text">Pending</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Applied"><span class="toc-number">3.</span> <span class="toc-text">Applied</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Done"><span class="toc-number">4.</span> <span class="toc-text">Done</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Roll-Back"><span class="toc-number"></span> <span class="toc-text">Roll Back</span></a></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  lastModified:<span class="built_in">Date</span>,</span><br><span class="line">  status:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</span><br><span class="line">    index:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code><br><a id="more"></a></p>
 <h2 id="New"><a href="#New" class="headerlink" title="New"></a>New</h2><p>The transaction is just created and waiting to be started.<br>Once the transaction is created, the <code>data</code> field would contain all information. e.g. source, destination, cash amount.</p>
 <h2 id="Pending"><a href="#Pending" class="headerlink" title="Pending"></a>Pending</h2><p>The transaction has started but some collection(s) have not finished its operation.</p>
@@ -254,115 +183,122 @@
 <li>the collection should have a <code>pendingTransaction</code> field which record all current pending transactions on a document.</li>
 <li>Developer should use <code>update</code> method to update target fields and the pendingTransaction <strong>at the same time</strong>.</li>
 </ul>
-<p>Example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> UserSchema=<span class="keyword">new</span> Schema(&#123;</div><div class="line">    <span class="attr">money</span>:<span class="built_in">Number</span>,</div><div class="line">    <span class="attr">pendingTransaction</span>:[ObjectId]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//Process transaction</span></div><div class="line"><span class="keyword">var</span> transaction;</div><div class="line">UserModel.findAndUpdate(&#123; <span class="comment">//the query find specified user and gurantee it has not been applied before</span></div><div class="line">  $ne:&#123;</div><div class="line">    <span class="attr">pendingTransaction</span>:transaction._id</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">_id</span>:transaction.data.targetUser</div><div class="line">&#125;,&#123; <span class="comment">//update to increase the money and push the transaction to pendingTransaction to mark current user has been applied with the transaction so next application will skip this user account.</span></div><div class="line">  $push:&#123;</div><div class="line">    <span class="attr">pendingTransaction</span>:transaction._id</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">$inc</span>:&#123;</div><div class="line">    <span class="attr">money</span>:transaction.data.amount</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>Example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> UserSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">    money:<span class="built_in">Number</span>,</span><br><span class="line">    pendingTransaction:[ObjectId]</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Process transaction</span></span><br><span class="line"><span class="keyword">var</span> transaction;</span><br><span class="line">UserModel.findAndUpdate(&#123; <span class="comment">//the query find specified user and gurantee it has not been applied before</span></span><br><span class="line">  $ne:&#123;</span><br><span class="line">    pendingTransaction:transaction._id</span><br><span class="line">  &#125;,</span><br><span class="line">  _id:transaction.data.targetUser</span><br><span class="line">&#125;,&#123; <span class="comment">//update to increase the money and push the transaction to pendingTransaction to mark current user has been applied with the transaction so next application will skip this user account.</span></span><br><span class="line">  $push:&#123;</span><br><span class="line">    pendingTransaction:transaction._id</span><br><span class="line">  &#125;,</span><br><span class="line">  $inc:&#123;</span><br><span class="line">    money:transaction.data.amount</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>After all operations finished, transaction will be marked as <code>applied</code>. If any problems happens during the transaction (e.g. system crashes), the next run through the transaction will ‘skip’ the documents that already being applied and continue applying other operations until the transaction is marked as <code>applied</code>.</p>
 <h2 id="Applied"><a href="#Applied" class="headerlink" title="Applied"></a>Applied</h2><p>The transaction has made modifications to all related documents. This stage is to clear the pendingTransaction field of those documents ($pull the transaction id from the field.)</p>
 <h2 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h2><p>The transaction has completed</p>
 <h1 id="Roll-Back"><a href="#Roll-Back" class="headerlink" title="Roll Back"></a>Roll Back</h1><p>The lastModified field in transaction can be used to judge if a transaction needs to roll-back. (e.g. the lastModified was 5 mins ago but still not successful)</p>
 <p>Only <code>pending</code> transactions need to be rolled-back as it means there are unfinished changes and some changes have been applied. The roll-back operation is a reverse operation of application operation. e.g. for user document with transaction id in pendingTransaction, pull transaction id from pendingTransaction and decrease the money amount.</p>
 
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-    </div>
+        <a href="/tags/mongodb/">mongodb</a>
+      
+	  </div>
     
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/03/20/mongoosejs-setters-schema/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          mongoosejs: setters schema
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/03/17/wordpress-reverse-proxy-headers/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">wordpress reverse proxy headers</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2016/03/20/mongoosejs-setters-schema/" rel="prev"  title="Using setter in Mongoose">
+						Using setter in Mongoose 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/2016/03/17/wordpress-reverse-proxy-headers/" rel="next"  title="wordpress reverse proxy headers">
+						wordpress reverse proxy headers
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+		<section id="comments">
+			<div id="disqus_thread"></div>
+		</section>
+	
 </article>
-
-
-
-
-
-
-
-
-<section id="comments">
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'keyangxiang'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2017 Keyang Xiang
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
-  </div>
-</footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
 <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
+	window.subData = {
+		title: 'Mongodb two phase lock example (with mongoose)',
+		tools: true
 	}
 </script>
-<script src="/js/main.js"></script>
 
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-29275086-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-
-
+      </div>
+      
+      <script>setLoadingBarProgress(60);</script>
+    </div>
   </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/keyang" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/keyangxiang" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  <div>&copy;2018 Keyang Xiang </div>
+  <!-- <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div> -->
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+<script>
+  var disqus_shortname = 'keyangxiang';
+  
+  var disqus_url = 'http://keyangxiang.com/2016/03/17/Mongodb-two-phase-lock-example/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src='/js/waves.min.js'></script>
+<script src="/js/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>

@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "Roboto";
+    src: local(Roboto Thin), url("Roboto-Thin.woff2") format("woff2"), url("Roboto-Thin.woff") format("woff");
+    font-weight: 100;
+}
+
+.fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@keyframes bg {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.3);
+        opacity: 0.3;
+    }
+}
+
+@keyframes moveup {
+    from {
+        transform: translateY(30px);
+        opacity: 0.2;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+a {
+    color: white;
+}
+
+a.nostyle {
+    text-decoration: none;
+}
+
+$animDuration:300ms;
+.moveupanimation {
+    animation-name: moveup;
+    animation-duration: $animDuration;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+body {
+    font-family: Roboto;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    overflow-y: auto;
+    font-size: 20px;
+    @media screen and (max-width: 600px) {
+        font-size:12px;
+    }
+    .bg {
+        @extend .fullscreen;
+        position: fixed;
+        background: url(../img/home-bg.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+        animation-name: bg;
+        animation-duration: 300ms;
+        animation-direction: reverse;
+    }
+    .mask {
+        @extend .fullscreen;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+    .blog {
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        z-index: 6;
+        font-size: 24px;
+    }
+    .content {
+        @extend .fullscreen;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        color: white;
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+            padding: 20px;
+        }
+        .intro {
+            .hi {
+                font-size: 8em;
+                @extend .moveupanimation;
+                animation-delay: 300ms;
+            }
+            .intro_lines {
+                font-size: 2em;
+                display: flex;
+                flex-direction: column;
+                @extend .moveupanimation;
+                animation-delay: $animDuration+ 300ms;
+                >span {
+                    margin-bottom: 20px;
+                }
+            }
+            .contact {
+                text-align: center;
+                @extend .moveupanimation;
+                animation-delay: 2*$animDuration+ 300ms;
+                >div {
+                    padding: 8px;
+                }
+                a {
+                    padding: 8px;
+                    i {
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+        .projects {
+            color: white;
+            margin-left: 200px;
+            @extend .moveupanimation;
+            animation-delay:  3*$animDuration+ 300ms;
+            @media screen and (max-width: 1000px) {
+                margin-left:0;
+                margin-top: 50px;
+            }
+            .intro {
+                font-size: 1.2em;
+            }
+            .project {
+                display: block;
+                padding: 10px;
+                margin-top: 12px;
+                margin-left: 10px;
+                color: #ccc;
+                font-size: 1.2em;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.5);
+                transition: all ease 0.3s;
+                cursor: pointer;
+                .title {
+                    font-size: 1.6em;
+                }
+                .desc {
+                    color: #999;
+                }
+            }
+            .project:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+}
