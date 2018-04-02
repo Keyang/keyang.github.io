@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title><![CDATA[How to install Node.JS locally]]></title>
+      <url>/2018/04/01/node.js/how-to-install/</url>
+      <content type="html"><![CDATA[<p>Installing Node.JS locally will take no more than 5 minutes. This post will go through the steps very quickly.<br><a id="more"></a></p>
+<h1 id="Download-Installer"><a href="#Download-Installer" class="headerlink" title="Download Installer"></a>Download Installer</h1><p>First, download Node.JS installer according to target operation system from <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">here</a></p>
+<p>The installer downloaded should be executable on target operation system (e.g. <code>.msi</code> on Window and <code>.pkg</code> on MacOSX)</p>
+<h1 id="Run-Installer"><a href="#Run-Installer" class="headerlink" title="Run Installer"></a>Run Installer</h1><p>Follow the wizard and install Node.JS to target machine.</p>
+<h1 id="Restart-and-Test"><a href="#Restart-and-Test" class="headerlink" title="Restart and Test"></a>Restart and Test</h1><p>Once installation finished, open a <code>bash</code> or <code>cmd</code>. Installation should have both <code>node</code> and <code>npm</code> commands exposed.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ node --version</span><br><span class="line">v6.9.5</span><br><span class="line">$ npm --version</span><br><span class="line">3.10.10</span><br></pre></td></tr></table></figure>
+<p>It is essential to have <strong>both</strong> commands running correctly.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Node.JS </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> nodejs </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[How to deploy website to openshift with nginx?]]></title>
       <url>/2017/10/24/How-to-run-nginx-on-openshift-and-deploy-website/</url>
       <content type="html"><![CDATA[<p>Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official <code>nginx</code> docker image does not work on openshift.</p>

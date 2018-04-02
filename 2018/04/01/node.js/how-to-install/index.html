@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: js | Keyang&#39;s Blog</title>
+  <title>How to install Node.JS locally | Keyang&#39;s Blog</title>
   <meta name="description" content="null" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,13 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keyang&#39;s Blog">
-<meta property="og:url" content="http://keyangxiang.com/tags/js/index.html">
+  <meta name="description" content="Installing Node.JS locally will take no more than 5 minutes. This post will go through the steps very quickly.">
+<meta name="keywords" content="nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to install Node.JS locally">
+<meta property="og:url" content="http://keyangxiang.com/2018/04/01/node.js/how-to-install/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
+<meta property="og:description" content="Installing Node.JS locally will take no more than 5 minutes. This post will go through the steps very quickly.">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-02T20:59:24.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Keyang&#39;s Blog">
+<meta name="twitter:title" content="How to install Node.JS locally">
+<meta name="twitter:description" content="Installing Node.JS locally will take no more than 5 minutes. This post will go through the steps very quickly.">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -148,132 +153,72 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-  <script>
-    window.subData= { title:'Tag : js'}
-  </script>
-
-<section class="post-list">
+        <article id="post-node.js/how-to-install"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2018/04/01/node.js/how-to-install/">
+    	How to install Node.JS locally
+    </a>
+  </h2>
+	<time>
+	  Apr 1, 2018
+	</time>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
     
-    <h2 class="title">
-      <a href="/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/">
-        How to download binary content as Blob in JS with Ajax(XHR)
-      </a>
-    </h2>
-    
-    <time>
-      Sep 1, 2017
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p>Using <code>XMLHTTPRequest</code> (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as <code>ArrayBuffer</code> or <code>Blob</code>) such as pdf, image, and psd files. This post will go through how to achieve it with <code>XMLHTTPRequest</code> and <code>jQuery</code>.</p>
-
-    
-	  <div class="readmore">
-      <a href="/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/">Read More</a>
+    <div class='cats'>
+        <a href="/categories/Node-JS/">Node.JS</a>
     </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Download-Installer"><span class="toc-number">1.</span> <span class="toc-text">Download Installer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Run-Installer"><span class="toc-number">2.</span> <span class="toc-text">Run Installer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Restart-and-Test"><span class="toc-number">3.</span> <span class="toc-text">Restart and Test</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Installing Node.JS locally will take no more than 5 minutes. This post will go through the steps very quickly.<br><a id="more"></a></p>
+<h1 id="Download-Installer"><a href="#Download-Installer" class="headerlink" title="Download Installer"></a>Download Installer</h1><p>First, download Node.JS installer according to target operation system from <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">here</a></p>
+<p>The installer downloaded should be executable on target operation system (e.g. <code>.msi</code> on Window and <code>.pkg</code> on MacOSX)</p>
+<h1 id="Run-Installer"><a href="#Run-Installer" class="headerlink" title="Run Installer"></a>Run Installer</h1><p>Follow the wizard and install Node.JS to target machine.</p>
+<h1 id="Restart-and-Test"><a href="#Restart-and-Test" class="headerlink" title="Restart and Test"></a>Restart and Test</h1><p>Once installation finished, open a <code>bash</code> or <code>cmd</code>. Installation should have both <code>node</code> and <code>npm</code> commands exposed.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ node --version</span><br><span class="line">v6.9.5</span><br><span class="line">$ npm --version</span><br><span class="line">3.10.10</span><br></pre></td></tr></table></figure>
+<p>It is essential to have <strong>both</strong> commands running correctly.</p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-        <a href="/tags/js/">js</a>
-      
-        <a href="/tags/web/">web</a>
+        <a href="/tags/nodejs/">nodejs</a>
       
 	  </div>
     
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2017/08/17/Using-service-worker-enables-web-app-offline-usage/">
-        How to make website offline accessible
-      </a>
-    </h2>
-    
-    <time>
-      Aug 17, 2017
-    </time>
 		
-  </section>
-  <section class="article typo">
-	  <p>It is incredibly easy to make a rich web application like <a href="https://studio.psdetch.com" target="_blank" rel="noopener">psdetch</a> working offline with <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" target="_blank" rel="noopener">Service Worker</a>. 5 minutes are all you need!</p>
-
-    
-	  <div class="readmore">
-      <a href="/2017/08/17/Using-service-worker-enables-web-app-offline-usage/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/js/">js</a>
-      
-        <a href="/tags/web/">web</a>
-      
-	  </div>
-    
-  </section>
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/2017/10/24/How-to-run-nginx-on-openshift-and-deploy-website/" rel="next"  title="How to deploy website to openshift with nginx?">
+						How to deploy website to openshift with nginx?
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+		<section id="comments">
+			<div id="disqus_thread"></div>
+		</section>
+	
 </article>
-    </div>
-  
-</section>
-
+<script>
+	window.subData = {
+		title: 'How to install Node.JS locally',
+		tools: true
+	}
+</script>
 
       </div>
-      
-      <aside class='l_side'>
-        
-  <section class='m_widget about'>
-  
-    <img class='avatar waves-image' src='https://avatars3.githubusercontent.com/u/1092855' />
-    
-      <div class='header'>
-        Keyang Xiang
-      </div>
-      <div class='content'>
-        <div class='desc'>
-          web, mobile, container, cloud
-        </div>
-      </div>
-</section>
-
-  <section class='m_widget categories'>
-<div class='header'>Categories</div>
-<div class='content'>
-    
-    <ul class="entry">
-    
-        <li><a class="flat-box" href="/categories/Node-JS/"><div class='name'>Node.JS</div><div class='badget'>1</div></a></li>
-    
-    </ul>
-    
-</div>
-</section>
-
-  
-<div class="m_widget tagcloud">
-    <div class="header">Tags</div>
-    <div class='content'>
-        <a href="/tags/angularjs/" style="font-size: 14px; color: #808080">angularjs</a> <a href="/tags/cli/" style="font-size: 14px; color: #808080">cli</a> <a href="/tags/css/" style="font-size: 20px; color: #000">css</a> <a href="/tags/docker/" style="font-size: 20px; color: #000">docker</a> <a href="/tags/express-js/" style="font-size: 14px; color: #808080">express.js</a> <a href="/tags/html/" style="font-size: 17px; color: #404040">html</a> <a href="/tags/js/" style="font-size: 17px; color: #404040">js</a> <a href="/tags/linux/" style="font-size: 14px; color: #808080">linux</a> <a href="/tags/macosx-trick/" style="font-size: 14px; color: #808080">macosx trick</a> <a href="/tags/misc/" style="font-size: 14px; color: #808080">misc</a> <a href="/tags/mongodb/" style="font-size: 14px; color: #808080">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 14px; color: #808080">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 17px; color: #404040">nginx</a> <a href="/tags/node-js/" style="font-size: 20px; color: #000">node.js</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #808080">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #808080">npm</a> <a href="/tags/openshift/" style="font-size: 14px; color: #808080">openshift</a> <a href="/tags/openssl/" style="font-size: 14px; color: #808080">openssl</a> <a href="/tags/raspberrypi/" style="font-size: 14px; color: #808080">raspberrypi</a> <a href="/tags/test/" style="font-size: 14px; color: #808080">test</a> <a href="/tags/web/" style="font-size: 17px; color: #404040">web</a> <a href="/tags/web-javascript/" style="font-size: 14px; color: #808080">web, javascript</a> <a href="/tags/wordpress/" style="font-size: 14px; color: #808080">wordpress</a>
-    </div>
-</div>
-
-
-
-      </aside>
       
       <script>setLoadingBarProgress(60);</script>
     </div>
@@ -311,11 +256,13 @@
 <script>
   var disqus_shortname = 'keyangxiang';
   
+  var disqus_url = 'http://keyangxiang.com/2018/04/01/node.js/how-to-install/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
