@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>How to Run Minishift On MacOSX | Keyang&#39;s Blog</title>
+  <meta name="description" content="null" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS. Step1 – Download latest Minishi">
+<meta name="keywords" content="openshift,minishift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Run Minishift On MacOSX">
+<meta property="og:url" content="http://keyangxiang.com/2018/05/18/Openshift/how-to-run-minishift-on-macos/index.html">
+<meta property="og:site_name" content="Keyang&#39;s Blog">
+<meta property="og:description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS. Step1 – Download latest Minishi">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-18T09:44:25.775Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to Run Minishift On MacOSX">
+<meta name="twitter:description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS. Step1 – Download latest Minishi">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29275086-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-29275086-1');
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Keyang's Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a target="_self" class='flat-box nav-home' href='/'>
+								HOME
+							</a>
+						</li>
+					
+						<li>
+							<a target="_self" class='flat-box nav-csvtojson' href='/csvtojson'>
+								CSVTOJSON
+							</a>
+						</li>
+					
+						<li>
+							<a target="_blank" class='flat-box nav-psdetch' href='https://psdetch.com'>
+								PSDETCH
+							</a>
+						</li>
+					
+						<li>
+							<a target="_blank" class='flat-box nav-uml_editor' href='https://uml.keyangxiang.com'>
+								UML Editor
+							</a>
+						</li>
+					
+						<li>
+							<a target="_self" class='flat-box nav-archives' href='/archives'>
+								ARCHIVES
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a target="_self" href="/" class="nav-home nav">
+				HOME
+			</a>
+		
+			<a target="_self" href="/csvtojson" class="nav-csvtojson nav">
+				CSVTOJSON
+			</a>
+		
+			<a target="_blank" href="https://psdetch.com" class="nav-psdetch nav">
+				PSDETCH
+			</a>
+		
+			<a target="_blank" href="https://uml.keyangxiang.com" class="nav-uml_editor nav">
+				UML Editor
+			</a>
+		
+			<a target="_self" href="/archives" class="nav-archives nav">
+				ARCHIVES
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        
+<article id="post-Openshift/how-to-run-minishift-on-macos"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2018/05/18/Openshift/how-to-run-minishift-on-macos/">
+    	How to Run Minishift On MacOSX
+    </a>
+  </h2>
+	<time>
+	  May 18, 2018
+	</time>
+	
+    
+    <div class='cats'>
+        <a href="/categories/Openshift/">Openshift</a>
+    </div>
+
+	</section>
+	<div class="article_right_wrapper">
+		
+			<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Step1-–-Download-latest-Minishift"><span class="toc-number">1.</span> <span class="toc-text">Step1 – Download latest Minishift</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step2-–-Install-dependencies-Virtualization-Environment"><span class="toc-number">2.</span> <span class="toc-text">Step2 – Install dependencies / Virtualization Environment</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-3-–-Run-minishift"><span class="toc-number">3.</span> <span class="toc-text">Step 3 – Run minishift</span></a></li></ol></section>
+		
+		
+			<section >
+<h4><a href="/categories/Openshift/">Openshift</a></h4>
+<ol>
+  
+    <li>
+      <a href="/2018/03/31/node.js/about-nodejs/">What is Node.JS? Why should I care?</li></a>
+    
+    <li>
+      <a href="/2018/04/01/node.js/how-to-install/">How to install Node.JS locally</li></a>
+    
+    <li>
+      <a href="/2018/05/18/Openshift/how-to-run-minishift-on-macos/">How to Run Minishift On MacOSX</li></a>
+    
+</ol></section>
+		
+	</div>
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p><a href="https://github.com/minishift/minishift" target="_blank" rel="noopener">Minishift</a> allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.</p>
+<h1 id="Step1-–-Download-latest-Minishift"><a href="#Step1-–-Download-latest-Minishift" class="headerlink" title="Step1 – Download latest Minishift"></a>Step1 – Download latest Minishift</h1><p>Goto <a href="https://github.com/minishift/minishift/releases" target="_blank" rel="noopener">Mnishift Github Release Page</a>, it is able to see the binary assets of Minishift for different operation systems. By writing this article, the latest versino of Minishift for MacOS is <a href="https://github.com/minishift/minishift/releases/download/v1.17.0/minishift-1.17.0-darwin-amd64.tgz" target="_blank" rel="noopener">minishift-1.17.0-darwin-amd64.tgz</a>.</p>
+<p>Once downloaded, expand the tar file and copy the <code>minishift</code> file to <code>/usr/local/bin</code> folder</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># untar the downloaded file</span></span><br><span class="line">tar -xvf ~/Downloads/&lt;downloaded file&gt;</span><br><span class="line"></span><br><span class="line">sudo cp ~/Downloads/&lt;expanded folder&gt;/minishift /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/minishift</span><br></pre></td></tr></table></figure>
+<h1 id="Step2-–-Install-dependencies-Virtualization-Environment"><a href="#Step2-–-Install-dependencies-Virtualization-Environment" class="headerlink" title="Step2 – Install dependencies / Virtualization Environment"></a>Step2 – Install dependencies / Virtualization Environment</h1><p>Before Minishift can run, we need setup the virualization environment which supports Openshift running under MacOS environment.</p>
+<p>When doing this step, I assum you have <a href="https://brew.sh/" target="_blank" rel="noopener">brew</a> installed /configured correctly in your computer.</p>
+<p>You can simply copy and paste code below and run in a terminal.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Update brew first</span></span><br><span class="line">brew update</span><br><span class="line"><span class="comment"># install docker-machine-driver-xhyve</span></span><br><span class="line">brew install docker-machine-driver-xhyve</span><br><span class="line"><span class="comment"># Set the owner User ID (SUID) for the binary </span></span><br><span class="line">sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve</span><br></pre></td></tr></table></figure>
+<h1 id="Step-3-–-Run-minishift"><a href="#Step-3-–-Run-minishift" class="headerlink" title="Step 3 – Run minishift"></a>Step 3 – Run minishift</h1><p>Once setup virtualization environment successfully, let’s start minishift:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minishift start</span><br></pre></td></tr></table></figure>
+<p>For first time running, it will download all related dependencies including images / cli binary .</p>
+<p>After starting successfully, it is able to see the allocated IP address to the master node of the openshift cluster. In my case it is <code>192.168.64.2</code>.</p>
+<p>Then you should be able to open <code>https://192.168.64.2:8443</code> in your browser and login with username and password both as <code>admin</code>.</p>
+<p>To shutdown your minishift cluster simply run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minishift stop</span><br></pre></td></tr></table></figure>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/tags/openshift/">openshift</a>
+      
+        <a href="/tags/minishift/">minishift</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/2018/04/01/node.js/how-to-install/" rel="next"  title="How to install Node.JS locally">
+						How to install Node.JS locally
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+		<section id="comments">
+			<div id="disqus_thread"></div>
+		</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'How to Run Minishift On MacOSX',
+		tools: true
+	}
+</script>
+
+      </div>
+      
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/keyang" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/keyangxiang" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  <div>&copy;2018 Keyang Xiang </div>
+  <!-- <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div> -->
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+<script>
+  var disqus_shortname = 'keyangxiang';
+  
+  var disqus_url = 'http://keyangxiang.com/2018/05/18/Openshift/how-to-run-minishift-on-macos/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src='/js/waves.min.js'></script>
+<script src="/js/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

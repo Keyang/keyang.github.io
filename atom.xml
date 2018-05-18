@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keyangxiang.com/"/>
-  <updated>2018-04-02T20:59:24.821Z</updated>
+  <updated>2018-05-18T09:44:25.775Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to Run Minishift On MacOSX</title>
+    <link href="http://keyangxiang.com/2018/05/18/Openshift/how-to-run-minishift-on-macos/"/>
+    <id>http://keyangxiang.com/2018/05/18/Openshift/how-to-run-minishift-on-macos/</id>
+    <published>2018-05-18T17:40:23.000Z</published>
+    <updated>2018-05-18T09:44:25.775Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/minishift/minishift" target="_blank" rel="noopener">Minishift</a> allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.</p><h1 id="Step1-–-Download-latest-Minishift"><a href="#Step1-–-Download-latest-Minishift" class="headerlink" title="Step1 – Download latest Minishift"></a>Step1 – Download latest Minishift</h1><p>Goto <a href="https://github.com/minishift/minishift/releases" target="_blank" rel="noopener">Mnishift Github Release Page</a>, it is able to see the binary assets of Minishift for different operation systems. By writing this article, the latest versino of Minishift for MacOS is <a href="https://github.com/minishift/minishift/releases/download/v1.17.0/minishift-1.17.0-darwin-amd64.tgz" target="_blank" rel="noopener">minishift-1.17.0-darwin-amd64.tgz</a>.</p><p>Once downloaded, expand the tar file and copy the <code>minishift</code> file to <code>/usr/local/bin</code> folder</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># untar the downloaded file</span></span><br><span class="line">tar -xvf ~/Downloads/&lt;downloaded file&gt;</span><br><span class="line"></span><br><span class="line">sudo cp ~/Downloads/&lt;expanded folder&gt;/minishift /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/minishift</span><br></pre></td></tr></table></figure><h1 id="Step2-–-Install-dependencies-Virtualization-Environment"><a href="#Step2-–-Install-dependencies-Virtualization-Environment" class="headerlink" title="Step2 – Install dependencies / Virtualization Environment"></a>Step2 – Install dependencies / Virtualization Environment</h1><p>Before Minishift can run, we need setup the virualization environment which supports Openshift running under MacOS environment.</p><p>When doing this step, I assum you have <a href="https://brew.sh/" target="_blank" rel="noopener">brew</a> installed /configured correctly in your computer.</p><p>You can simply copy and paste code below and run in a terminal.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Update brew first</span></span><br><span class="line">brew update</span><br><span class="line"><span class="comment"># install docker-machine-driver-xhyve</span></span><br><span class="line">brew install docker-machine-driver-xhyve</span><br><span class="line"><span class="comment"># Set the owner User ID (SUID) for the binary </span></span><br><span class="line">sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve</span><br></pre></td></tr></table></figure><h1 id="Step-3-–-Run-minishift"><a href="#Step-3-–-Run-minishift" class="headerlink" title="Step 3 – Run minishift"></a>Step 3 – Run minishift</h1><p>Once setup virtualization environment successfully, let’s start minishift:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minishift start</span><br></pre></td></tr></table></figure><p>For first time running, it will download all related dependencies including images / cli binary .</p><p>After starting successfully, it is able to see the allocated IP address to the master node of the openshift cluster. In my case it is <code>192.168.64.2</code>.</p><p>Then you should be able to open <code>https://192.168.64.2:8443</code> in your browser and login with username and password both as <code>admin</code>.</p><p>To shutdown your minishift cluster simply run:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minishift stop</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://github.com/minishift/minishift&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Minishift&lt;/a&gt; allows running a mini-version of Openshift 
+      
+    
+    </summary>
+    
+      <category term="Openshift" scheme="http://keyangxiang.com/categories/Openshift/"/>
+    
+    
+      <category term="openshift" scheme="http://keyangxiang.com/tags/openshift/"/>
+    
+      <category term="minishift" scheme="http://keyangxiang.com/tags/minishift/"/>
+    
+  </entry>
   
   <entry>
     <title>How to install Node.JS locally</title>
@@ -28,6 +55,32 @@
     <summary type="html">
     
       &lt;p&gt;Installing Node.JS locally will take no more than 5 minutes. This post will go through the steps very quickly.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Node.JS" scheme="http://keyangxiang.com/categories/Node-JS/"/>
+    
+    
+      <category term="nodejs" scheme="http://keyangxiang.com/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>What is Node.JS? Why should I care?</title>
+    <link href="http://keyangxiang.com/2018/03/31/node.js/about-nodejs/"/>
+    <id>http://keyangxiang.com/2018/03/31/node.js/about-nodejs/</id>
+    <published>2018-03-31T11:45:31.000Z</published>
+    <updated>2018-04-02T21:07:28.581Z</updated>
+    
+    <content type="html"><![CDATA[<p>Node.JS has been attracting attentions for years. What is Node.JS? What makes it unique? Why should developers care about it?</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Node.JS has been attracting attentions for years. What is Node.JS? What makes it unique? Why should developers care about it?&lt;/p&gt;
+
+      
     
     </summary>
     
@@ -435,54 +488,6 @@
       <category term="nginx" scheme="http://keyangxiang.com/tags/nginx/"/>
     
       <category term="wordpress" scheme="http://keyangxiang.com/tags/wordpress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>minimist: a neat cli argv parser</title>
-    <link href="http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/"/>
-    <id>http://keyangxiang.com/2016/03/16/minimist-a-neat-cli-argv-parser/</id>
-    <published>2016-03-16T17:41:36.000Z</published>
-    <updated>2017-12-23T00:22:20.330Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://github.com/substack/minimist" target="_blank" rel="noopener">minimist</a> is a lightweight cli argument (command line arguments) parser:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; <span class="attr">_</span>: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://github.com/substack/minimist&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;minimist&lt;/a&gt; is a lightweight cli argument (command line ar
-      
-    
-    </summary>
-    
-    
-      <category term="node.js" scheme="http://keyangxiang.com/tags/node-js/"/>
-    
-      <category term="npm" scheme="http://keyangxiang.com/tags/npm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css: font-smoothing</title>
-    <link href="http://keyangxiang.com/2016/03/16/css-font-smoothing/"/>
-    <id>http://keyangxiang.com/2016/03/16/css-font-smoothing/</id>
-    <published>2016-03-16T17:30:36.000Z</published>
-    <updated>2017-12-23T00:21:55.017Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-webkit-font-smoothing</span>: <span class="selector-tag">antialiased</span>;</span><br><span class="line"><span class="selector-tag">-moz-osx-font-smoothing</span>: <span class="selector-tag">grayscale</span></span><br></pre></td></tr></table></figure><p>Makes text clearer</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;t
-      
-    
-    </summary>
-    
-    
-      <category term="css" scheme="http://keyangxiang.com/tags/css/"/>
     
   </entry>
   

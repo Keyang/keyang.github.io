@@ -153,7 +153,8 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-Mongodb-two-phase-lock-example"
+        
+<article id="post-Mongodb-two-phase-lock-example"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
@@ -167,9 +168,12 @@
 	</time>
 	
 	</section>
-	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#New"><span class="toc-number">1.</span> <span class="toc-text">New</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pending"><span class="toc-number">2.</span> <span class="toc-text">Pending</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Applied"><span class="toc-number">3.</span> <span class="toc-text">Applied</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Done"><span class="toc-number">4.</span> <span class="toc-text">Done</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Roll-Back"><span class="toc-number"></span> <span class="toc-text">Roll Back</span></a></section>
-	
+	<div class="article_right_wrapper">
+		
+			<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#New"><span class="toc-number">1.</span> <span class="toc-text">New</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pending"><span class="toc-number">2.</span> <span class="toc-text">Pending</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Applied"><span class="toc-number">3.</span> <span class="toc-text">Applied</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Done"><span class="toc-number">4.</span> <span class="toc-text">Done</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Roll-Back"><span class="toc-number"></span> <span class="toc-text">Roll Back</span></a></section>
+		
+		
+	</div>
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  lastModified:<span class="built_in">Date</span>,</span><br><span class="line">  status:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</span><br><span class="line">    index:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>

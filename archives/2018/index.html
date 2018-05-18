@@ -161,6 +161,59 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2018/05/18/Openshift/how-to-run-minishift-on-macos/">
+        How to Run Minishift On MacOSX
+      </a>
+    </h2>
+    
+    <time>
+      May 18, 2018
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/Openshift/">Openshift</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <p><a href="https://github.com/minishift/minishift" target="_blank" rel="noopener">Minishift</a> allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.</p>
+<h1 id="Step1-–-Download-latest-Minishift"><a href="#Step1-–-Download-latest-Minishift" class="headerlink" title="Step1 – Download latest Minishift"></a>Step1 – Download latest Minishift</h1><p>Goto <a href="https://github.com/minishift/minishift/releases" target="_blank" rel="noopener">Mnishift Github Release Page</a>, it is able to see the binary assets of Minishift for different operation systems. By writing this article, the latest versino of Minishift for MacOS is <a href="https://github.com/minishift/minishift/releases/download/v1.17.0/minishift-1.17.0-darwin-amd64.tgz" target="_blank" rel="noopener">minishift-1.17.0-darwin-amd64.tgz</a>.</p>
+<p>Once downloaded, expand the tar file and copy the <code>minishift</code> file to <code>/usr/local/bin</code> folder</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># untar the downloaded file</span></span><br><span class="line">tar -xvf ~/Downloads/&lt;downloaded file&gt;</span><br><span class="line"></span><br><span class="line">sudo cp ~/Downloads/&lt;expanded folder&gt;/minishift /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/minishift</span><br></pre></td></tr></table></figure>
+<h1 id="Step2-–-Install-dependencies-Virtualization-Environment"><a href="#Step2-–-Install-dependencies-Virtualization-Environment" class="headerlink" title="Step2 – Install dependencies / Virtualization Environment"></a>Step2 – Install dependencies / Virtualization Environment</h1><p>Before Minishift can run, we need setup the virualization environment which supports Openshift running under MacOS environment.</p>
+<p>When doing this step, I assum you have <a href="https://brew.sh/" target="_blank" rel="noopener">brew</a> installed /configured correctly in your computer.</p>
+<p>You can simply copy and paste code below and run in a terminal.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Update brew first</span></span><br><span class="line">brew update</span><br><span class="line"><span class="comment"># install docker-machine-driver-xhyve</span></span><br><span class="line">brew install docker-machine-driver-xhyve</span><br><span class="line"><span class="comment"># Set the owner User ID (SUID) for the binary </span></span><br><span class="line">sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve</span><br></pre></td></tr></table></figure>
+<h1 id="Step-3-–-Run-minishift"><a href="#Step-3-–-Run-minishift" class="headerlink" title="Step 3 – Run minishift"></a>Step 3 – Run minishift</h1><p>Once setup virtualization environment successfully, let’s start minishift:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minishift start</span><br></pre></td></tr></table></figure>
+<p>For first time running, it will download all related dependencies including images / cli binary .</p>
+<p>After starting successfully, it is able to see the allocated IP address to the master node of the openshift cluster. In my case it is <code>192.168.64.2</code>.</p>
+<p>Then you should be able to open <code>https://192.168.64.2:8443</code> in your browser and login with username and password both as <code>admin</code>.</p>
+<p>To shutdown your minishift cluster simply run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minishift stop</span><br></pre></td></tr></table></figure>
+
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/openshift/">openshift</a>
+      
+        <a href="/tags/minishift/">minishift</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2018/04/01/node.js/how-to-install/">
         How to install Node.JS locally
       </a>
@@ -183,6 +236,43 @@
 	  <div class="readmore">
       <a href="/2018/04/01/node.js/how-to-install/">Read More</a>
     </div>
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/nodejs/">nodejs</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2018/03/31/node.js/about-nodejs/">
+        What is Node.JS? Why should I care?
+      </a>
+    </h2>
+    
+    <time>
+      Mar 31, 2018
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/Node-JS/">Node.JS</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <p>Node.JS has been attracting attentions for years. What is Node.JS? What makes it unique? Why should developers care about it?</p>
+
+
     
     
     
@@ -224,7 +314,9 @@
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/categories/Node-JS/"><div class='name'>Node.JS</div><div class='badget'>1</div></a></li>
+        <li><a class="flat-box" href="/categories/Node-JS/"><div class='name'>Node.JS</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Openshift/"><div class='name'>Openshift</div><div class='badget'>1</div></a></li>
     
     </ul>
     
@@ -235,7 +327,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/tags/angularjs/" style="font-size: 14px; color: #808080">angularjs</a> <a href="/tags/cli/" style="font-size: 14px; color: #808080">cli</a> <a href="/tags/css/" style="font-size: 20px; color: #000">css</a> <a href="/tags/docker/" style="font-size: 20px; color: #000">docker</a> <a href="/tags/express-js/" style="font-size: 14px; color: #808080">express.js</a> <a href="/tags/html/" style="font-size: 17px; color: #404040">html</a> <a href="/tags/js/" style="font-size: 17px; color: #404040">js</a> <a href="/tags/linux/" style="font-size: 14px; color: #808080">linux</a> <a href="/tags/macosx-trick/" style="font-size: 14px; color: #808080">macosx trick</a> <a href="/tags/misc/" style="font-size: 14px; color: #808080">misc</a> <a href="/tags/mongodb/" style="font-size: 14px; color: #808080">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 14px; color: #808080">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 17px; color: #404040">nginx</a> <a href="/tags/node-js/" style="font-size: 20px; color: #000">node.js</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #808080">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #808080">npm</a> <a href="/tags/openshift/" style="font-size: 14px; color: #808080">openshift</a> <a href="/tags/openssl/" style="font-size: 14px; color: #808080">openssl</a> <a href="/tags/raspberrypi/" style="font-size: 14px; color: #808080">raspberrypi</a> <a href="/tags/test/" style="font-size: 14px; color: #808080">test</a> <a href="/tags/web/" style="font-size: 17px; color: #404040">web</a> <a href="/tags/web-javascript/" style="font-size: 14px; color: #808080">web, javascript</a> <a href="/tags/wordpress/" style="font-size: 14px; color: #808080">wordpress</a>
+        <a href="/tags/angularjs/" style="font-size: 14px; color: #808080">angularjs</a> <a href="/tags/cli/" style="font-size: 14px; color: #808080">cli</a> <a href="/tags/css/" style="font-size: 20px; color: #000">css</a> <a href="/tags/docker/" style="font-size: 20px; color: #000">docker</a> <a href="/tags/express-js/" style="font-size: 14px; color: #808080">express.js</a> <a href="/tags/html/" style="font-size: 17px; color: #404040">html</a> <a href="/tags/js/" style="font-size: 17px; color: #404040">js</a> <a href="/tags/linux/" style="font-size: 14px; color: #808080">linux</a> <a href="/tags/macosx-trick/" style="font-size: 14px; color: #808080">macosx trick</a> <a href="/tags/minishift/" style="font-size: 14px; color: #808080">minishift</a> <a href="/tags/misc/" style="font-size: 14px; color: #808080">misc</a> <a href="/tags/mongodb/" style="font-size: 14px; color: #808080">mongodb</a> <a href="/tags/mongoose-js/" style="font-size: 14px; color: #808080">mongoose.js</a> <a href="/tags/nginx/" style="font-size: 17px; color: #404040">nginx</a> <a href="/tags/node-js/" style="font-size: 20px; color: #000">node.js</a> <a href="/tags/nodejs/" style="font-size: 17px; color: #404040">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #808080">npm</a> <a href="/tags/openshift/" style="font-size: 17px; color: #404040">openshift</a> <a href="/tags/openssl/" style="font-size: 14px; color: #808080">openssl</a> <a href="/tags/raspberrypi/" style="font-size: 14px; color: #808080">raspberrypi</a> <a href="/tags/test/" style="font-size: 14px; color: #808080">test</a> <a href="/tags/web/" style="font-size: 17px; color: #404040">web</a> <a href="/tags/web-javascript/" style="font-size: 14px; color: #808080">web, javascript</a> <a href="/tags/wordpress/" style="font-size: 14px; color: #808080">wordpress</a>
     </div>
 </div>
 

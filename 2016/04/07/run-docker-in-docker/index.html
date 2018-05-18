@@ -153,7 +153,8 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-run-docker-in-docker"
+        
+<article id="post-run-docker-in-docker"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
@@ -167,9 +168,12 @@
 	</time>
 	
 	</section>
-	
-		<section class="toc-wrapper"></section>
-	
+	<div class="article_right_wrapper">
+		
+			<section class="toc-wrapper"></section>
+		
+		
+	</div>
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Run docker in docker<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="params">--privileged</span> -i -t -d <span class="params">--restart=unless-stopped</span> -p 2376<span class="function">:2376</span> -p 10000-11000<span class="function">:10000-11000</span> -p 10000-11000<span class="function">:10000-11000</span>/udp -v <span class="string">/mnt/opt</span>:<span class="string">/opt</span><span class="function">:rw</span> -v <span class="string">/etc/docker</span>:<span class="string">/etc/docker</span><span class="function">:ro</span> -v <span class="string">/mnt/var/lib/docker</span>:<span class="string">/var/lib/docker</span> <span class="params">--name=docker</span> docker<span class="function">:dind</span>  -H tcp:<span class="string">//0.0.0.0</span><span class="function">:2376</span> <span class="params">--storage-driver=aufs</span> <span class="params">--tlsverify</span> <span class="params">--tlscacert</span> <span class="string">/etc/docker/ca.pem</span> <span class="params">--tlscert</span> <span class="string">/etc/docker/server.pem</span> <span class="params">--tlskey</span> <span class="string">/etc/docker/server-key.pem</span></span><br></pre></td></tr></table></figure></p>

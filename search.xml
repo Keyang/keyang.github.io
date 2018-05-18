@@ -3,6 +3,43 @@
   
     
     <entry>
+      <title><![CDATA[How to Run Minishift On MacOSX]]></title>
+      <url>/2018/05/18/Openshift/how-to-run-minishift-on-macos/</url>
+      <content type="html"><![CDATA[<p><a href="https://github.com/minishift/minishift" target="_blank" rel="noopener">Minishift</a> allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.</p>
+<h1 id="Step1-–-Download-latest-Minishift"><a href="#Step1-–-Download-latest-Minishift" class="headerlink" title="Step1 – Download latest Minishift"></a>Step1 – Download latest Minishift</h1><p>Goto <a href="https://github.com/minishift/minishift/releases" target="_blank" rel="noopener">Mnishift Github Release Page</a>, it is able to see the binary assets of Minishift for different operation systems. By writing this article, the latest versino of Minishift for MacOS is <a href="https://github.com/minishift/minishift/releases/download/v1.17.0/minishift-1.17.0-darwin-amd64.tgz" target="_blank" rel="noopener">minishift-1.17.0-darwin-amd64.tgz</a>.</p>
+<p>Once downloaded, expand the tar file and copy the <code>minishift</code> file to <code>/usr/local/bin</code> folder</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># untar the downloaded file</span></span><br><span class="line">tar -xvf ~/Downloads/&lt;downloaded file&gt;</span><br><span class="line"></span><br><span class="line">sudo cp ~/Downloads/&lt;expanded folder&gt;/minishift /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/minishift</span><br></pre></td></tr></table></figure>
+<h1 id="Step2-–-Install-dependencies-Virtualization-Environment"><a href="#Step2-–-Install-dependencies-Virtualization-Environment" class="headerlink" title="Step2 – Install dependencies / Virtualization Environment"></a>Step2 – Install dependencies / Virtualization Environment</h1><p>Before Minishift can run, we need setup the virualization environment which supports Openshift running under MacOS environment.</p>
+<p>When doing this step, I assum you have <a href="https://brew.sh/" target="_blank" rel="noopener">brew</a> installed /configured correctly in your computer.</p>
+<p>You can simply copy and paste code below and run in a terminal.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Update brew first</span></span><br><span class="line">brew update</span><br><span class="line"><span class="comment"># install docker-machine-driver-xhyve</span></span><br><span class="line">brew install docker-machine-driver-xhyve</span><br><span class="line"><span class="comment"># Set the owner User ID (SUID) for the binary </span></span><br><span class="line">sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve</span><br></pre></td></tr></table></figure>
+<h1 id="Step-3-–-Run-minishift"><a href="#Step-3-–-Run-minishift" class="headerlink" title="Step 3 – Run minishift"></a>Step 3 – Run minishift</h1><p>Once setup virtualization environment successfully, let’s start minishift:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minishift start</span><br></pre></td></tr></table></figure>
+<p>For first time running, it will download all related dependencies including images / cli binary .</p>
+<p>After starting successfully, it is able to see the allocated IP address to the master node of the openshift cluster. In my case it is <code>192.168.64.2</code>.</p>
+<p>Then you should be able to open <code>https://192.168.64.2:8443</code> in your browser and login with username and password both as <code>admin</code>.</p>
+<p>To shutdown your minishift cluster simply run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minishift stop</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Openshift </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> openshift </tag>
+            
+            <tag> minishift </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[How to install Node.JS locally]]></title>
       <url>/2018/04/01/node.js/how-to-install/</url>
       <content type="html"><![CDATA[<p>Installing Node.JS locally will take no more than 5 minutes. This post will go through the steps very quickly.<br><a id="more"></a></p>
@@ -12,6 +49,27 @@
 <h1 id="Restart-and-Test"><a href="#Restart-and-Test" class="headerlink" title="Restart and Test"></a>Restart and Test</h1><p>Once installation finished, open a <code>bash</code> or <code>cmd</code>. Installation should have both <code>node</code> and <code>npm</code> commands exposed.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ node --version</span><br><span class="line">v6.9.5</span><br><span class="line">$ npm --version</span><br><span class="line">3.10.10</span><br></pre></td></tr></table></figure>
 <p>It is essential to have <strong>both</strong> commands running correctly.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Node.JS </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> nodejs </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[What is Node.JS? Why should I care?]]></title>
+      <url>/2018/03/31/node.js/about-nodejs/</url>
+      <content type="html"><![CDATA[<p>Node.JS has been attracting attentions for years. What is Node.JS? What makes it unique? Why should developers care about it?</p>
 ]]></content>
       
         <categories>
