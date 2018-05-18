@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[How to Run Minishift On MacOSX]]></title>
       <url>/2018/05/18/Openshift/how-to-run-minishift-on-macos/</url>
-      <content type="html"><![CDATA[<p><a href="https://github.com/minishift/minishift" target="_blank" rel="noopener">Minishift</a> allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.</p>
+      <content type="html"><![CDATA[<p><a href="https://github.com/minishift/minishift" target="_blank" rel="noopener">Minishift</a> allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.<br><a id="more"></a></p>
 <h1 id="Step1-–-Download-latest-Minishift"><a href="#Step1-–-Download-latest-Minishift" class="headerlink" title="Step1 – Download latest Minishift"></a>Step1 – Download latest Minishift</h1><p>Goto <a href="https://github.com/minishift/minishift/releases" target="_blank" rel="noopener">Mnishift Github Release Page</a>, it is able to see the binary assets of Minishift for different operation systems. By writing this article, the latest versino of Minishift for MacOS is <a href="https://github.com/minishift/minishift/releases/download/v1.17.0/minishift-1.17.0-darwin-amd64.tgz" target="_blank" rel="noopener">minishift-1.17.0-darwin-amd64.tgz</a>.</p>
 <p>Once downloaded, expand the tar file and copy the <code>minishift</code> file to <code>/usr/local/bin</code> folder</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># untar the downloaded file</span></span><br><span class="line">tar -xvf ~/Downloads/&lt;downloaded file&gt;</span><br><span class="line"></span><br><span class="line">sudo cp ~/Downloads/&lt;expanded folder&gt;/minishift /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/minishift</span><br></pre></td></tr></table></figure>
@@ -89,7 +89,7 @@
     
     <entry>
       <title><![CDATA[How to deploy website to openshift with nginx?]]></title>
-      <url>/2017/10/24/How-to-run-nginx-on-openshift-and-deploy-website/</url>
+      <url>/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/</url>
       <content type="html"><![CDATA[<p>Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official <code>nginx</code> docker image does not work on openshift.</p>
 <p>In this post, I will simply go through how to run <a href="https://access.redhat.com/containers/?tab=overview&amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">this</a> Official RedHat nginx image on Openshift and deploy a website onto it.</p>
 <a id="more"></a>
@@ -110,6 +110,12 @@
 <p>Once it is exposed, your nginx server and your website should be accessible with the route associated.</p>
 ]]></content>
       
+        <categories>
+            
+            <category> Openshift </category>
+            
+        </categories>
+        
         
         <tags>
             
@@ -136,9 +142,9 @@
         
         <tags>
             
-            <tag> js </tag>
-            
             <tag> web </tag>
+            
+            <tag> js </tag>
             
         </tags>
         
@@ -176,9 +182,9 @@
         
         <tags>
             
-            <tag> js </tag>
-            
             <tag> web </tag>
+            
+            <tag> js </tag>
             
         </tags>
         

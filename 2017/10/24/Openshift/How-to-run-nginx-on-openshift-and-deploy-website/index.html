@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>What is Node.JS? Why should I care? | Keyang&#39;s Blog</title>
+  <title>How to deploy website to openshift with nginx? | Keyang&#39;s Blog</title>
   <meta name="description" content="null" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,18 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Node.JS has been attracting attentions for years. What is Node.JS? What makes it unique? Why should developers care about it?">
-<meta name="keywords" content="nodejs">
+  <meta name="description" content="Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official nginx docker im">
+<meta name="keywords" content="openshift,nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What is Node.JS? Why should I care?">
-<meta property="og:url" content="http://keyangxiang.com/2018/03/31/node.js/about-nodejs/index.html">
+<meta property="og:title" content="How to deploy website to openshift with nginx?">
+<meta property="og:url" content="http://keyangxiang.com/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
-<meta property="og:description" content="Node.JS has been attracting attentions for years. What is Node.JS? What makes it unique? Why should developers care about it?">
+<meta property="og:description" content="Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official nginx docker im">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-02T21:07:28.581Z">
+<meta property="og:updated_time" content="2018-05-18T09:58:33.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="What is Node.JS? Why should I care?">
-<meta name="twitter:description" content="Node.JS has been attracting attentions for years. What is Node.JS? What makes it unique? Why should developers care about it?">
+<meta name="twitter:title" content="How to deploy website to openshift with nginx?">
+<meta name="twitter:description" content="Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official nginx docker im">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -154,52 +154,71 @@
     <div class='container clearfix'>
       <div class='l_main'>
         
-<article id="post-node.js/about-nodejs"
+<article id="post-Openshift/How-to-run-nginx-on-openshift-and-deploy-website"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/2018/03/31/node.js/about-nodejs/">
-    	What is Node.JS? Why should I care?
+  	<a href="/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/">
+    	How to deploy website to openshift with nginx?
     </a>
   </h2>
 	<time>
-	  Mar 31, 2018
+	  Oct 24, 2017
 	</time>
 	
     
     <div class='cats'>
-        <a href="/categories/Node-JS/">Node.JS</a>
+        <a href="/categories/Openshift/">Openshift</a>
     </div>
 
 	</section>
 	<div class="article_right_wrapper">
 		
-			<section class="toc-wrapper"></section>
+			<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-1-Create-App-Deploy-website-source-code"><span class="toc-number">1.</span> <span class="toc-text">Step 1 - Create App / Deploy website source code</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Build-Local-Source"><span class="toc-number">1.1.</span> <span class="toc-text">Build Local Source</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-2-Expose-Nginx-Server"><span class="toc-number">2.</span> <span class="toc-text">Step 2 - Expose Nginx Server</span></a></li></ol></section>
 		
 		
 			<section >
-<h4><a href="/categories/Node-JS/">Node.JS</a></h4>
+<h4><a href="/categories/Openshift/">Openshift</a></h4>
 <ol>
   
     <li>
-      <a href="/2018/03/31/node.js/about-nodejs/">What is Node.JS? Why should I care?</li></a>
+      <a href="/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/">How to deploy website to openshift with nginx?</li></a>
     
     <li>
-      <a href="/2018/04/01/node.js/how-to-install/">How to install Node.JS locally</li></a>
+      <a href="/2018/05/18/Openshift/how-to-run-minishift-on-macos/">How to Run Minishift On MacOSX</li></a>
     
 </ol></section>
 		
 	</div>
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>Node.JS has been attracting attentions for years. What is Node.JS? What makes it unique? Why should developers care about it?</p>
+    	<p>Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official <code>nginx</code> docker image does not work on openshift.</p>
+<p>In this post, I will simply go through how to run <a href="https://access.redhat.com/containers/?tab=overview&amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">this</a> Official RedHat nginx image on Openshift and deploy a website onto it.</p>
+<a id="more"></a>
+<p>So, have your <a href="https://developers.openshift.com/managing-your-applications/client-tools.html" target="_blank" rel="noopener">openshift cli tool (oc)</a> ready, let’s get started.</p>
+<h1 id="Step-1-Create-App-Deploy-website-source-code"><a href="#Step-1-Create-App-Deploy-website-source-code" class="headerlink" title="Step 1 - Create App / Deploy website source code"></a>Step 1 - Create App / Deploy website source code</h1><p>With <code>oc</code> tool, create a new app.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#oc new-app [BuilderImage]~[Source Code Repo]</span></span><br><span class="line">oc new-app registry.access.redhat.com/rhscl/nginx-112-rhel7~https://github.com/Keyang/keyang.github.io.git --name=myapp</span><br></pre></td></tr></table></figure>
+<p>The openshift will pull the image from the registry and register it locally as builder image which will allow building images along with source code of website. It creates <code>build config</code>. </p>
+<p>Then it will pull source code and <code>assemble</code> it with build image to produce another image stream.</p>
+<p>This command will also create <code>deployment config</code> and <code>service</code>.</p>
+<h2 id="Build-Local-Source"><a href="#Build-Local-Source" class="headerlink" title="Build Local Source"></a>Build Local Source</h2><p>If you have no accessible git repo, it is able to build againt local source.</p>
+<p>Slightly different, create a new app on current folder</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#oc new-app [BuilderImage]~[Source Code Repo]</span></span><br><span class="line">oc new-app nginx-112-rhel7~./ --name=myapp</span><br></pre></td></tr></table></figure>
+<p>This will not actually upload the source code from current folder to Openshift but just create a build config. Thus we need to start the build with extra parameters:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc start-build myapp --from-dir=./</span><br></pre></td></tr></table></figure>
+<p>with <code>--from-dir</code> param, <code>oc</code> will upload content of current directory and builder image will <code>assemble</code> the code.</p>
+<h1 id="Step-2-Expose-Nginx-Server"><a href="#Step-2-Expose-Nginx-Server" class="headerlink" title="Step 2 - Expose Nginx Server"></a>Step 2 - Expose Nginx Server</h1><p>Once app is created and built, we could expose it through <code>router</code>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc expose svc/myapp</span><br></pre></td></tr></table></figure>
+<p>Once it is exposed, your nginx server and your website should be accessible with the route associated.</p>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/tags/nodejs/">nodejs</a>
+        <a href="/tags/openshift/">openshift</a>
+      
+        <a href="/tags/nginx/">nginx</a>
       
 	  </div>
     
@@ -207,13 +226,13 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2018/04/01/node.js/how-to-install/" rel="prev"  title="How to install Node.JS locally">
-						How to install Node.JS locally 
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2018/03/31/node.js/about-nodejs/" rel="prev"  title="What is Node.JS? Why should I care?">
+						What is Node.JS? Why should I care? 
 					</a></span>
 				
 				
-					<span class="art-item-right">next：<a href="/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/" rel="next"  title="How to deploy website to openshift with nginx?">
-						How to deploy website to openshift with nginx?
+					<span class="art-item-right">next：<a href="/2017/09/01/HTML5-XHR-download-binary-content-as-Blob/" rel="next"  title="How to download binary content as Blob in JS with Ajax(XHR)">
+						How to download binary content as Blob in JS with Ajax(XHR)
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
@@ -227,7 +246,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'What is Node.JS? Why should I care?',
+		title: 'How to deploy website to openshift with nginx?',
 		tools: true
 	}
 </script>
@@ -270,7 +289,7 @@
 <script>
   var disqus_shortname = 'keyangxiang';
   
-  var disqus_url = 'http://keyangxiang.com/2018/03/31/node.js/about-nodejs/';
+  var disqus_url = 'http://keyangxiang.com/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/';
   
   (function(){
     var dsq = document.createElement('script');

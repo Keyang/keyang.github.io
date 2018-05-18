@@ -12,18 +12,18 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS. Step1 – Download latest Minishi">
+  <meta name="description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.">
 <meta name="keywords" content="openshift,minishift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Run Minishift On MacOSX">
 <meta property="og:url" content="http://keyangxiang.com/2018/05/18/Openshift/how-to-run-minishift-on-macos/index.html">
 <meta property="og:site_name" content="Keyang&#39;s Blog">
-<meta property="og:description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS. Step1 – Download latest Minishi">
+<meta property="og:description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-18T09:44:25.775Z">
+<meta property="og:updated_time" content="2018-05-18T09:50:41.300Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to Run Minishift On MacOSX">
-<meta name="twitter:description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS. Step1 – Download latest Minishi">
+<meta name="twitter:description" content="Minishift allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -183,10 +183,7 @@
 <ol>
   
     <li>
-      <a href="/2018/03/31/node.js/about-nodejs/">What is Node.JS? Why should I care?</li></a>
-    
-    <li>
-      <a href="/2018/04/01/node.js/how-to-install/">How to install Node.JS locally</li></a>
+      <a href="/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/">How to deploy website to openshift with nginx?</li></a>
     
     <li>
       <a href="/2018/05/18/Openshift/how-to-run-minishift-on-macos/">How to Run Minishift On MacOSX</li></a>
@@ -196,7 +193,7 @@
 	</div>
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p><a href="https://github.com/minishift/minishift" target="_blank" rel="noopener">Minishift</a> allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.</p>
+    	<p><a href="https://github.com/minishift/minishift" target="_blank" rel="noopener">Minishift</a> allows running a mini-version of Openshift cluster locally for convenience of development and debug. This blog is going through how to run minishift on MacOS.<br><a id="more"></a></p>
 <h1 id="Step1-–-Download-latest-Minishift"><a href="#Step1-–-Download-latest-Minishift" class="headerlink" title="Step1 – Download latest Minishift"></a>Step1 – Download latest Minishift</h1><p>Goto <a href="https://github.com/minishift/minishift/releases" target="_blank" rel="noopener">Mnishift Github Release Page</a>, it is able to see the binary assets of Minishift for different operation systems. By writing this article, the latest versino of Minishift for MacOS is <a href="https://github.com/minishift/minishift/releases/download/v1.17.0/minishift-1.17.0-darwin-amd64.tgz" target="_blank" rel="noopener">minishift-1.17.0-darwin-amd64.tgz</a>.</p>
 <p>Once downloaded, expand the tar file and copy the <code>minishift</code> file to <code>/usr/local/bin</code> folder</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># untar the downloaded file</span></span><br><span class="line">tar -xvf ~/Downloads/&lt;downloaded file&gt;</span><br><span class="line"></span><br><span class="line">sudo cp ~/Downloads/&lt;expanded folder&gt;/minishift /usr/<span class="built_in">local</span>/bin</span><br><span class="line"></span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/minishift</span><br></pre></td></tr></table></figure>

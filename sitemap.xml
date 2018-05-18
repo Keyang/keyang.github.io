@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://keyangxiang.com/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/</loc>
+    
+    <lastmod>2018-05-18T09:58:33.636Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://keyangxiang.com/2018/05/18/Openshift/how-to-run-minishift-on-macos/</loc>
     
-    <lastmod>2018-05-18T09:44:25.775Z</lastmod>
+    <lastmod>2018-05-18T09:50:41.300Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://keyangxiang.com/2018/04/01/node.js/how-to-install/</loc>
+    
+    <lastmod>2018-05-18T09:48:58.741Z</lastmod>
     
   </url>
   
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>http://keyangxiang.com/2018/04/01/node.js/how-to-install/</loc>
-    
-    <lastmod>2018-04-02T20:59:24.821Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://keyangxiang.com/google74ef30bb51b6688b.html</loc>
     
     <lastmod>2018-03-06T22:00:53.428Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://keyangxiang.com/2017/10/24/How-to-run-nginx-on-openshift-and-deploy-website/</loc>
-    
-    <lastmod>2018-01-07T20:31:37.902Z</lastmod>
     
   </url>
   
