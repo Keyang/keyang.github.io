@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://keyangxiang.com/2018/06/01/Openshift/how-to-run-nginx-as-reverse-proxy/</loc>
+    
+    <lastmod>2018-06-14T10:12:55.416Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://keyangxiang.com/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/</loc>
     
     <lastmod>2018-05-18T09:58:33.636Z</lastmod>

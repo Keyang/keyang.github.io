@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keyangxiang.com/"/>
-  <updated>2018-05-18T09:50:41.300Z</updated>
+  <updated>2018-06-14T10:12:55.416Z</updated>
   <id>http://keyangxiang.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Run Nginx as reverse proxy on Openshift</title>
+    <link href="http://keyangxiang.com/2018/06/01/Openshift/how-to-run-nginx-as-reverse-proxy/"/>
+    <id>http://keyangxiang.com/2018/06/01/Openshift/how-to-run-nginx-as-reverse-proxy/</id>
+    <published>2018-06-01T16:32:24.000Z</published>
+    <updated>2018-06-14T10:12:55.416Z</updated>
+    
+    <content type="html"><![CDATA[<p>In this post, I will introduce a way to deploy a Nginx Reverse Proxy to Openshift base on <a href="https://access.redhat.com/containers/?tab=overview&amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">RedHat certified Nginx Builder Image</a>.</p><a id="more"></a><p>In my previous post: <a href="http://keyangxiang.com/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/">How to deploy website to openshift with nginx</a>, I simply introduced how to use the Nginx Builder Image to deploy a website on Openshift. </p><p>Reverse Proxy configuration, however, is not part of web content. Thus it is not able to directly to use the Builder Image to setup the config and we will need create a real Nginx Image which can be futher configured with reverse proxy table.</p><p><img src="https://www.plantuml.com/plantuml/png/oyjFILLGSYhDp4b9BLBmIy_Cgr3mp4rCJrLII2nMICfKuCe3gu38E2KMfo99vu44KHG4fPQb5WKKvLTKWXKKW5WAN4cPkdPGjI1IrmuipiK50000" alt="image"></p><h1 id="Step-1-–-Create-Nginx-base-image"><a href="#Step-1-–-Create-Nginx-base-image" class="headerlink" title="Step 1 – Create Nginx base image"></a>Step 1 – Create Nginx base image</h1><p>We are creating the Nginx Base Image based on <a href="https://access.redhat.com/containers/?tab=overview&amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">RedHat certified Nginx Builder Image</a> (rhscl/nginx-112-rhel7). </p><p>First, let’s create an app that has an empty <code>index.html</code> page from local directory (e.g. <code>$HOME/webfolder</code>):</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc new-app registry.access.redhat.com/rhscl/nginx-112-rhel7~<span class="variable">$HOME</span>/webfolder --name=nginxbase</span><br></pre></td></tr></table></figure><p>This will create corresponding resources like <code>buildconfig</code>, <code>deploymentconfig</code>, <code>imagestream</code>, <code>service</code> etc for <code>nginxbase</code> in Openshift.</p><p>Once resources created successfully, let’s build the image</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc start-build nginxbase --from-dir=<span class="variable">$HOME</span>/webfolder</span><br></pre></td></tr></table></figure><p>This will create the Nginx Base image and push to registry in Openshift.</p><p>Once the <code>nginxbase</code> image being created, we could remove all other resources:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oc delete bc/nginxbase</span><br><span class="line">oc delete dc/nginxbase</span><br><span class="line">oc delete svc/nginxbase</span><br></pre></td></tr></table></figure><h1 id="Step-2-–-Add-reverse-proxy-configuration"><a href="#Step-2-–-Add-reverse-proxy-configuration" class="headerlink" title="Step 2 – Add reverse proxy configuration"></a>Step 2 – Add reverse proxy configuration</h1><p>We will need create a custom image for reverse proxy. First, create an empty folder and add following files:</p><ul><li>Dockerfile</li><li>nginx-proxy.conf: the proxy definition file</li></ul><p>In <code>Dockerfile</code>, add following content:</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> nginxbase:latest</span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> nginx-proxy.conf /opt/app-root/etc/nginx.default.d/nginx-proxy.conf</span></span><br></pre></td></tr></table></figure><p>When nginx server starts, it will automatically load configuration files <code>*.conf</code> in <code>/opt/app-root/etc/nginx.default.d</code> folder into its default server definition closure. So we add our <code>nginx-proxy</code> configuration file into that folder.</p><p>In <code>nginx-proxy.conf</code> file, we could add reverse proxy configuration. For example:</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> /userProfile &#123;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  Host <span class="variable">$host</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-Proto https;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-For <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-Host <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_pass</span> http://userProfile:8080;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">location</span> /uploadAsset &#123;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  Host <span class="variable">$host</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-Proto https;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-For <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-Host <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_buffering</span> <span class="literal">off</span>;</span><br><span class="line">  <span class="attribute">client_max_body_size</span> <span class="number">50m</span>;</span><br><span class="line">  <span class="attribute">proxy_pass</span> http://uploadAsset:8080;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="Step-3-–-Create-Reverse-Proxy"><a href="#Step-3-–-Create-Reverse-Proxy" class="headerlink" title="Step 3 – Create Reverse Proxy"></a>Step 3 – Create Reverse Proxy</h1><p>Next, create reverse proxy app in Openshift:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc new-app --strategy=docker nginxbase~&lt;path to dockerfile&gt; --name=myReverseProxy</span><br></pre></td></tr></table></figure><p>Just be aware we have to use <code>docker strategy</code> as app’s build strategy so that Openshift knows that we will upload a Docker project.</p><p>Start Build:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc start-build myReverseProxy --from-dir=&lt;path to dockerfile&gt;</span><br></pre></td></tr></table></figure><p>Once the build finished, Openshift should automatically deploy a new pod up and running. We could expose the reverse proxy by running</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc expose svc/myReverseProxy</span><br></pre></td></tr></table></figure><p>and access the nginx reverse proxy through the routes created.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In this post, I will introduce a way to deploy a Nginx Reverse Proxy to Openshift base on &lt;a href=&quot;https://access.redhat.com/containers/?tab=overview&amp;amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;RedHat certified Nginx Builder Image&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Openshift" scheme="http://keyangxiang.com/categories/Openshift/"/>
+    
+    
+      <category term="nginx" scheme="http://keyangxiang.com/tags/nginx/"/>
+    
+      <category term="openshift" scheme="http://keyangxiang.com/tags/openshift/"/>
+    
+  </entry>
   
   <entry>
     <title>How to Run Minishift On MacOSX</title>
@@ -107,9 +131,9 @@
       <category term="Openshift" scheme="http://keyangxiang.com/categories/Openshift/"/>
     
     
-      <category term="openshift" scheme="http://keyangxiang.com/tags/openshift/"/>
-    
       <category term="nginx" scheme="http://keyangxiang.com/tags/nginx/"/>
+    
+      <category term="openshift" scheme="http://keyangxiang.com/tags/openshift/"/>
     
   </entry>
   
@@ -129,9 +153,9 @@
     </summary>
     
     
-      <category term="web" scheme="http://keyangxiang.com/tags/web/"/>
-    
       <category term="js" scheme="http://keyangxiang.com/tags/js/"/>
+    
+      <category term="web" scheme="http://keyangxiang.com/tags/web/"/>
     
   </entry>
   
@@ -151,9 +175,9 @@
     </summary>
     
     
-      <category term="web" scheme="http://keyangxiang.com/tags/web/"/>
-    
       <category term="js" scheme="http://keyangxiang.com/tags/js/"/>
+    
+      <category term="web" scheme="http://keyangxiang.com/tags/web/"/>
     
   </entry>
   
@@ -461,32 +485,6 @@
     
     
       <category term="mongodb" scheme="http://keyangxiang.com/tags/mongodb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>wordpress reverse proxy headers</title>
-    <link href="http://keyangxiang.com/2016/03/17/wordpress-reverse-proxy-headers/"/>
-    <id>http://keyangxiang.com/2016/03/17/wordpress-reverse-proxy-headers/</id>
-    <published>2016-03-17T21:32:31.000Z</published>
-    <updated>2017-12-23T00:22:52.544Z</updated>
-    
-    <content type="html"><![CDATA[<p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line"></span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:&lt;/p&gt;
-&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;t
-      
-    
-    </summary>
-    
-    
-      <category term="nginx" scheme="http://keyangxiang.com/tags/nginx/"/>
-    
-      <category term="wordpress" scheme="http://keyangxiang.com/tags/wordpress/"/>
     
   </entry>
   
