@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>How to make website offline accessible | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -21,7 +21,7 @@
 <meta property="og:description" content="Progress web app - enable website offline access with service worker.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtieUQ0QVNuR1RMUUE">
-<meta property="og:updated_time" content="2017-12-22T22:08:26.173Z">
+<meta property="og:updated_time" content="2017-12-22T22:08:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to make website offline accessible">
 <meta name="twitter:description" content="Progress web app - enable website offline access with service worker.">
@@ -29,7 +29,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -46,7 +46,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -194,14 +194,16 @@
 <li>Add <code>service-worker.js</code> at the root folder of your web app. Here, the location (root folder) is important.</li>
 <li>Add following script to <code>index.html</code></li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/sw-toolbox/companion.js"</span> <span class="attr">data-service-worker</span>=<span class="string">"service-worker.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/path/to/sw-toolbox/companion.js"</span> <span class="attr">data-service-worker</span>=<span class="string">"service-worker.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
 <li>Add content to <code>service-worker.js</code>. You can follow the tutorial <a href="https://googlechrome.github.io/sw-toolbox/usage.html#main" target="_blank" rel="noopener">here</a>. But most situation you can just use following scripts:</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">importScripts(<span class="string">"/path/to/sw-toolbox/sw-toolbox.js"</span>);</span><br><span class="line"><span class="comment">/* this will cache all files of current web app with </span></span><br><span class="line"><span class="comment"> * "fastest" strategy. </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">toolbox.router.get(<span class="string">"/(.*)"</span>,toolbox.fastest);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* Add external files here.e.g.</span></span><br><span class="line"><span class="comment">* toolbox.router.get("https://code.jquery.com/jquery-3.2.1.min.js",toolbox.fastest);</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
 <p>You can check what I have used for <a href="https://studio.psdetch.com/service-worker.js" target="_blank" rel="noopener">psdetch</a>.</p>
 <p>And that’s it. Your whole web app can now work offline. With <code>fastest</code> strategy, response is always returned from Cache and updated immediately if possible. This dramatically increased user experience.</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtieUQ0QVNuR1RMUUE" alt="cat relax"></p>
+<p><img src="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtieUQ0QVNuR1RMUUE" alt="cat relax"></p>
 
   	</div>
 	  

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>how to change MacOSX screenshot location | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -22,7 +22,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiVkVNYWJsWEJHbWc">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiLUF6V2Q1alo4M3M">
-<meta property="og:updated_time" content="2017-12-22T22:04:01.527Z">
+<meta property="og:updated_time" content="2017-12-22T22:04:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="how to change MacOSX screenshot location">
 <meta name="twitter:description" content="Taking screenshots with MacOSX is very useful when writting blogs or documents. The system has powerful built-in screenshot function. However, the default location to store the screenshot files is Des">
@@ -30,7 +30,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -47,7 +47,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -182,15 +182,17 @@
     	<p>Taking screenshots with MacOSX is very useful when writting blogs or documents. The system has powerful built-in screenshot function. However, the default location to store the screenshot files is Desktop.</p>
 <p>This blog will go through how to change the location of screenshots to another folder.</p>
 <a id="more"></a>
+
 <h1 id="Step-1-Create-a-folder"><a href="#Step-1-Create-a-folder" class="headerlink" title="Step 1 Create a folder"></a>Step 1 Create a folder</h1><p>Create a new folder anywhere using <code>finder</code> or <code>terminal</code>. Here I created <code>blog_statics</code> folder in my Google Drive folder.</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiVkVNYWJsWEJHbWc" alt="Picture"></p>
+<p><img src="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiVkVNYWJsWEJHbWc" alt="Picture"></p>
 <h1 id="Step-2-Change-default-location-of-screenshots"><a href="#Step-2-Change-default-location-of-screenshots" class="headerlink" title="Step 2 Change default location of screenshots"></a>Step 2 Change default location of screenshots</h1><p>Click the created folder in last step and press <code>Command+C</code> to copy the full path to clipboard.</p>
 <p>Press <code>Command + Space</code> and type <code>terminal</code> to open <code>terminal</code></p>
 <p>In terminal, type following command:</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults <span class="keyword">write</span> com.apple.screencapture <span class="keyword">location</span> <span class="title">&lt;Folder</span> Location&gt;</span><br></pre></td></tr></table></figure>
-<p>Note the <folder location=""> is the location of your create folder. You could <code>Command+V</code> to paste it from clipboard</folder></p>
+
+<p>Note the <folder location> is the location of your create folder. You could <code>Command+V</code> to paste it from clipboard</folder></p>
 <p>It should give following result:</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiLUF6V2Q1alo4M3M" alt="img"></p>
+<p><img src="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiLUF6V2Q1alo4M3M" alt="img"></p>
 <p>Now all new screenshots should be stored in that place.</p>
 
   	</div>

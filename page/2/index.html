@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -22,7 +22,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -39,7 +39,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -156,6 +156,42 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2016/12/21/how-to-change-MacOSX-screenshot-location/">
+        how to change MacOSX screenshot location
+      </a>
+    </h2>
+    
+    <time>
+      Dec 21, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>Taking screenshots with MacOSX is very useful when writting blogs or documents. The system has powerful built-in screenshot function. However, the default location to store the screenshot files is Desktop.</p>
+<p>This blog will go through how to change the location of screenshots to another folder.</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/12/21/how-to-change-MacOSX-screenshot-location/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/macosx-trick/">macosx trick</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2016/11/13/webworker-notes/">
         webworker notes
       </a>
@@ -236,7 +272,9 @@
 		
   </section>
   <section class="article typo">
-	  <p>Run docker in docker<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="params">--privileged</span> -i -t -d <span class="params">--restart=unless-stopped</span> -p 2376<span class="function">:2376</span> -p 10000-11000<span class="function">:10000-11000</span> -p 10000-11000<span class="function">:10000-11000</span>/udp -v <span class="string">/mnt/opt</span>:<span class="string">/opt</span><span class="function">:rw</span> -v <span class="string">/etc/docker</span>:<span class="string">/etc/docker</span><span class="function">:ro</span> -v <span class="string">/mnt/var/lib/docker</span>:<span class="string">/var/lib/docker</span> <span class="params">--name=docker</span> docker<span class="function">:dind</span>  -H tcp:<span class="string">//0.0.0.0</span><span class="function">:2376</span> <span class="params">--storage-driver=aufs</span> <span class="params">--tlsverify</span> <span class="params">--tlscacert</span> <span class="string">/etc/docker/ca.pem</span> <span class="params">--tlscert</span> <span class="string">/etc/docker/server.pem</span> <span class="params">--tlskey</span> <span class="string">/etc/docker/server-key.pem</span></span><br></pre></td></tr></table></figure></p>
+	  <p>Run docker in docker</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="params">--privileged</span> -i -t -d <span class="params">--restart=unless-stopped</span> -p 2376<span class="function">:2376</span> -p 10000-11000<span class="function">:10000-11000</span> -p 10000-11000<span class="function">:10000-11000</span>/udp -v <span class="string">/mnt/opt</span>:<span class="string">/opt</span><span class="function">:rw</span> -v <span class="string">/etc/docker</span>:<span class="string">/etc/docker</span><span class="function">:ro</span> -v <span class="string">/mnt/var/lib/docker</span>:<span class="string">/var/lib/docker</span> <span class="params">--name=docker</span> docker<span class="function">:dind</span>  -H tcp:<span class="string">//0.0.0.0</span><span class="function">:2376</span> <span class="params">--storage-driver=aufs</span> <span class="params">--tlsverify</span> <span class="params">--tlscacert</span> <span class="string">/etc/docker/ca.pem</span> <span class="params">--tlscert</span> <span class="string">/etc/docker/server.pem</span> <span class="params">--tlskey</span> <span class="string">/etc/docker/server-key.pem</span></span><br></pre></td></tr></table></figure>
+
 
 
     
@@ -268,7 +306,9 @@
 		
   </section>
   <section class="article typo">
-	  <p>Netcat (nc) is very powerful tool. Install <code>apt-get install netcat</code><br>Send UDP packet with netcat:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">"content goes to server"</span> | nc -<span class="keyword">u</span> <span class="symbol">&lt;ip&gt;</span> <span class="symbol">&lt;port&gt;</span></span><br></pre></td></tr></table></figure></p>
+	  <p>Netcat (nc) is very powerful tool. Install <code>apt-get install netcat</code><br>Send UDP packet with netcat:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">"content goes to server"</span> | nc -<span class="keyword">u</span> <span class="symbol">&lt;ip&gt;</span> <span class="symbol">&lt;port&gt;</span></span><br></pre></td></tr></table></figure>
+
 
 
     
@@ -276,9 +316,9 @@
     
 	  <div class="full-width auto-padding tags">
       
-        <a href="/tags/linux/">linux</a>
-      
         <a href="/tags/cli/">cli</a>
+      
+        <a href="/tags/linux/">linux</a>
       
 	  </div>
     
@@ -302,7 +342,9 @@
 		
   </section>
   <section class="article typo">
-	  <p>e.g.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.select-type-1</span>&#123;</span><br><span class="line">  <span class="attribute">-webkit-appearance</span>: none;</span><br><span class="line">  <span class="attribute">-moz-appearance</span>: none;</span><br><span class="line">  <span class="attribute">appearance</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#ee7122</span>;</span><br><span class="line">  <span class="attribute">color</span>:white;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(255, 255, 255, 0.12) <span class="built_in">url</span>(<span class="string">"../img/arrowdown.png"</span>) no-repeat <span class="number">90%</span> <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-size</span>:<span class="number">10%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+	  <p>e.g.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.select-type-1</span>&#123;</span><br><span class="line">  <span class="attribute">-webkit-appearance</span>: none;</span><br><span class="line">  <span class="attribute">-moz-appearance</span>: none;</span><br><span class="line">  <span class="attribute">appearance</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#ee7122</span>;</span><br><span class="line">  <span class="attribute">color</span>:white;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(255, 255, 255, 0.12) <span class="built_in">url</span>(<span class="string">"../img/arrowdown.png"</span>) no-repeat <span class="number">90%</span> <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-size</span>:<span class="number">10%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>self-explained.</p>
 
 
@@ -381,6 +423,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ip = (req.headers[<span class="string">'x-forwarded-for'</span>] ||</span><br><span class="line">     req.connection.remoteAddress ||</span><br><span class="line">     req.socket.remoteAddress ||</span><br><span class="line">     req.connection.socket.remoteAddress).split(<span class="string">","</span>)[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
 
 
+
     
     
     
@@ -414,7 +457,8 @@
   <section class="article typo">
 	  <p>Testing with web app is always fun. Angularjs makes it even better.<br>This quick note bootstrap any angular.js projects embracing with unit tests.</p>
 <h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><p>Unit testing in Angularjs is using (by default) Jasmine and Karma.</p>
-<p>Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span><span class="keyword">install </span>--save angular-mocks</span><br></pre></td></tr></table></figure></p>
+<p>Also, angular-mocks needs to be installed. It is needed for injection and some other mock objects.</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bower </span><span class="keyword">install </span>--save angular-mocks</span><br></pre></td></tr></table></figure>
 
     
 	  <div class="readmore">
@@ -451,7 +495,8 @@
 		
   </section>
   <section class="article typo">
-	  <p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="noopener">doc</a> is not quite detailed and obselete.<br>Some example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  password:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    required:<span class="literal">true</span>,</span><br><span class="line">    set:hash</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hash</span>(<span class="params">plainPwd</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+	  <p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="noopener">doc</a> is not quite detailed and obselete.<br>Some example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  password:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    required:<span class="literal">true</span>,</span><br><span class="line">    <span class="keyword">set</span>:hash</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">function hash(plainPwd)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     
 	  <div class="readmore">
@@ -465,42 +510,6 @@
         <a href="/tags/node-js/">node.js</a>
       
         <a href="/tags/mongoose-js/">mongoose.js</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/03/17/Mongodb-two-phase-lock-example/">
-        Mongodb two phase lock example (with mongoose)
-      </a>
-    </h2>
-    
-    <time>
-      Mar 17, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  lastModified:<span class="built_in">Date</span>,</span><br><span class="line">  status:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</span><br><span class="line">    index:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code><br>
-
-    
-	  <div class="readmore">
-      <a href="/2016/03/17/Mongodb-two-phase-lock-example/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/mongodb/">mongodb</a>
       
 	  </div>
     

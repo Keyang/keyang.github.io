@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -22,7 +22,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -39,7 +39,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -156,6 +156,44 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2016/03/17/Mongodb-two-phase-lock-example/">
+        Mongodb two phase lock example (with mongoose)
+      </a>
+    </h2>
+    
+    <time>
+      Mar 17, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>Mongodb needs extra collection for two phase lock.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  lastModified:<span class="built_in">Date</span>,</span><br><span class="line">  status:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</span><br><span class="line">    index:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code></p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/03/17/Mongodb-two-phase-lock-example/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/mongodb/">mongodb</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2016/03/17/wordpress-reverse-proxy-headers/">
         wordpress reverse proxy headers
       </a>
@@ -169,6 +207,7 @@
   <section class="article typo">
 	  <p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line"></span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</span><br></pre></td></tr></table></figure>
+
 
 
     
@@ -206,6 +245,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'minimist'</span>)(<span class="string">"-x 3 -y 4 -n5 -abc --beep=boop foo bar baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line">&#123; <span class="attr">_</span>: [ <span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span> ],</span><br><span class="line">  x: <span class="number">3</span>,</span><br><span class="line">  y: <span class="number">4</span>,</span><br><span class="line">  n: <span class="number">5</span>,</span><br><span class="line">  a: <span class="literal">true</span>,</span><br><span class="line">  b: <span class="literal">true</span>,</span><br><span class="line">  c: <span class="literal">true</span>,</span><br><span class="line">  beep: <span class="string">'boop'</span> &#125;</span><br></pre></td></tr></table></figure>
 
 
+
     
     
     
@@ -238,6 +278,7 @@
   </section>
   <section class="article typo">
 	  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-webkit-font-smoothing</span>: <span class="selector-tag">antialiased</span>;</span><br><span class="line"><span class="selector-tag">-moz-osx-font-smoothing</span>: <span class="selector-tag">grayscale</span></span><br></pre></td></tr></table></figure>
+
 <p>Makes text clearer</p>
 
 
@@ -279,7 +320,7 @@
 <li>It makes system deployment much faster</li>
 <li>and easier system operation</li>
 </ul>
-<p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">use cases here</a><br>
+<p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">use cases here</a></p>
 
     
 	  <div class="readmore">
@@ -314,19 +355,23 @@
 		
   </section>
   <section class="article typo">
-	  <h3 id="Resize"><a href="#Resize" class="headerlink" title="Resize"></a>Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">style</span>=<span class="string">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<textarea style="resize:horizontal"></textarea>
+	  <h3 id="Resize"><a href="#Resize" class="headerlink" title="Resize"></a>Resize</h3><p>Switch on / off resize of a textarea on horizontal / vertical / both.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">style</span>=<span class="string">"resize:horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p><textarea style="resize:horizontal"></textarea></p>
 <p>The resize property can be either:</p>
 <ul>
 <li>vertical: only resize vertically</li>
 <li>horizontal: only resize horizontally</li>
 <li>none: disable resize (also remove the resize area on right bottom.)</li>
 </ul>
-<h3 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h3><p>Remove or change style of outline when textarea is focused on safari / chrome etc.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"customize"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h3><p>Remove or change style of outline when textarea is focused on safari / chrome etc.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"customize"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.customize</span><span class="selector-pseudo">:focus</span>&#123;</span><br><span class="line">  <span class="attribute">outline-color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><style>.customize:focus{ outline-color:red; }</style></p>
-<textarea class="customize"></textarea>
+
+<style>.customize:focus{ outline-color:red; }</style>
+<p><textarea class="customize"></textarea></p>
 
 
     

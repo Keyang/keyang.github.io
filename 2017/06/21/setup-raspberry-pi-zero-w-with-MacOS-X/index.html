@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>How to setup raspberry pi zero w with MacOS X | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -32,7 +32,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -49,7 +49,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -192,20 +192,23 @@
 </ul>
 <p>All coneectors can come from seller when you purchase Raspberrypi zero w.</p>
 <a id="more"></a>
+
+
 <h1 id="Step-2-Download-Raspbian-Image"><a href="#Step-2-Download-Raspbian-Image" class="headerlink" title="Step 2 Download Raspbian Image"></a>Step 2 Download Raspbian Image</h1><p>You can download official <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">Raspbian OS</a> from here. If you want use <a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">other operation systems</a>, it is same setup setups.</p>
 <h1 id="Step-3-Write-Image-to-Micro-SD-card"><a href="#Step-3-Write-Image-to-Micro-SD-card" class="headerlink" title="Step 3 Write Image to Micro SD card"></a>Step 3 Write Image to Micro SD card</h1><p><strong>Be aware, writing image to micro sd card will wipe all data on it</strong></p>
 <p>Connect micro sd card to your mac through micro sd card reader.</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiSnZ4VW91d1lWRXc" alt="Picture"></p>
+<p><img src="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiSnZ4VW91d1lWRXc" alt="Picture"></p>
 <p>Once you can see your sd card in <code>finder</code>, you need find out the <code>disk</code> in system.</p>
 <p>Open a <code>terminal</code> and run <code>diskutil list</code>:  </p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtiemZJXzdLZzFHM3c" alt="Picture"></p>
+<p><img src="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtiemZJXzdLZzFHM3c" alt="Picture"></p>
 <p>Find your sd card disk by its name. On my machine, the <code>/dev/disk2</code> in red rectangle is the <code>disk</code> in system and copy <code>disk2</code> only (not <code>/dev/disk2</code>) into clipboard.</p>
 <p>Unmount the sd card from finder but do <strong>not</strong> unplug it.</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFtib0MxZUR5QUJOc3M" alt="Picture"></p>
+<p><img src="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFtib0MxZUR5QUJOc3M" alt="Picture"></p>
 <p>Now, we need flash the image downloaded to sd card. You may need unzip it if the downloaded file is zipped by double click the file in finder. Below is the command to use:</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd <span class="attribute">bs</span>=4M <span class="attribute">if</span>=&lt;path <span class="keyword">to</span> downloaded .img file&gt;  <span class="attribute">of</span>=/dev/r&lt;disk&gt;</span><br></pre></td></tr></table></figure>
+
 <p>Replace the <code>path</code> and <code>&lt;disk&gt;</code> to your own one. </p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=0ByuKQDQ-pFticTM3R3lna0FudzA" alt="Pic"></p>
+<p><img src="https://drive.google.com/uc?export=download&id=0ByuKQDQ-pFticTM3R3lna0FudzA" alt="Pic"></p>
 <h1 id="Step-4-Plugin-and-setup"><a href="#Step-4-Plugin-and-setup" class="headerlink" title="Step 4 Plugin and setup"></a>Step 4 Plugin and setup</h1><p>Now insert the flashed micro sd card to Raspberrypi Zero W and connect everything and you are ready to go.</p>
 <p>[Picture]</p>
 <h1 id="General-Problems"><a href="#General-Problems" class="headerlink" title="General Problems"></a>General Problems</h1><ul>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Run Nginx as reverse proxy on Openshift | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -21,7 +21,7 @@
 <meta property="og:description" content="In this post, I will introduce a way to deploy a Nginx Reverse Proxy to Openshift base on RedHat certified Nginx Builder Image.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://www.plantuml.com/plantuml/png/oyjFILLGSYhDp4b9BLBmIy_Cgr3mp4rCJrLII2nMICfKuCe3gu38E2KMfo99vu44KHG4fPQb5WKKvLTKWXKKW5WAN4cPkdPGjI1IrmuipiK50000">
-<meta property="og:updated_time" content="2018-06-14T10:12:55.416Z">
+<meta property="og:updated_time" content="2018-06-14T10:12:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Run Nginx as reverse proxy on Openshift">
 <meta name="twitter:description" content="In this post, I will introduce a way to deploy a Nginx Reverse Proxy to Openshift base on RedHat certified Nginx Builder Image.">
@@ -29,7 +29,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -46,7 +46,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -198,20 +198,24 @@
 	</div>
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>In this post, I will introduce a way to deploy a Nginx Reverse Proxy to Openshift base on <a href="https://access.redhat.com/containers/?tab=overview&amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">RedHat certified Nginx Builder Image</a>.</p>
+    	<p>In this post, I will introduce a way to deploy a Nginx Reverse Proxy to Openshift base on <a href="https://access.redhat.com/containers/?tab=overview&platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">RedHat certified Nginx Builder Image</a>.</p>
 <a id="more"></a>
+
 <p>In my previous post: <a href="http://keyangxiang.com/2017/10/24/Openshift/How-to-run-nginx-on-openshift-and-deploy-website/">How to deploy website to openshift with nginx</a>, I simply introduced how to use the Nginx Builder Image to deploy a website on Openshift. </p>
 <p>Reverse Proxy configuration, however, is not part of web content. Thus it is not able to directly to use the Builder Image to setup the config and we will need create a real Nginx Image which can be futher configured with reverse proxy table.</p>
 <p><img src="https://www.plantuml.com/plantuml/png/oyjFILLGSYhDp4b9BLBmIy_Cgr3mp4rCJrLII2nMICfKuCe3gu38E2KMfo99vu44KHG4fPQb5WKKvLTKWXKKW5WAN4cPkdPGjI1IrmuipiK50000" alt="image"></p>
-<h1 id="Step-1-–-Create-Nginx-base-image"><a href="#Step-1-–-Create-Nginx-base-image" class="headerlink" title="Step 1 – Create Nginx base image"></a>Step 1 – Create Nginx base image</h1><p>We are creating the Nginx Base Image based on <a href="https://access.redhat.com/containers/?tab=overview&amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">RedHat certified Nginx Builder Image</a> (rhscl/nginx-112-rhel7). </p>
+<h1 id="Step-1-–-Create-Nginx-base-image"><a href="#Step-1-–-Create-Nginx-base-image" class="headerlink" title="Step 1 – Create Nginx base image"></a>Step 1 – Create Nginx base image</h1><p>We are creating the Nginx Base Image based on <a href="https://access.redhat.com/containers/?tab=overview&platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">RedHat certified Nginx Builder Image</a> (rhscl/nginx-112-rhel7). </p>
 <p>First, let’s create an app that has an empty <code>index.html</code> page from local directory (e.g. <code>$HOME/webfolder</code>):</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc new-app registry.access.redhat.com/rhscl/nginx-112-rhel7~<span class="variable">$HOME</span>/webfolder --name=nginxbase</span><br></pre></td></tr></table></figure>
+
 <p>This will create corresponding resources like <code>buildconfig</code>, <code>deploymentconfig</code>, <code>imagestream</code>, <code>service</code> etc for <code>nginxbase</code> in Openshift.</p>
 <p>Once resources created successfully, let’s build the image</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc start-build nginxbase --from-dir=<span class="variable">$HOME</span>/webfolder</span><br></pre></td></tr></table></figure>
+
 <p>This will create the Nginx Base image and push to registry in Openshift.</p>
 <p>Once the <code>nginxbase</code> image being created, we could remove all other resources:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oc delete bc/nginxbase</span><br><span class="line">oc delete dc/nginxbase</span><br><span class="line">oc delete svc/nginxbase</span><br></pre></td></tr></table></figure>
+
 <h1 id="Step-2-–-Add-reverse-proxy-configuration"><a href="#Step-2-–-Add-reverse-proxy-configuration" class="headerlink" title="Step 2 – Add reverse proxy configuration"></a>Step 2 – Add reverse proxy configuration</h1><p>We will need create a custom image for reverse proxy. First, create an empty folder and add following files:</p>
 <ul>
 <li>Dockerfile</li>
@@ -219,16 +223,21 @@
 </ul>
 <p>In <code>Dockerfile</code>, add following content:</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> nginxbase:latest</span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> nginx-proxy.conf /opt/app-root/etc/nginx.default.d/nginx-proxy.conf</span></span><br></pre></td></tr></table></figure>
+
 <p>When nginx server starts, it will automatically load configuration files <code>*.conf</code> in <code>/opt/app-root/etc/nginx.default.d</code> folder into its default server definition closure. So we add our <code>nginx-proxy</code> configuration file into that folder.</p>
 <p>In <code>nginx-proxy.conf</code> file, we could add reverse proxy configuration. For example:</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> /userProfile &#123;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  Host <span class="variable">$host</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-Proto https;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-For <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-Host <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_pass</span> http://userProfile:8080;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">location</span> /uploadAsset &#123;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  Host <span class="variable">$host</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-Proto https;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-For <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_set_header</span>  X-Forwarded-Host <span class="variable">$remote_addr</span>;</span><br><span class="line">  <span class="attribute">proxy_buffering</span> <span class="literal">off</span>;</span><br><span class="line">  <span class="attribute">client_max_body_size</span> <span class="number">50m</span>;</span><br><span class="line">  <span class="attribute">proxy_pass</span> http://uploadAsset:8080;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h1 id="Step-3-–-Create-Reverse-Proxy"><a href="#Step-3-–-Create-Reverse-Proxy" class="headerlink" title="Step 3 – Create Reverse Proxy"></a>Step 3 – Create Reverse Proxy</h1><p>Next, create reverse proxy app in Openshift:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc new-app --strategy=docker nginxbase~&lt;path to dockerfile&gt; --name=myReverseProxy</span><br></pre></td></tr></table></figure>
+
 <p>Just be aware we have to use <code>docker strategy</code> as app’s build strategy so that Openshift knows that we will upload a Docker project.</p>
 <p>Start Build:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc start-build myReverseProxy --from-dir=&lt;path to dockerfile&gt;</span><br></pre></td></tr></table></figure>
+
 <p>Once the build finished, Openshift should automatically deploy a new pod up and running. We could expose the reverse proxy by running</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc expose svc/myReverseProxy</span><br></pre></td></tr></table></figure>
+
 <p>and access the nginx reverse proxy through the routes created.</p>
 
   	</div>
@@ -244,6 +253,10 @@
 		
 	
 		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2019/09/06/hello/" rel="prev"  title="hello">
+						hello 
+					</a></span>
 				
 				
 					<span class="art-item-right">next：<a href="/2018/05/18/Openshift/how-to-run-minishift-on-macos/" rel="next"  title="How to Run Minishift On MacOSX">

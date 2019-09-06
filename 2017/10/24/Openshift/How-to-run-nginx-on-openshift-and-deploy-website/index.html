@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>How to deploy website to openshift with nginx? | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -20,14 +20,14 @@
 <meta property="og:site_name" content="Keyang&#39;s Blog">
 <meta property="og:description" content="Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official nginx docker im">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-18T09:58:33.636Z">
+<meta property="og:updated_time" content="2018-05-18T09:58:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to deploy website to openshift with nginx?">
 <meta name="twitter:description" content="Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official nginx docker im">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -44,7 +44,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -197,22 +197,27 @@
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Although Openshift is able to use docker images, it has much more restrictions like no root user. Thus not all docker images can work straight on Openshift. Unfortunately, the official <code>nginx</code> docker image does not work on openshift.</p>
-<p>In this post, I will simply go through how to run <a href="https://access.redhat.com/containers/?tab=overview&amp;platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">this</a> Official RedHat nginx image on Openshift and deploy a website onto it.</p>
+<p>In this post, I will simply go through how to run <a href="https://access.redhat.com/containers/?tab=overview&platform=openshift#/registry.access.redhat.com/rhscl/nginx-112-rhel7" target="_blank" rel="noopener">this</a> Official RedHat nginx image on Openshift and deploy a website onto it.</p>
 <a id="more"></a>
+
 <p>So, have your <a href="https://developers.openshift.com/managing-your-applications/client-tools.html" target="_blank" rel="noopener">openshift cli tool (oc)</a> ready, let’s get started.</p>
 <h1 id="Step-1-Create-App-Deploy-website-source-code"><a href="#Step-1-Create-App-Deploy-website-source-code" class="headerlink" title="Step 1 - Create App / Deploy website source code"></a>Step 1 - Create App / Deploy website source code</h1><p>With <code>oc</code> tool, create a new app.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#oc new-app [BuilderImage]~[Source Code Repo]</span></span><br><span class="line">oc new-app registry.access.redhat.com/rhscl/nginx-112-rhel7~https://github.com/Keyang/keyang.github.io.git --name=myapp</span><br></pre></td></tr></table></figure>
+
 <p>The openshift will pull the image from the registry and register it locally as builder image which will allow building images along with source code of website. It creates <code>build config</code>. </p>
 <p>Then it will pull source code and <code>assemble</code> it with build image to produce another image stream.</p>
 <p>This command will also create <code>deployment config</code> and <code>service</code>.</p>
 <h2 id="Build-Local-Source"><a href="#Build-Local-Source" class="headerlink" title="Build Local Source"></a>Build Local Source</h2><p>If you have no accessible git repo, it is able to build againt local source.</p>
 <p>Slightly different, create a new app on current folder</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#oc new-app [BuilderImage]~[Source Code Repo]</span></span><br><span class="line">oc new-app nginx-112-rhel7~./ --name=myapp</span><br></pre></td></tr></table></figure>
+
 <p>This will not actually upload the source code from current folder to Openshift but just create a build config. Thus we need to start the build with extra parameters:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc start-build myapp --from-dir=./</span><br></pre></td></tr></table></figure>
+
 <p>with <code>--from-dir</code> param, <code>oc</code> will upload content of current directory and builder image will <code>assemble</code> the code.</p>
 <h1 id="Step-2-Expose-Nginx-Server"><a href="#Step-2-Expose-Nginx-Server" class="headerlink" title="Step 2 - Expose Nginx Server"></a>Step 2 - Expose Nginx Server</h1><p>Once app is created and built, we could expose it through <code>router</code>.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oc expose svc/myapp</span><br></pre></td></tr></table></figure>
+
 <p>Once it is exposed, your nginx server and your website should be accessible with the route associated.</p>
 
   	</div>

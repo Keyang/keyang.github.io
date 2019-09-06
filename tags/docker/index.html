@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Tag: docker | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -22,7 +22,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -39,7 +39,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -171,7 +171,9 @@
 		
   </section>
   <section class="article typo">
-	  <p>Run docker in docker<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="params">--privileged</span> -i -t -d <span class="params">--restart=unless-stopped</span> -p 2376<span class="function">:2376</span> -p 10000-11000<span class="function">:10000-11000</span> -p 10000-11000<span class="function">:10000-11000</span>/udp -v <span class="string">/mnt/opt</span>:<span class="string">/opt</span><span class="function">:rw</span> -v <span class="string">/etc/docker</span>:<span class="string">/etc/docker</span><span class="function">:ro</span> -v <span class="string">/mnt/var/lib/docker</span>:<span class="string">/var/lib/docker</span> <span class="params">--name=docker</span> docker<span class="function">:dind</span>  -H tcp:<span class="string">//0.0.0.0</span><span class="function">:2376</span> <span class="params">--storage-driver=aufs</span> <span class="params">--tlsverify</span> <span class="params">--tlscacert</span> <span class="string">/etc/docker/ca.pem</span> <span class="params">--tlscert</span> <span class="string">/etc/docker/server.pem</span> <span class="params">--tlskey</span> <span class="string">/etc/docker/server-key.pem</span></span><br></pre></td></tr></table></figure></p>
+	  <p>Run docker in docker</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="params">--privileged</span> -i -t -d <span class="params">--restart=unless-stopped</span> -p 2376<span class="function">:2376</span> -p 10000-11000<span class="function">:10000-11000</span> -p 10000-11000<span class="function">:10000-11000</span>/udp -v <span class="string">/mnt/opt</span>:<span class="string">/opt</span><span class="function">:rw</span> -v <span class="string">/etc/docker</span>:<span class="string">/etc/docker</span><span class="function">:ro</span> -v <span class="string">/mnt/var/lib/docker</span>:<span class="string">/var/lib/docker</span> <span class="params">--name=docker</span> docker<span class="function">:dind</span>  -H tcp:<span class="string">//0.0.0.0</span><span class="function">:2376</span> <span class="params">--storage-driver=aufs</span> <span class="params">--tlsverify</span> <span class="params">--tlscacert</span> <span class="string">/etc/docker/ca.pem</span> <span class="params">--tlscert</span> <span class="string">/etc/docker/server.pem</span> <span class="params">--tlskey</span> <span class="string">/etc/docker/server-key.pem</span></span><br></pre></td></tr></table></figure>
+
 
 
     
@@ -252,7 +254,7 @@
 <li>It makes system deployment much faster</li>
 <li>and easier system operation</li>
 </ul>
-<p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">use cases here</a><br>
+<p>Still don’t know why? Check out <a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">use cases here</a></p>
 
     
 	  <div class="readmore">

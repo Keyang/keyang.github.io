@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Docker multi-hosting network quick note | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -20,14 +20,14 @@
 <meta property="og:site_name" content="Keyang&#39;s Blog">
 <meta property="og:description" content="To create an overlay network on multiple hosts over swarm, following are required:  a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used fo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-23T00:22:04.889Z">
+<meta property="og:updated_time" content="2017-12-23T00:22:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker multi-hosting network quick note">
 <meta name="twitter:description" content="To create an overlay network on multiple hosts over swarm, following are required:  a key-value store service: this is used for broadcasting hosts / swarm agents. It can be same kv store swarm used fo">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -44,7 +44,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -182,21 +182,29 @@
 <li>Run docker daemon with following parameters:<ul>
 <li>cluster-store: where the store is</li>
 <li>cluster-advertise: what network interface to be advertised<a id="more"></a>
-<h1 id="Setup-consul-KV-store"><a href="#Setup-consul-KV-store" class="headerlink" title="Setup consul KV store"></a>Setup consul KV store</h1><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    -<span class="ruby">p <span class="string">"8500:8500"</span> \</span></span><br><span class="line"><span class="ruby">    -h <span class="string">"consul"</span> \</span></span><br><span class="line"><span class="ruby">    --restart=<span class="keyword">unless</span>-stopped \</span></span><br><span class="line"><span class="ruby">    --name=<span class="string">"kv_store"</span>\</span></span><br><span class="line"><span class="ruby">    progrium/consul -server -bootstrap</span></span><br></pre></td></tr></table></figure>
+<h1 id="Setup-consul-KV-store"><a href="#Setup-consul-KV-store" class="headerlink" title="Setup consul KV store"></a>Setup consul KV store</h1><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d <span class="string">\</span></span><br><span class="line">    -p <span class="string">"8500:8500"</span> <span class="string">\</span></span><br><span class="line">    -h <span class="string">"consul"</span> <span class="string">\</span></span><br><span class="line">    --restart=<span class="keyword">unless</span>-stopped <span class="string">\</span></span><br><span class="line">    --name=<span class="string">"kv_store"</span><span class="string">\</span></span><br><span class="line">    progrium/consul -server -bootstrap</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
 </ul>
 <h1 id="Daemon-Options"><a href="#Daemon-Options" class="headerlink" title="Daemon Options"></a>Daemon Options</h1><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">--engine-opt</span>=<span class="string">"cluster-store=consul://$(docker-machine ip mh-keystore):8500"</span></span><br><span class="line"><span class="attr">--engine-opt</span>=<span class="string">"cluster-advertise=eth1:2376"</span></span><br></pre></td></tr></table></figure>
-<p><strong>All</strong> swarm-agents should have these options otherwise it will be likely get this error:<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">Error</span> response <span class="keyword">from</span> daemon: 500 Internal<span class="built_in"> Server </span>Error: failed <span class="keyword">to</span> parse<span class="built_in"> pool </span>request <span class="keyword">for</span><span class="built_in"> address </span>space <span class="string">"GlobalDefault"</span><span class="built_in"> pool </span><span class="string">""</span> subpool <span class="string">""</span>: cannot <span class="builtin-name">find</span><span class="built_in"> address </span>space GlobalDefault (most likely the backing datastore is <span class="keyword">not</span> configured)</span><br></pre></td></tr></table></figure></p>
+
+<p><strong>All</strong> swarm-agents should have these options otherwise it will be likely get this error:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">Error</span> response <span class="keyword">from</span> daemon: 500 Internal<span class="built_in"> Server </span>Error: failed <span class="keyword">to</span> parse<span class="built_in"> pool </span>request <span class="keyword">for</span><span class="built_in"> address </span>space <span class="string">"GlobalDefault"</span><span class="built_in"> pool </span><span class="string">""</span> subpool <span class="string">""</span>: cannot <span class="builtin-name">find</span><span class="built_in"> address </span>space GlobalDefault (most likely the backing datastore is <span class="keyword">not</span> configured)</span><br></pre></td></tr></table></figure>
+
 <h1 id="Create-overlay-network"><a href="#Create-overlay-network" class="headerlink" title="Create overlay network"></a>Create overlay network</h1><p>If using docker-compose, there is nothing need to do. As docker-compose will automatically create defaul network if:</p>
 <ul>
 <li>Single host: it will create a bridge</li>
 <li>Multiple host: it will create a overlay</li>
 </ul>
 <p>Once docker-compose file finished, just run <code>docker-compose up -d</code> which will create network correspondingly.</p>
-<p>otherwise simply use following command at your <code>swarm</code>:<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker<span class="built_in"> network </span>create --driver overlay <span class="attribute">--subnet</span>=10.0.9.0/24 my-net</span><br></pre></td></tr></table></figure></p>
-<h1 id="Docker-compose-build-on-Swarm"><a href="#Docker-compose-build-on-Swarm" class="headerlink" title="Docker-compose build on Swarm"></a>Docker-compose build on Swarm</h1><p>There is limitation for docker-compose build as it cannot find the target node to build the image.<br>The only way currently is to build on the node and tag it rather than on swarm.<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">build</span> -t &lt;tag name&gt; <span class="keyword">path</span>/<span class="keyword">to</span>/dockerfile</span><br></pre></td></tr></table></figure></p>
+<p>otherwise simply use following command at your <code>swarm</code>:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker<span class="built_in"> network </span>create --driver overlay <span class="attribute">--subnet</span>=10.0.9.0/24 my-net</span><br></pre></td></tr></table></figure>
+
+<h1 id="Docker-compose-build-on-Swarm"><a href="#Docker-compose-build-on-Swarm" class="headerlink" title="Docker-compose build on Swarm"></a>Docker-compose build on Swarm</h1><p>There is limitation for docker-compose build as it cannot find the target node to build the image.<br>The only way currently is to build on the node and tag it rather than on swarm.</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">build</span> -t &lt;tag name&gt; <span class="keyword">path</span>/<span class="keyword">to</span>/dockerfile</span><br></pre></td></tr></table></figure>
+
 
   	</div>
 	  

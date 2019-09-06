@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Tag: mongodb | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -22,7 +22,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -39,7 +39,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -171,8 +171,10 @@
 		
   </section>
   <section class="article typo">
-	  <p>Mongodb needs extra collection for two phase lock.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  lastModified:<span class="built_in">Date</span>,</span><br><span class="line">  status:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</span><br><span class="line">    index:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code><br>
+	  <p>Mongodb needs extra collection for two phase lock.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> transactionSchema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  lastModified:<span class="built_in">Date</span>,</span><br><span class="line">  status:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"new"</span>,</span><br><span class="line">    index:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>The transaction life cycle is <code>new-&gt;pending-&gt;applied-&gt;done</code></p>
 
     
 	  <div class="readmore">

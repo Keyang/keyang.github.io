@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>Tag: mongoose.js | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -22,7 +22,7 @@
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -39,7 +39,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -171,7 +171,8 @@
 		
   </section>
   <section class="article typo">
-	  <p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="noopener">doc</a> is not quite detailed and obselete.<br>Some example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  password:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    required:<span class="literal">true</span>,</span><br><span class="line">    set:hash</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hash</span>(<span class="params">plainPwd</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+	  <p>According to mongoose.js doc, it is able to set setters to a field on schema.<br>However, the <a href="http://mongoosejs.com/docs/2.7.x/docs/getters-setters.html" target="_blank" rel="noopener">doc</a> is not quite detailed and obselete.<br>Some example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> schema=<span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  password:&#123;</span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    required:<span class="literal">true</span>,</span><br><span class="line">    <span class="keyword">set</span>:hash</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">function hash(plainPwd)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">"crypto"</span>).createHash(<span class="string">"sha1"</span>).update(plainPwd).update(secret).digest(<span class="string">"hex"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     
 	  <div class="readmore">

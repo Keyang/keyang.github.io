@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>wordpress reverse proxy headers | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -20,14 +20,14 @@
 <meta property="og:site_name" content="Keyang&#39;s Blog">
 <meta property="og:description" content="When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup: 123456proxy_set_header Host $host;proxy_set_header X-Real-IP $remote_addr;proxy_set_header X-Forwarded-For $">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-23T00:22:52.544Z">
+<meta property="og:updated_time" content="2017-12-23T00:22:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wordpress reverse proxy headers">
 <meta name="twitter:description" content="When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup: 123456proxy_set_header Host $host;proxy_set_header X-Real-IP $remote_addr;proxy_set_header X-Forwarded-For $">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -44,7 +44,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -178,6 +178,7 @@
   	<div class="article-entry" itemprop="articleBody">
     	<p>When put wordpress blog behind a reverse proxy (e.g. nginx), some headers have to be setup:</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line"></span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> HTTP_X_FORWARDED_PROTO <span class="variable">$scheme</span>;</span><br></pre></td></tr></table></figure>
+
 
   	</div>
 	  

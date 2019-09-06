@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>How to download binary content as Blob in JS with Ajax(XHR) | Keyang&#39;s Blog</title>
-  <meta name="description" content="null" />
-  <meta name="keywords" content="" />
-  <meta name="HandheldFriendly" content="True" />
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Keyang's Blog">
@@ -20,14 +20,14 @@
 <meta property="og:site_name" content="Keyang&#39;s Blog">
 <meta property="og:description" content="Using XMLHTTPRequest (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as ArrayBuffer or Blob) such a">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-22T23:35:00.936Z">
+<meta property="og:updated_time" content="2017-12-22T23:35:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to download binary content as Blob in JS with Ajax(XHR)">
 <meta name="twitter:description" content="Using XMLHTTPRequest (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as ArrayBuffer or Blob) such a">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href='/css/waves.min.css' rel='stylesheet'>
+  <link href="/css/waves.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <script>
     function setLoadingBarProgress(num) {
@@ -44,7 +44,7 @@
     gtag('config', 'UA-29275086-1');
   </script>
 </head>
-
+</html>
 <body>
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
@@ -178,10 +178,13 @@
   	<div class="article-entry" itemprop="articleBody">
     	<p>Using <code>XMLHTTPRequest</code> (ajax) transporting data between client and server has been popular for a while. Sometimes, we want our browser to retrieve binary data from server (as <code>ArrayBuffer</code> or <code>Blob</code>) such as pdf, image, and psd files. This post will go through how to achieve it with <code>XMLHTTPRequest</code> and <code>jQuery</code>.</p>
 <a id="more"></a>
+
 <h1 id="Download-Binary-using-XMLHTTPRequest"><a href="#Download-Binary-using-XMLHTTPRequest" class="headerlink" title="Download Binary using XMLHTTPRequest"></a>Download Binary using XMLHTTPRequest</h1><p>For <code>XMLHTTPRequest</code>, just simply setup the <code>responseType</code> of <code>XHR</code> instance to either <code>arraybuffer</code> or <code>blob</code>. Example:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr=<span class="keyword">new</span> XMLHTTPRequest();</span><br><span class="line">xhr.open(<span class="string">"GET"</span>, url, <span class="literal">true</span>);</span><br><span class="line"><span class="comment">//Now set response type</span></span><br><span class="line">xhr.responseType = <span class="string">'arraybuffer'</span>;</span><br><span class="line">xhr.addEventListener(<span class="string">'load'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.status === <span class="number">200</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(xhr.response) <span class="comment">// ArrayBuffer</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span> Blob([xhr.response])) <span class="comment">// Blob</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+
 <h1 id="Download-with-jQuery-Ajax"><a href="#Download-with-jQuery-Ajax" class="headerlink" title="Download with jQuery Ajax"></a>Download with jQuery Ajax</h1><p><code>$.ajax</code> does not support either <code>arraybuffer</code> or <code>blob</code> as its <code>dataType</code>. Thus we need write a <code>beforeSend</code> handler:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//setup ajax</span></span><br><span class="line">$.ajaxSetup(&#123;</span><br><span class="line">  beforeSend:<span class="function"><span class="keyword">function</span>(<span class="params">jqXHR,settings</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (settings.dataType === <span class="string">'binary'</span>)&#123;</span><br><span class="line">      settings.xhr().responseType=<span class="string">'arraybuffer'</span>;</span><br><span class="line">      settings.processData=<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//use ajax now</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">  url:url,</span><br><span class="line">  dataType:<span class="string">"binary"</span>,</span><br><span class="line">  success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data); <span class="comment">//ArrayBuffer</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span> Blob([data])) <span class="comment">// Blob</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <h1 id="About-ResponseType"><a href="#About-ResponseType" class="headerlink" title="About ResponseType"></a>About ResponseType</h1><p>For more information about <code>responseType</code>, take a look at <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType" target="_blank" rel="noopener">this</a>.</p>
 
   	</div>
